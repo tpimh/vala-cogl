@@ -29,7 +29,68 @@ static string get_winsys_name_for_id(WinsysID winsys_id) {
 }
 
 static void feature_cb(FeatureID feature) {
-    stdout.printf(" » Feature #%d\n", feature);
+    string feature_name = "Unknown feature %d".printf(feature);
+    switch (feature) {
+        case FeatureID.TEXTURE_NPOT_BASIC:
+            feature_name = "Non power of two textures (basic)";
+            break;
+        case FeatureID.TEXTURE_NPOT_MIPMAP:
+            feature_name = "Non power of two textures (+ mipmap)";
+            break;
+        case FeatureID.TEXTURE_NPOT_REPEAT:
+            feature_name = "Non power of two textures (+ repeat modes)";
+            break;
+        case FeatureID.TEXTURE_NPOT:
+            feature_name = "Non power of two textures (fully featured)";
+            break;
+        case FeatureID.TEXTURE_RECTANGLE:
+            feature_name = "Unnormalized coordinate, rectangle textures";
+            break;
+        case FeatureID.TEXTURE_3D:
+            feature_name = "3D texture support";
+            break;
+        case FeatureID.OFFSCREEN:
+            feature_name = "Offscreen rendering support";
+            break;
+        case FeatureID.OFFSCREEN_MULTISAMPLE:
+            feature_name = "Offscreen rendering with multisampling support";
+            break;
+        case FeatureID.ONSCREEN_MULTIPLE:
+            feature_name = "Multiple onscreen framebuffers supported";
+            break;
+        case FeatureID.GLSL:
+            feature_name = "GLSL support";
+            break;
+        case FeatureID.UNSIGNED_INT_INDICES:
+            feature_name = "Unsigned integer indices";
+            break;
+        case FeatureID.DEPTH_RANGE:
+            feature_name = "cogl_pipeline_set_depth_range() support";
+            break;
+        case FeatureID.POINT_SPRITE:
+            feature_name = "Point sprite coordinates";
+            break;
+        case FeatureID.MAP_BUFFER_FOR_READ:
+            feature_name = "Mapping buffers for reading";
+            break;
+        case FeatureID.MAP_BUFFER_FOR_WRITE:
+            feature_name = "Mapping buffers for writing";
+            break;
+        case FeatureID.MIRRORED_REPEAT:
+            feature_name = "Mirrored repeat wrap modes";
+            break;
+        case FeatureID.GLES2_CONTEXT:
+            feature_name = "GLES2 API integration supported";
+            break;
+        case FeatureID.DEPTH_TEXTURE:
+            feature_name = "Depth Textures";
+            break;
+        case FeatureID.PER_VERTEX_POINT_SIZE:
+            feature_name = "Per-vertex point size";
+            break;
+    }
+
+    stdout.printf(" » %s\n", feature_name);
 }
 
 static void output_cb(Output output) {
@@ -79,7 +140,7 @@ int main(string[] args) {
     try {
         ctx = new Context(null);
     } catch (Error e) {
-        
+        stderr.printf("Failed to create context: %s\n", e.message);
         return 1;
     }
 
