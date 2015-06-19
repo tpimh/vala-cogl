@@ -1,6 +1,6 @@
 SRCS = cogl-info.vala
 PROGRAM = cogl-info
-VALAPKGS = --pkg cogl-2.0
+VALAPKGS = --pkg cogl-2.0 --vapidir=../vapi
 VALAOPTS =
 CFLAGS = -X -I/usr/include/cogl -X -lcogl
 
