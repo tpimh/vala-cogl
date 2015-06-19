@@ -1,5 +1,5 @@
-SRCS = src/vala-cogl.vala
-PROGRAM = vala-cogl
+SRCS = cogl1-clutter-test.vala
+PROGRAM = cogl1-clutter-test
 VALAPKGS = --pkg clutter-1.0
 VALAOPTS =
 CFLAGS = -X -lm
