@@ -7,6 +7,8 @@ struct Feature {
 }
 
 class CoglInfo {
+    private static int output_num = 0;
+
     public static const Feature[] features = {
         {
             FeatureID.TEXTURE_NPOT_BASIC,"Non power of two textures (basic)",
@@ -143,7 +145,7 @@ class CoglInfo {
         string order = "";
         float refresh;
 
-        stdout.printf(" Output:\n");
+        stdout.printf(" Output%d:\n", output_num++);
         stdout.printf("  » position = (%d, %d)\n", output.get_x(), output.get_y());
         stdout.printf("  » resolution = %d x %d\n", output.get_width(), output.get_height());
         stdout.printf("  » physical size = %dmm x %dmm\n", output.get_mm_width(), output.get_mm_height());
@@ -201,6 +203,8 @@ class CoglInfo {
 
         stdout.printf("Outputs:\n");
         renderer.foreach_output(output_cb);
+        if (output_num == 0)
+            stdout.printf(" Unknown\n");
 
         return 0;
     }
