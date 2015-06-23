@@ -3,9 +3,9 @@ class Box : Clutter.Actor {
     public float px = 300;
     public float py = 200;
     public float pz = -100;
-    public float sx = 100;
-    public float sy = 100;
-    public float sz = 100;
+    public float sx = 250;
+    public float sy = 250;
+    public float sz = 250;
     public float rx = 45.0f;
     public float ry = 45.0f;
 
@@ -183,7 +183,7 @@ class Box : Clutter.Actor {
         Timeout.add(20, () => {
             box.rx += 0.5f;
             box.ry += 1.0f;
-            box.queue_redraw ();
+            box.queue_redraw();
             return true;
         });
 
