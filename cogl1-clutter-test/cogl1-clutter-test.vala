@@ -10,26 +10,9 @@ class Rectangle : Clutter.Actor {
         Cogl.push_matrix();
         Cogl.translate(px, py, 0);
         Cogl.rotate(rotation, 0, 0, 1);
+        Cogl.set_source_color(color);
 
-        Cogl.TextureVertex vertex[4];
-
-        vertex[0].x = -sx / 2;
-        vertex[0].y = -sy / 2;
-        vertex[0].color = color;
-
-        vertex[1].x = sx / 2;
-        vertex[1].y = -sy / 2;
-        vertex[1].color = color;
-
-        vertex[2].x = sx / 2;
-        vertex[2].y = sy / 2;
-        vertex[2].color= color;
-
-        vertex[3].x = -sx / 2;
-        vertex[3].y = sy / 2;
-        vertex[3].color= color;
-
-        Cogl.polygon(vertex, true);
+        Cogl.rectangle(-sx / 2, -sy / 2, sx / 2, sy / 2);
 
         Cogl.pop_matrix();
    }
