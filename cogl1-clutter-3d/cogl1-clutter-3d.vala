@@ -179,6 +179,14 @@ class Box : Clutter.Actor {
 
         var box = new Box();
         stage.add_child(box);
+
+        Timeout.add(20, () => {
+            box.rx += 0.5f;
+            box.ry += 1.0f;
+            box.queue_redraw ();
+            return true;
+        });
+
         stage.show();
 
         Clutter.main();
