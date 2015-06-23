@@ -6,8 +6,30 @@ class Box : Clutter.Actor {
     public float sx = 250;
     public float sy = 250;
     public float sz = 250;
-    public float rx = 45.0f;
-    public float ry = 45.0f;
+    private float _rx = 0.0f;
+    private float _ry = 0.0f;
+
+    public float rx {
+        get { return _rx; }
+        set {
+            while (value > 360)
+                value -= 360;
+            while (value < 0)
+                value += 360;
+            _rx = value;
+        }
+    }
+
+    public float ry {
+        get { return _ry; }
+        set {
+            while (value > 360)
+                value -= 360;
+            while (value < 0)
+                value += 360;
+            _ry = value;
+        }
+    }
 
     public override void paint() {
         Cogl.push_matrix();
