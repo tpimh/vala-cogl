@@ -201,15 +201,14 @@ class Box : Clutter.Actor {
 
         var box = new Box();
         stage.add_child(box);
+        stage.show();
 
-        Timeout.add(20, () => {
-            box.rx += 0.5f;
-            box.ry += 1.0f;
+        stage.motion_event.connect ((evt) => {
+            box.rx = -evt.y;
+            box.ry = -evt.x;
             box.queue_redraw();
             return true;
         });
-
-        stage.show();
 
         Clutter.main();
 
