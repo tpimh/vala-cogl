@@ -693,7 +693,6 @@ namespace Cogl {
 		public void set_test_function (Cogl.DepthTestFunction function);
 		public void set_write_enabled (Cogl.Bool enable);
 	}
-
 	[CCode (cheader_filename = "cogl/cogl.h", has_type_id = false)]
 	public struct GtypeClass {
 		public weak GLib.TypeClass base_class;
@@ -887,9 +886,7 @@ namespace Cogl {
 	[CCode (cheader_filename = "cogl/cogl.h", cprefix = "COGL_BUFFER_MAP_HINT_", has_type_id = false)]
 	[Flags]
 	public enum BufferMapHint {
-		[CCode (cname = "COGL_BUFFER_MAP_HINT_DISCARD")]
 		DISCARD,
-		[CCode (cname = "COGL_BUFFER_MAP_HINT_DISCARD_RANGE")]
 		DISCARD_RANGE
 	}
 	[CCode (cheader_filename = "cogl/cogl.h", cprefix = "COGL_", type_id = "cogl_buffer_target_get_type ()")]
@@ -965,55 +962,30 @@ namespace Cogl {
 	}
 	[CCode (cheader_filename = "cogl/cogl.h", cprefix = "COGL_FEATURE_ID_", has_type_id = false)]
 	public enum FeatureID {
-		[CCode (cname = "COGL_FEATURE_ID_TEXTURE_NPOT_BASIC")]
 		TEXTURE_NPOT_BASIC,
-		[CCode (cname = "COGL_FEATURE_ID_TEXTURE_NPOT_MIPMAP")]
 		TEXTURE_NPOT_MIPMAP,
-		[CCode (cname = "COGL_FEATURE_ID_TEXTURE_NPOT_REPEAT")]
 		TEXTURE_NPOT_REPEAT,
-		[CCode (cname = "COGL_FEATURE_ID_TEXTURE_NPOT")]
 		TEXTURE_NPOT,
-		[CCode (cname = "COGL_FEATURE_ID_TEXTURE_RECTANGLE")]
 		TEXTURE_RECTANGLE,
-		[CCode (cname = "COGL_FEATURE_ID_TEXTURE_3D")]
 		TEXTURE_3D,
-		[CCode (cname = "COGL_FEATURE_ID_GLSL")]
 		GLSL,
-		[CCode (cname = "COGL_FEATURE_ID_ARBFP")]
 		ARBFP,
-		[CCode (cname = "COGL_FEATURE_ID_OFFSCREEN")]
 		OFFSCREEN,
-		[CCode (cname = "COGL_FEATURE_ID_OFFSCREEN_MULTISAMPLE")]
 		OFFSCREEN_MULTISAMPLE,
-		[CCode (cname = "COGL_FEATURE_ID_ONSCREEN_MULTIPLE")]
 		ONSCREEN_MULTIPLE,
-		[CCode (cname = "COGL_FEATURE_ID_UNSIGNED_INT_INDICES")]
 		UNSIGNED_INT_INDICES,
-		[CCode (cname = "COGL_FEATURE_ID_DEPTH_RANGE")]
 		DEPTH_RANGE,
-		[CCode (cname = "COGL_FEATURE_ID_POINT_SPRITE")]
 		POINT_SPRITE,
-		[CCode (cname = "COGL_FEATURE_ID_MAP_BUFFER_FOR_READ")]
 		MAP_BUFFER_FOR_READ,
-		[CCode (cname = "COGL_FEATURE_ID_MAP_BUFFER_FOR_WRITE")]
 		MAP_BUFFER_FOR_WRITE,
-		[CCode (cname = "COGL_FEATURE_ID_MIRRORED_REPEAT")]
 		MIRRORED_REPEAT,
-		[CCode (cname = "COGL_FEATURE_ID_SWAP_BUFFERS_EVENT")]
 		SWAP_BUFFERS_EVENT,
-		[CCode (cname = "COGL_FEATURE_ID_GLES2_CONTEXT")]
 		GLES2_CONTEXT,
-		[CCode (cname = "COGL_FEATURE_ID_DEPTH_TEXTURE")]
 		DEPTH_TEXTURE,
-		[CCode (cname = "COGL_FEATURE_ID_PRESENTATION_TIME")]
 		PRESENTATION_TIME,
-		[CCode (cname = "COGL_FEATURE_ID_FENCE")]
 		FENCE,
-		[CCode (cname = "COGL_FEATURE_ID_PER_VERTEX_POINT_SIZE")]
 		PER_VERTEX_POINT_SIZE,
-		[CCode (cname = "COGL_FEATURE_ID_TEXTURE_RG")]
 		TEXTURE_RG,
-		[CCode (cname = "COGL_FEATURE_ID_BUFFER_AGE")]
 		BUFFER_AGE
 	}
 	[CCode (cheader_filename = "cogl/cogl.h", cprefix = "COGL_FILTER_", has_type_id = false)]
