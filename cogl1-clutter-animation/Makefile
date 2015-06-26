@@ -1,5 +1,5 @@
-SRCS = cogl1-clutter-test.vala
-PROGRAM = cogl1-clutter-test
+SRCS = cogl1-clutter-animation.vala
+PROGRAM = cogl1-clutter-animation
 VALAPKGS = --pkg clutter-1.0
 VALAOPTS =
 CFLAGS = -X -lm
