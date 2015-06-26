@@ -19,14 +19,11 @@ class Rectangle : Clutter.Actor {
     }
 
     public override void paint() {
-        Cogl.push_matrix();
         Cogl.translate(px, py, 0);
         Cogl.rotate(r, 0, 0, 1);
         Cogl.set_source_color(color);
 
         Cogl.rectangle(-sx / 2, -sy / 2, sx / 2, sy / 2);
-
-        Cogl.pop_matrix();
    }
 
     public static int main(string[] args) {
