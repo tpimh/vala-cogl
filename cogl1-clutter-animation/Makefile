@@ -2,7 +2,7 @@ SRCS = cogl1-clutter-animation.vala
 PROGRAM = cogl1-clutter-animation
 VALAPKGS = --pkg clutter-1.0
 VALAOPTS =
-CFLAGS = -X -lm
+CFLAGS =
 
 ifndef VALA_COLORS
 	VALA_COLORS = "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
