@@ -26,7 +26,7 @@ class Hello {
                     is_dirty = false;
                     draw_ready = false;
 
-                    Framebuffer.clear4f(fb, BufferBit.COLOR, 0, 0, 0, 1);
+                    fb.clear4f(BufferBit.COLOR, 0, 0, 0, 1);
                     triangle.draw(fb, pipeline);
                     ((Onscreen)fb).swap_buffers();
 

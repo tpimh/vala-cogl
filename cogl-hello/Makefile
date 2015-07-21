@@ -1,8 +1,8 @@
 SRCS = cogl-hello.vala
 PROGRAM = cogl-hello
-VALAPKGS = --pkg cogl-2.0-git --vapidir=../vapi
+VALAPKGS = --pkg cogl-2.0 --vapidir=../vapi
 VALAOPTS =
-CFLAGS = -X $(shell pkg-config --cflags --libs cogl2 | sed 's/ -/ -X -/g')
+CFLAGS = -X -DCOGL_ENABLE_EXPERIMENTAL_2_0_API -X -I/usr/include/cogl -X -lcogl -X -I/usr/include/drm
 
 ifndef VALA_COLORS
 	VALA_COLORS = "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
