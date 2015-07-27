@@ -1,7 +1,7 @@
 # vala-cogl
 This is a collection of examples of what can be done with [Cogl](http://www.cogl3d.org/) written in Vala.
 
-If you are searching for bindings for Cogl 2.0 and it's documentation, you can find it here: [vapi](http://blog.golovin.in/vala-cogl/vapi) and [valadoc](http://blog.golovin.in/vala-cogl/valadoc).
+If you are searching for bindings for Cogl 2.0 and it's documentation, you can find it here: [vapi](http://blog.golovin.in/vala-cogl/vapi) and [valadoc](http://blog.golovin.in/vala-cogl/doc).
 
 ## Contents
   * **cogl-hello** — `cogl-hello` in Vala (original [here](https://github.com/GNOME/cogl/blob/master/examples/cogl-hello.c)) with Cogl 2.0 API
