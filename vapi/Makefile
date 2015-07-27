@@ -13,4 +13,4 @@ doc:
 	valadoc -o doc --vapidir=$(VAPIDIR) --pkg pango --pkg pangocairo cogl-2.0.vapi cogl-pango-2.0.vapi
 
 clean:
-	rm -f cogl-2.0.vapi cogl-pango-2.0.vapi
+	rm -rf cogl-2.0.vapi cogl-pango-2.0.vapi doc
