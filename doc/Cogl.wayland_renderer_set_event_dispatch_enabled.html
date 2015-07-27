@@ -247,6 +247,30 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><span class="method">wayland_renderer_set_event_dispatch_enabled</span></b> (<span class="main_type"><a href="Cogl.Renderer.html" class="class">Renderer</a></span> renderer, <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> enable)
+        </div>
+        <div class="description">
+          <p>Sets whether Cogl should handle calling <code>wl_display_dispatch</code> and <code>wl_display_flush</code> as part of its main loop 
+            integration via <a href="Cogl.poll_renderer_get_info.html" class="method">poll_renderer_get_info</a> and 
+            <a href="Cogl.poll_renderer_dispatch.html" class="method">poll_renderer_dispatch</a>.</p>
+          <p> The default value is <span class="main_optional_parameter">true</span>. When it is enabled the application can register listeners for 
+            Wayland interfaces and the callbacks will be invoked during <a href="Cogl.poll_renderer_dispatch.html" class="method">
+              poll_renderer_dispatch</a>. If the application wants to integrate with its own code that is already handling reading from the Wayland 
+            display socket, it should disable this to avoid having competing code read from the socket.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">renderer</td>
+              <td>
+                <p>A <a href="Cogl.Renderer.html" class="class">Renderer</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">enable</td>
+              <td>
+                <p>The new value</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

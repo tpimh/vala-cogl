@@ -47,6 +47,26 @@
 
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition">[ <span class="main_type">Compact</span> ]<br/><span class="main_keyword">public</span> <span class="main_keyword">class</span> <b><span class="class">MatrixEntry</span></b>
+        </div>
+        <div class="description">
+          <p>Represents a single immutable transformation that was retrieved from a <a href="Cogl.MatrixStack.html" class="class">MatrixStack</a> 
+            using <a href="Cogl.MatrixStack.get_entry.html" class="method">get_entry</a>.</p>
+          <p>Internally a <span class="class">MatrixEntry</span> represents a single matrix operation (such as "rotate", "scale", "translate") which 
+            is applied to the transform of a single parent entry.</p>
+          <p>Using the <a href="Cogl.MatrixStack.html" class="class">MatrixStack</a> api effectively builds up a graph of these immutable 
+            <span class="class">MatrixEntry</span> structures whereby operations that can be shared between multiple transformations will result in 
+            shared <span class="class">MatrixEntry</span> nodes in the graph.</p>
+          <p>When a <a href="Cogl.MatrixStack.html" class="class">MatrixStack</a> is first created it references one <span class="class">MatrixEntry
+            </span> that represents a single "load identity" operation. This serves as the root entry and all operations that are then applied to the 
+            stack will extend the graph starting from this root "load identity" entry.</p>
+          <p>Given the typical usage model for a <a href="Cogl.MatrixStack.html" class="class">MatrixStack</a> and the way the entries are built up 
+            while traversing a scenegraph then in most cases where an application is interested in comparing two transformations for equality then it 
+            is enough to simply compare two <span class="class">MatrixEntry</span> pointers directly. Technically this can lead to false negatives 
+            that could be identified with a deeper comparison but often these false negatives are unlikely and don't matter anyway so this enables 
+            extremely cheap comparisons.</p>
+          <p>&lt;note&gt;<span class="class">MatrixEntry</span>&lt;!-- --&gt;s are reference counted using 
+            <a href="Cogl.MatrixEntry.@ref.html" class="method">@ref</a> and <a href="Cogl.MatrixEntry.unref.html" class="method">unref</a> not with 
+            <code>cogl_object_ref</code> and <code>cogl_object_unref</code>.&lt;/note&gt;</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -57,27 +77,36 @@
         <ul class="navi_inline">
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.MatrixEntry.calculate_translation.html" class="method">calculate_translation</a></b> (<span class="main_type"><span class="class">MatrixEntry</span></span> entry1, <span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">float</span></span> x, <span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">float</span></span> y, <span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">float</span></span> z)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Determines if the only difference between two transforms is a 
+                translation and if so returns what the <code>x</code>, <code>y</code>, and <code>z</code> components of the translation are.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.MatrixEntry.equal.html" class="method">equal</a></b> (<span class="main_type"><span class="class">MatrixEntry</span></span> entry1)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Compares two arbitrary <span class="class">MatrixEntry</span> 
+                transforms for equality returning <span class="main_optional_parameter">true</span> if they are equal or 
+                <span class="main_optional_parameter">false</span> otherwise.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> <b><a href="Cogl.MatrixEntry.@get.html" class="method">@get</a></b> (<span class="main_keyword">out</span> <span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Resolves the current <span class="main_keyword">this</span> transform 
+                into a <a href="Cogl.Matrix.html" class="class">Matrix</a> by combining the sequence of operations that have been applied to build up 
+                the current transform.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.MatrixEntry.is_identity.html" class="method">is_identity</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Determines whether <span class="main_keyword">this</span> is known to 
+                represent an identity transform.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span class="class">MatrixEntry</span></span> <b><a href="Cogl.MatrixEntry.@ref.html" class="method">@ref</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Takes a reference on the given <span class="main_keyword">this</span> 
+                to ensure the <span class="main_keyword">this</span> stays alive and remains valid.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixEntry.unref.html" class="method">unref</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Releases a reference on <span class="main_keyword">this</span> either 
+                taken by calling <span class="method">unref</span> or to release the reference given when calling 
+                <a href="Cogl.MatrixStack.get_entry.html" class="method">get_entry</a>.</span>
             </div></li>
         </ul>
       </div>

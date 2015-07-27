@@ -40,6 +40,12 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">SubpixelOrder</span></b>
+        </div>
+        <div class="description">
+          <p>Some output devices (such as LCD panels) display colors by making each pixel consist of smaller "subpixels" that each have a particular 
+            color.</p>
+          <p> By using knowledge of the layout of this subpixel components, it is possible to create image content with higher resolution than the 
+            pixel grid.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -48,12 +54,19 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.SubpixelOrder.UNKNOWN.html">UNKNOWN</a> - </li>
-          <li class="enumvalue"><a href="Cogl.SubpixelOrder.NONE.html">NONE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.SubpixelOrder.HORIZONTAL_RGB.html">HORIZONTAL_RGB</a> - </li>
-          <li class="enumvalue"><a href="Cogl.SubpixelOrder.HORIZONTAL_BGR.html">HORIZONTAL_BGR</a> - </li>
-          <li class="enumvalue"><a href="Cogl.SubpixelOrder.VERTICAL_RGB.html">VERTICAL_RGB</a> - </li>
-          <li class="enumvalue"><a href="Cogl.SubpixelOrder.VERTICAL_BGR.html">VERTICAL_BGR</a> - </li>
+          <li class="enumvalue"><a href="Cogl.SubpixelOrder.UNKNOWN.html">UNKNOWN</a> - <span class="brief_description">the layout of subpixel  
+              components for the device is unknown.</span></li>
+          <li class="enumvalue"><a href="Cogl.SubpixelOrder.NONE.html">NONE</a> - <span class="brief_description">the device displays colors  without 
+              geometrically-separated subpixel components,  or the positioning or colors of the components do not  match any of the values in the 
+              enumeration.</span></li>
+          <li class="enumvalue"><a href="Cogl.SubpixelOrder.HORIZONTAL_RGB.html">HORIZONTAL_RGB</a> - <span class="brief_description">the device has  
+              horizontally arranged components in the order  red-green-blue from left to right.</span></li>
+          <li class="enumvalue"><a href="Cogl.SubpixelOrder.HORIZONTAL_BGR.html">HORIZONTAL_BGR</a> - <span class="brief_description">the device has  
+              horizontally arranged components in the order  blue-green-red from left to right.</span></li>
+          <li class="enumvalue"><a href="Cogl.SubpixelOrder.VERTICAL_RGB.html">VERTICAL_RGB</a> - <span class="brief_description">the device has  
+              vertically arranged components in the order  red-green-blue from top to bottom.</span></li>
+          <li class="enumvalue"><a href="Cogl.SubpixelOrder.VERTICAL_BGR.html">VERTICAL_BGR</a> - <span class="brief_description">the device has  
+              vertically arranged components in the order  blue-green-red from top to bottom.</span></li>
         </ul>
       </div>
     </div><br/>

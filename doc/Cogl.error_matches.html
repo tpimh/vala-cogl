@@ -247,6 +247,40 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><span class="method">error_matches</span></b> (<span class="main_type"><span class="class">Error</span></span> error, <span class="main_basic_type"><span class="struct">uint32</span></span> domain, <span class="main_basic_type"><span class="struct">int</span></span> code)
+        </div>
+        <div class="description">
+          <p>Returns <span class="main_optional_parameter">true</span> if error matches <code>domain</code> and <code>code</code>, 
+            <span class="main_optional_parameter">false</span> otherwise.</p>
+          <p> In particular, when error is <span class="main_optional_parameter">null</span>, FALSE will be returned.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">error</td>
+              <td>
+                <p>A <code>CoglError</code> thrown by the Cogl api or <span class="main_optional_parameter">null</span></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">domain</td>
+              <td>
+                <p>The error domain</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">code</td>
+              <td>
+                <p>The error code</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p>whether the <code>error</code> corresponds to the given <code>domain</code>  and <code>code</code>.</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

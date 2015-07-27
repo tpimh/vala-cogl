@@ -44,6 +44,9 @@
 
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition">[ <span class="main_type">SimpleType</span> ]<br/><span class="main_keyword">public</span> <span class="main_keyword">struct</span> <b><span class="struct">Handle</span></b>
+        </div>
+        <div class="description">
+          <p>Type used for storing references to cogl objects, the CoglHandle is a fully opaque type without any public data members.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -58,11 +61,12 @@
             </div></li>
           <li class="static_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">static</span> <span class="main_type"><span class="struct">Handle</span></span> <b><a href="Cogl.Handle.@ref.html" class="static_method">@ref</a></b> (<span class="main_type"><span class="struct">Handle</span></span> handle)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Increases the reference count of <code>handle</code> by 1</span>
             </div></li>
           <li class="static_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">static</span> <span class="main_keyword">void</span> <b><a href="Cogl.Handle.unref.html" class="static_method">unref</a></b> (<span class="main_type"><span class="struct">Handle</span></span> handle)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Drecreases the reference count of <code>handle</code> by 1; if the 
+                reference count reaches 0, the resources allocated by <code>handle</code> will be freed</span>
             </div></li>
         </ul>
       </div>

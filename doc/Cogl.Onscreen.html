@@ -73,82 +73,105 @@
         <ul class="navi_inline">
           <li class="creation_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <b><a href="Cogl.Onscreen.Onscreen.html" class="creation_method">Onscreen</a></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> context, <span class="main_basic_type"><span class="struct">int</span></span> width, <span class="main_basic_type"><span class="struct">int</span></span> height)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Instantiates an "unallocated" <span class="class">Onscreen</span> 
+                framebuffer that may be configured before later being allocated, either implicitly when it is first used or explicitly via 
+                <a href="Cogl.Framebuffer.allocate.html" class="method">allocate</a>.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Methods:</h3>
         <ul class="navi_inline">
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.OnscreenDirtyClosure.html" class="class">OnscreenDirtyClosure</a></span> <b><a href="Cogl.Onscreen.add_dirty_callback.html" class="method">add_dirty_callback</a></b> (<span class="main_type"><a href="Cogl.OnscreenDirtyCallback.html" class="delegate">OnscreenDirtyCallback</a></span> callback, <span class="main_type"><a href="Cogl.UserDataDestroyCallback.html" class="delegate">UserDataDestroyCallback</a></span>? destroy)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Installs a <code>callback</code> function that will be called whenever
+                 the window system has lost the contents of a region of the onscreen buffer and the application should redraw it to repair the buffer.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.FrameClosure.html" class="class">FrameClosure</a></span> <b><a href="Cogl.Onscreen.add_frame_callback.html" class="method">add_frame_callback</a></b> (<span class="main_type"><a href="Cogl.FrameCallback.html" class="delegate">FrameCallback</a></span> callback, <span class="main_type"><a href="Cogl.UserDataDestroyCallback.html" class="delegate">UserDataDestroyCallback</a></span>? destroy)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Installs a <code>callback</code> function that will be called for 
+                significant events relating to the given <span class="main_keyword">this</span> framebuffer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.OnscreenResizeClosure.html" class="class">OnscreenResizeClosure</a></span> <b><a href="Cogl.Onscreen.add_resize_callback.html" class="method">add_resize_callback</a></b> (<span class="main_type"><a href="Cogl.OnscreenResizeCallback.html" class="delegate">OnscreenResizeCallback</a></span> callback, <span class="main_type"><a href="Cogl.UserDataDestroyCallback.html" class="delegate">UserDataDestroyCallback</a></span>? destroy)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Registers a <code>callback</code> with <span class="main_keyword">this
+                </span> that will be called whenever the <span class="main_keyword">this</span> framebuffer changes size.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="deprecated"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">uint</span></span> <b><a href="Cogl.Onscreen.add_swap_buffers_callback.html" class="method">add_swap_buffers_callback</a></b> (<span class="main_type"><a href="Cogl.SwapBuffersNotify.html" class="delegate">SwapBuffersNotify</a></span> callback)
               </span></span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Installs a <code>callback</code> function that should be called 
+                whenever a swap buffers request (made using <a href="Cogl.Onscreen.swap_buffers.html" class="method">swap_buffers</a>) for the given 
+                <span class="main_keyword">this</span> completes.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Cogl.Onscreen.get_buffer_age.html" class="method">get_buffer_age</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Gets the current age of the buffer contents.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int64</span></span> <b><a href="Cogl.Onscreen.get_frame_counter.html" class="method">get_frame_counter</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Gets the value of the framebuffers frame counter.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Onscreen.get_resizable.html" class="method">get_resizable</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Lets you query whether <span class="main_keyword">this</span> has been
+                 marked as resizable via the <a href="Cogl.Onscreen.set_resizable.html" class="method">set_resizable</a> api.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Onscreen.hide.html" class="method">hide</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">This requests to make <span class="main_keyword">this</span> invisible
+                 to the user.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Onscreen.remove_dirty_callback.html" class="method">remove_dirty_callback</a></b> (<span class="main_type"><a href="Cogl.OnscreenDirtyClosure.html" class="class">OnscreenDirtyClosure</a></span> closure)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Removes a callback and associated user data that were previously 
+                registered using <a href="Cogl.Onscreen.add_dirty_callback.html" class="method">add_dirty_callback</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Onscreen.remove_frame_callback.html" class="method">remove_frame_callback</a></b> (<span class="main_type"><a href="Cogl.FrameClosure.html" class="class">FrameClosure</a></span> closure)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Removes a callback and associated user data that were previously 
+                registered using <a href="Cogl.Onscreen.add_frame_callback.html" class="method">add_frame_callback</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Onscreen.remove_resize_callback.html" class="method">remove_resize_callback</a></b> (<span class="main_type"><a href="Cogl.OnscreenResizeClosure.html" class="class">OnscreenResizeClosure</a></span> closure)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Removes a resize <code>callback</code> and <code>user_data</code> pair
+                 that were previously associated with <span class="main_keyword">this</span> via 
+                <a href="Cogl.Onscreen.add_resize_callback.html" class="method">add_resize_callback</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="deprecated"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Onscreen.remove_swap_buffers_callback.html" class="method">remove_swap_buffers_callback</a></b> (<span class="main_basic_type"><span class="struct">uint</span></span> id)
               </span></span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Removes a callback that was previously registered using 
+                <a href="Cogl.Onscreen.add_swap_buffers_callback.html" class="method">add_swap_buffers_callback</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Onscreen.set_resizable.html" class="method">set_resizable</a></b> (<span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> resizable)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Lets you request Cogl to mark an <span class="main_keyword">this
+                </span> framebuffer as resizable or not.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Onscreen.set_swap_throttled.html" class="method">set_swap_throttled</a></b> (<span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> throttled)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Requests that the given <span class="main_keyword">this</span> 
+                framebuffer should have swap buffer requests (made using <a href="Cogl.Onscreen.swap_buffers.html" class="method">swap_buffers</a>) 
+                throttled either by a displays vblank period or perhaps some other mechanism in a composited environment.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Onscreen.show.html" class="method">show</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">This requests to make <span class="main_keyword">this</span> visible 
+                to the user.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Onscreen.swap_buffers.html" class="method">swap_buffers</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Swaps the current back buffer being rendered too, to the front for 
+                display.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Onscreen.swap_buffers_with_damage.html" class="method">swap_buffers_with_damage</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> rectangles, <span class="main_basic_type"><span class="struct">int</span></span> n_rectangles)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Swaps the current back buffer being rendered too, to the front for 
+                display and provides information to any system compositor about what regions of the buffer have changed (damage) with respect to the 
+                last swapped buffer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Onscreen.swap_region.html" class="method">swap_region</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> rectangles, <span class="main_basic_type"><span class="struct">int</span></span> n_rectangles)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Swaps a region of the back buffer being rendered too, to the front for
+                 display.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Inherited Members:</h3>

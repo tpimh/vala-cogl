@@ -247,6 +247,53 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><span class="method">wayland_onscreen_resize</span></b> (<span class="main_type"><a href="Cogl.Onscreen.html" class="class">Onscreen</a></span> onscreen, <span class="main_basic_type"><span class="struct">int</span></span> width, <span class="main_basic_type"><span class="struct">int</span></span> height, <span class="main_basic_type"><span class="struct">int</span></span> offset_x, <span class="main_basic_type"><span class="struct">int</span></span> offset_y)
+        </div>
+        <div class="description">
+          <p>Resizes the backbuffer of the given <code>onscreen</code> framebuffer to the given size.</p>
+          <p> Since a buffer is usually conceptually scaled with a center point the <code>offset_x</code> and <code>offset_y</code> arguments allow 
+            the newly allocated buffer to be positioned relative to the old buffer size.</p>
+          <p>For example a buffer that is being resized by moving the bottom right corner, and the top left corner is remaining static would use x and
+             y offsets of (0, 0) since the top-left of the new buffer should have the same position as the old buffer. If the center of the old buffer
+             is being zoomed into then all the corners of the new buffer move out from the center and the x and y offsets would be (
+            -half_x_size_increase, -half_y_size_increase) where x/y_size_increase is how many pixels bigger the buffer is on the x and y axis.</p>
+          <p>Note that if some drawing commands have been applied to the framebuffer since the last swap buffers then the resize will be queued and 
+            will only take effect in the next swap buffers.</p>
+          <p>If multiple calls to <span class="method">wayland_onscreen_resize</span> get queued before the next swap buffers request then the 
+            relative x and y offsets accumulate instead of being replaced. The <code>width</code> and <code>height</code> values superseed the old 
+            values.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">onscreen</td>
+              <td>
+                <p>A <a href="Cogl.Onscreen.html" class="class">Onscreen</a> framebuffer</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">width</td>
+              <td>
+                <p>The desired width of the framebuffer</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">height</td>
+              <td>
+                <p>The desired height of the framebuffer</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">offset_x</td>
+              <td>
+                <p>A relative x offset for the new framebuffer</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">offset_y</td>
+              <td>
+                <p>A relative y offset for the new framebuffer</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

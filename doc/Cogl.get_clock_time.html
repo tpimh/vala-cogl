@@ -247,6 +247,31 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int64</span></span> <b><span class="method">get_clock_time</span></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> context)
+        </div>
+        <div class="description">
+          <p>Returns the current time value from Cogl's internal clock.</p>
+          <p> This clock is used for measuring times such as the presentation time in a <a href="Cogl.FrameInfo.html" class="class">FrameInfo</a>.</p>
+          <p>This method is meant for converting timestamps retrieved from Cogl to other time systems, and is not meant to be used as a standalone 
+            timing system. For that reason, if this function is called without having retrieved a valid (non-zero) timestamp from Cogl first, it may 
+            return 0 to indicate that Cogl has no active internal clock.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">context</td>
+              <td>
+                <p>a <a href="Cogl.Context.html" class="class">Context</a> pointer</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p>the time value for the Cogl clock, in nanoseconds  from an arbitrary point in time, or 0 if Cogl doesn't have an  active internal 
+                  clock.</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

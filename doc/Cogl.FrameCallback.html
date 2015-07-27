@@ -247,6 +247,40 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">delegate</span> <span class="main_keyword">void</span> <b><span class="delegate">FrameCallback</span></b> (<span class="main_type"><a href="Cogl.Onscreen.html" class="class">Onscreen</a></span> onscreen, <span class="main_type"><a href="Cogl.FrameEvent.html" class="enum">FrameEvent</a></span> event, <span class="main_type"><a href="Cogl.FrameInfo.html" class="class">FrameInfo</a></span> info)
+        </div>
+        <div class="description">
+          <p>Is a callback that can be registered via <a href="Cogl.Onscreen.add_frame_callback.html" class="method">add_frame_callback</a> to be 
+            called when a frame progresses in some notable way.</p>
+          <p>Please see the documentation for <a href="Cogl.FrameEvent.html" class="enum">FrameEvent</a> and 
+            <a href="Cogl.Onscreen.add_frame_callback.html" class="method">add_frame_callback</a> for more details about what events can be notified.
+          </p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">onscreen</td>
+              <td>
+                <p>The onscreen that the frame is associated with</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">event</td>
+              <td>
+                <p>A <a href="Cogl.FrameEvent.html" class="enum">FrameEvent</a> notifying how the frame has progressed</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">info</td>
+              <td>
+                <p>The meta information, such as timing information, about  the frame that has progressed.</p>
+              </td>
+            </tr>
+            <tr class="main_parameter_table_unknown_parameter">
+              <td class="main_parameter_table_name">user_data</td>
+              <td>
+                <p>The user pointer passed to  <a href="Cogl.Onscreen.add_frame_callback.html" class="method">add_frame_callback</a></p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

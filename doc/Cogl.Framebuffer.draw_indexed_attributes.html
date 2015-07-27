@@ -101,6 +101,83 @@
         </div>
         <div class="description">
           <p><b>Warning:</b> draw_indexed_attributes is deprecated.</p>
+          <p>Behaves the same as <a href="Cogl.Framebuffer.draw_attributes.html" class="method">draw_attributes</a> except that instead of reading 
+            vertex data sequentially from the specified <code>attributes</code> the <code>indices</code> provide an indirection for how the data 
+            should be indexed allowing a random access order to be specified.</p>
+          <div class="main_notification_block"><span class="main_block_headline">Note:</span> 
+            <div class="main_block_content">
+              <p>Use <a href="Cogl.Primitive.html" class="class">Primitive</a>&lt;!-- --&gt;s and  <a href="Cogl.Primitive.draw.html" class="method">
+                  draw</a> instead</p>
+            </div>
+          </div>
+          <p>For example an indices array of [0, 1, 2, 0, 2, 3] could be used used to draw two triangles (<code>mode</code> = 
+            <span class="main_optional_parameter">cogl_vertices_mode_triangles</span> + <code>n_vertices</code> = 6) but only provide attribute data 
+            for the 4 corners of a rectangle. When the GPU needs to read in each of the 6 vertices it will read the <code>indices</code> array for 
+            each vertex in sequence and use the index to look up the vertex attribute data. So here you can see that first and fourth vertex will 
+            point to the same data and third and fifth vertex will also point to shared data.</p>
+          <p>Drawing with indices can be a good way of minimizing the size of a mesh by allowing you to avoid data for duplicate vertices because 
+            multiple entries in the index array can refer back to a single shared vertex.</p>
+          <p>&lt;note&gt;The <code>indices</code> array must be at least as long as <code>first_vertex</code> + <code>n_vertices</code> otherwise the 
+            GPU will overrun the indices array when looking up vertex data.&lt;/note&gt;</p>
+          <p>Since it's very common to want to draw a run of rectangles using indices to avoid duplicating vertex data you can use <code>
+              cogl_get_rectangle_indices</code> to get a set of indices that can be shared.</p>
+          <p>This drawing api doesn't support high-level meta texture types such as <a href="Cogl.Texture2DSliced.html" class="class">Texture2DSliced
+            </a> so it is the user's responsibility to ensure that only low-level textures that can be directly sampled by a GPU such as 
+            <a href="Cogl.Texture2D.html" class="class">Texture2D</a>, <a href="Cogl.TextureRectangle.html" class="class">TextureRectangle</a> or 
+            <a href="Cogl.Texture3D.html" class="class">Texture3D</a> are associated with layers of the given <code>pipeline</code>.</p>
+          <p>&lt;note&gt;This api doesn't support any of the legacy global state options such as <code>cogl_set_depth_test_enabled</code>, <code>
+              cogl_set_backface_culling_enabled</code> or <code>cogl_program_use</code>&lt;/note&gt;</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">this</td>
+              <td>
+                <p>A destination <a href="Cogl.Framebuffer.html" class="interface">Framebuffer</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">pipeline</td>
+              <td>
+                <p>A <a href="Cogl.Pipeline.html" class="class">Pipeline</a> state object</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">mode</td>
+              <td>
+                <p>The <a href="Cogl.VerticesMode.html" class="enum">VerticesMode</a> defining the topology of vertices</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">first_vertex</td>
+              <td>
+                <p>The vertex offset within the given attributes to draw from</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">n_vertices</td>
+              <td>
+                <p>The number of vertices to draw from the given attributes</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">indices</td>
+              <td>
+                <p>The array of indices used by the GPU to lookup attribute  data for each vertex.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">attributes</td>
+              <td>
+                <p>An array of pointers to <a href="Cogl.Attribute.html" class="class">Attribute</a>&lt;-- --&gt;s defining vertex  geometry</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">n_attributes</td>
+              <td>
+                <p>The number of attributes in the <code>attributes</code> array.</p>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
     </div><br/>

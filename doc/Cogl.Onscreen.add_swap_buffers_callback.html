@@ -57,6 +57,49 @@
         </div>
         <div class="description">
           <p><b>Warning:</b> add_swap_buffers_callback is deprecated.</p>
+          <p>Installs a <code>callback</code> function that should be called whenever a swap buffers request (made using 
+            <a href="Cogl.Onscreen.swap_buffers.html" class="method">swap_buffers</a>) for the given <span class="main_keyword">this</span> completes.
+          </p>
+          <div class="main_notification_block"><span class="main_block_headline">Note:</span> 
+            <div class="main_block_content">
+              <p>Use <a href="Cogl.Onscreen.add_frame_callback.html" class="method">add_frame_callback</a> instead</p>
+            </div>
+          </div>
+          <p>&lt;note&gt;Applications should check for the <span class="main_optional_parameter">cogl_feature_id_swap_buffers_event</span> feature 
+            before using this API. It's currently undefined when and if registered callbacks will be called if this feature is not supported.&lt;/note
+            &gt;</p>
+          <p>We recommend using this mechanism when available to manually throttle your applications (in conjunction with 
+            <a href="Cogl.Onscreen.set_swap_throttled.html" class="method">set_swap_throttled</a>) so your application will be able to avoid long 
+            blocks in the driver caused by throttling when you request to swap buffers too quickly.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">this</td>
+              <td>
+                <p>A <a href="Cogl.Onscreen.html" class="class">Onscreen</a> framebuffer</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">callback</td>
+              <td>
+                <p>A callback function to call when a swap  has completed</p>
+              </td>
+            </tr>
+            <tr class="main_parameter_table_unknown_parameter">
+              <td class="main_parameter_table_name">user_data</td>
+              <td>
+                <p>A private pointer to be passed to <code>callback</code></p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p>a unique identifier that can be used to remove to remove  the callback later.</p>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
     </div><br/>

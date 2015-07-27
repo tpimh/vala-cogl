@@ -247,6 +247,64 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><span class="method">poll_renderer_get_info</span></b> (<span class="main_type"><a href="Cogl.Renderer.html" class="class">Renderer</a></span> renderer, <span class="main_type"><a href="Cogl.PollFD.html" class="struct">PollFD</a></span> poll_fds, <span class="main_basic_type"><span class="struct">int</span></span> n_poll_fds, <span class="main_basic_type"><span class="struct">int64</span></span> timeout)
+        </div>
+        <div class="description">
+          <p>Is used to integrate Cogl with an application mainloop that is based on the unix poll(2) api (or <code>select</code> or something 
+            equivalent).</p>
+          <p> This api should be called whenever an application is about to go idle so that Cogl has a chance to describe what file descriptor events 
+            it needs to be woken up for.</p>
+          <p>&lt;note&gt;If your application is using the Glib mainloop then you should jump to the 
+            <a href="Cogl.glib_source_new.html" class="method">glib_source_new</a> api as a more convenient way of integrating Cogl with the mainloop.
+            &lt;/note&gt;</p>
+          <p>After the function is called *<code>poll_fds</code> will contain a pointer to an array of <a href="Cogl.PollFD.html" class="struct">
+              PollFD</a> structs describing the file descriptors that Cogl expects. The fd and events members will be updated accordingly. After the 
+            application has completed its idle it is expected to either update the revents members directly in this array or to create a copy of the 
+            array and update them there.</p>
+          <p>When the application mainloop returns from calling poll(2) (or its equivalent) then it should call 
+            <a href="Cogl.poll_renderer_dispatch.html" class="method">poll_renderer_dispatch</a> passing a pointer the array of CoglPollFD&lt;!-- --
+            &gt;s with updated revent values.</p>
+          <p>When using the <span class="main_optional_parameter">cogl_winsys_id_wgl</span> winsys (where file descriptors don't make any sense) or 
+            <span class="main_optional_parameter">cogl_winsys_id_sdl</span> (where the event handling functions of SDL don't allow blocking on a file 
+            descriptor) *n_poll_fds is guaranteed to be zero.</p>
+          <p><code>timeout</code> will contain a maximum amount of time to wait in microseconds before the application should wake up or -1 if the 
+            application should wait indefinitely. This can also be 0 if Cogl needs to be woken up immediately.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">renderer</td>
+              <td>
+                <p>A <a href="Cogl.Renderer.html" class="class">Renderer</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">poll_fds</td>
+              <td>
+                <p>A return location for a pointer to an array  of <a href="Cogl.PollFD.html" class="struct">PollFD</a>&lt;!-- --&gt;s</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">n_poll_fds</td>
+              <td>
+                <p>A return location for the number of entries in *<code>poll_fds</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">timeout</td>
+              <td>
+                <p>A return location for the maximum length of time to wait  in microseconds, or -1 to wait indefinitely.</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p>A "poll fd state age" that changes whenever the set  of poll_fds has changed. If this API is being used to  integrate with another 
+                  system mainloop api then  knowing if the set of file descriptors and events has  really changed can help avoid redundant work  
+                  depending the api. The age isn't guaranteed to change  when the timeout changes.</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

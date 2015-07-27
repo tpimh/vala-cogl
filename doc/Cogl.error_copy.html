@@ -247,6 +247,26 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span class="class">Error</span></span> <b><span class="method">error_copy</span></b> (<span class="main_type"><span class="class">Error</span></span> error)
+        </div>
+        <div class="description">
+          <p>Makes a copy of <code>error</code> which can later be freed using <a href="Cogl.error_free.html" class="method">error_free</a>.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">error</td>
+              <td>
+                <p>A <code>CoglError</code> thrown by the Cogl api</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p>A newly allocated <code>CoglError</code> initialized to match the  contents of <code>error</code>.</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

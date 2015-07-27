@@ -45,6 +45,10 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">WinsysID</span></b>
+        </div>
+        <div class="description">
+          <p>Identifies specific window system backends that Cogl supports.</p>
+          <p>These can be used to query what backend Cogl is using or to try and explicitly select a backend to use.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -53,17 +57,26 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.WinsysID.ANY.html">ANY</a> - </li>
-          <li class="enumvalue"><a href="Cogl.WinsysID.STUB.html">STUB</a> - </li>
-          <li class="enumvalue"><a href="Cogl.WinsysID.GLX.html">GLX</a> - </li>
-          <li class="enumvalue"><a href="Cogl.WinsysID.EGL_XLIB.html">EGL_XLIB</a> - </li>
-          <li class="enumvalue"><a href="Cogl.WinsysID.EGL_NULL.html">EGL_NULL</a> - </li>
-          <li class="enumvalue"><a href="Cogl.WinsysID.EGL_GDL.html">EGL_GDL</a> - </li>
-          <li class="enumvalue"><a href="Cogl.WinsysID.EGL_WAYLAND.html">EGL_WAYLAND</a> - </li>
-          <li class="enumvalue"><a href="Cogl.WinsysID.EGL_KMS.html">EGL_KMS</a> - </li>
-          <li class="enumvalue"><a href="Cogl.WinsysID.EGL_ANDROID.html">EGL_ANDROID</a> - </li>
-          <li class="enumvalue"><a href="Cogl.WinsysID.WGL.html">WGL</a> - </li>
-          <li class="enumvalue"><a href="Cogl.WinsysID.SDL.html">SDL</a> - </li>
+          <li class="enumvalue"><a href="Cogl.WinsysID.ANY.html">ANY</a> - <span class="brief_description">Implies no preference for which backend is 
+              used</span></li>
+          <li class="enumvalue"><a href="Cogl.WinsysID.STUB.html">STUB</a> - <span class="brief_description">Use the no-op stub backend</span></li>
+          <li class="enumvalue"><a href="Cogl.WinsysID.GLX.html">GLX</a> - <span class="brief_description">Use the GLX window system binding API
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.WinsysID.EGL_XLIB.html">EGL_XLIB</a> - <span class="brief_description">Use EGL with the X window system 
+              via XLib</span></li>
+          <li class="enumvalue"><a href="Cogl.WinsysID.EGL_NULL.html">EGL_NULL</a> - <span class="brief_description">Use EGL with the PowerVR NULL 
+              window system</span></li>
+          <li class="enumvalue"><a href="Cogl.WinsysID.EGL_GDL.html">EGL_GDL</a> - <span class="brief_description">Use EGL with the GDL platform
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.WinsysID.EGL_WAYLAND.html">EGL_WAYLAND</a> - <span class="brief_description">Use EGL with the Wayland 
+              window system</span></li>
+          <li class="enumvalue"><a href="Cogl.WinsysID.EGL_KMS.html">EGL_KMS</a> - <span class="brief_description">Use EGL with the KMS platform
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.WinsysID.EGL_ANDROID.html">EGL_ANDROID</a> - <span class="brief_description">Use EGL with the Android 
+              platform</span></li>
+          <li class="enumvalue"><a href="Cogl.WinsysID.WGL.html">WGL</a> - <span class="brief_description">Use the Microsoft Windows WGL binding API
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.WinsysID.SDL.html">SDL</a> - <span class="brief_description">Use the SDL window system</span></li>
         </ul>
       </div>
     </div><br/>

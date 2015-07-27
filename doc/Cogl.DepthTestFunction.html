@@ -42,6 +42,13 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">DepthTestFunction</span></b>
+        </div>
+        <div class="description">
+          <p>When using depth testing one of these functions is used to compare the depth of an incoming fragment against the depth value currently 
+            stored in the depth buffer.</p>
+          <p> The function is changed using <a href="Cogl.DepthState.set_test_function.html" class="method">set_test_function</a>.</p>
+          <p>The test is only done when depth testing is explicitly enabled. (See <a href="Cogl.DepthState.set_test_enabled.html" class="method">
+              set_test_enabled</a>)</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -50,14 +57,20 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.DepthTestFunction.NEVER.html">NEVER</a> - </li>
-          <li class="enumvalue"><a href="Cogl.DepthTestFunction.LESS.html">LESS</a> - </li>
-          <li class="enumvalue"><a href="Cogl.DepthTestFunction.EQUAL.html">EQUAL</a> - </li>
-          <li class="enumvalue"><a href="Cogl.DepthTestFunction.LEQUAL.html">LEQUAL</a> - </li>
-          <li class="enumvalue"><a href="Cogl.DepthTestFunction.GREATER.html">GREATER</a> - </li>
-          <li class="enumvalue"><a href="Cogl.DepthTestFunction.NOTEQUAL.html">NOTEQUAL</a> - </li>
-          <li class="enumvalue"><a href="Cogl.DepthTestFunction.GEQUAL.html">GEQUAL</a> - </li>
-          <li class="enumvalue"><a href="Cogl.DepthTestFunction.ALWAYS.html">ALWAYS</a> - </li>
+          <li class="enumvalue"><a href="Cogl.DepthTestFunction.NEVER.html">NEVER</a> - <span class="brief_description">Never passes.</span></li>
+          <li class="enumvalue"><a href="Cogl.DepthTestFunction.LESS.html">LESS</a> - <span class="brief_description">Passes if the fragment's depth 
+              value is less than the value currently in the depth buffer.</span></li>
+          <li class="enumvalue"><a href="Cogl.DepthTestFunction.EQUAL.html">EQUAL</a> - <span class="brief_description">Passes if the fragment's depth
+               value is equal to the value currently in the depth buffer.</span></li>
+          <li class="enumvalue"><a href="Cogl.DepthTestFunction.LEQUAL.html">LEQUAL</a> - <span class="brief_description">Passes if the fragment's 
+              depth value is less or equal to the value currently in the depth buffer.</span></li>
+          <li class="enumvalue"><a href="Cogl.DepthTestFunction.GREATER.html">GREATER</a> - <span class="brief_description">Passes if the fragment's 
+              depth value is greater than the value currently in the depth buffer.</span></li>
+          <li class="enumvalue"><a href="Cogl.DepthTestFunction.NOTEQUAL.html">NOTEQUAL</a> - <span class="brief_description">Passes if the fragment's
+               depth value is not equal to the value currently in the depth buffer.</span></li>
+          <li class="enumvalue"><a href="Cogl.DepthTestFunction.GEQUAL.html">GEQUAL</a> - <span class="brief_description">Passes if the fragment's 
+              depth value greater than or equal to the value currently in the depth buffer.</span></li>
+          <li class="enumvalue"><a href="Cogl.DepthTestFunction.ALWAYS.html">ALWAYS</a> - <span class="brief_description">Always passes.</span></li>
         </ul>
       </div>
     </div><br/>

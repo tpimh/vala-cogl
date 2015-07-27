@@ -68,6 +68,25 @@
 
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition">[ <span class="main_type">Compact</span> ]<br/><span class="main_keyword">public</span> <span class="main_keyword">class</span> <b><span class="class">Quaternion</span></b>
+        </div>
+        <div class="description">
+          <p>A quaternion is comprised of a scalar component and a 3D vector component.</p>
+          <p> The scalar component is normally referred to as w and the vector might either be referred to as v or a (for axis) or expanded with the 
+            individual components: (x, y, z) A full quaternion would then be written as &lt;literal&gt;[w (x, y, z)]&lt;/literal&gt;.</p>
+          <p>Quaternions can be considered to represent an axis and angle pair although sadly these numbers are buried somewhat under some maths...
+          </p>
+          <p>For the curious you can see here that a given axis (a) and angle (𝜃) pair are represented in a quaternion as follows: <pre class="main_source">[w=cos(𝜃/2) ( x=sin(𝜃/2)*a.x, y=sin(𝜃/2)*a.y, z=sin(𝜃/2)*a.x )]</pre>
+            rnions: When using Quaternions to represent spatial orientations for 3D graphics it's always assumed you have a unit quaternion. The 
+            magnitude of a quaternion is defined as: <pre class="main_source">sqrt (w² + x² + y² + z²)</pre> a unit quaternion satisfies this 
+            equation: <pre class="main_source">w² + x² + y² + z² = 1</pre>ankfully most of the time we don't actually have to worry about the 
+            maths that goes on behind the scenes but if you are curious to learn more here are some external references:</p>
+          <p>&lt;itemizedlist&gt; &lt;listitem&gt; &lt;ulink url="http://mathworld.wolfram.com/Quaternion.html"/&gt; &lt;/listitem&gt; &lt;listitem
+            &gt; &lt;ulink url="http://www.gamedev.net/reference/articles/article1095.asp"/&gt; &lt;/listitem&gt; &lt;listitem&gt; &lt;ulink 
+            url="http://www.cprogramming.com/tutorial/3d/quaternions.html"/&gt; &lt;/listitem&gt; &lt;listitem&gt; &lt;ulink 
+            url="http://www.isner.com/tutorials/quatSpells/quaternion_spells_12.htm"/&gt; &lt;/listitem&gt; &lt;listitem&gt; 3D Maths Primer for 
+            Graphics and Game Development ISBN-10: 1556229119 &lt;/listitem&gt; &lt;listitem&gt; &lt;ulink 
+            url="http://www.cs.caltech.edu/courses/cs171/quatut.pdf"/&gt; &lt;/listitem&gt; &lt;listitem&gt; &lt;ulink 
+            url="http://www.j3d.org/matrix_faq/matrfaq_latest.html#Q56"/&gt; &lt;/listitem&gt; &lt;/itemizedlist&gt;</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -78,98 +97,108 @@
         <ul class="navi_inline">
           <li class="static_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">static</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Quaternion.equal.html" class="static_method">equal</a></b> (<span class="main_keyword">void</span>* v1, <span class="main_keyword">void</span>* v2)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Compares that all the components of quaternions <code>a</code> and 
+                <code>b</code> are equal.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Methods:</h3>
         <ul class="navi_inline">
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span class="class">Quaternion</span></span> <b><a href="Cogl.Quaternion.copy.html" class="method">copy</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Allocates a new <span class="class">Quaternion</span> on the stack and
+                 initializes it with the same values as <span class="main_keyword">this</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Quaternion.dot_product.html" class="method">dot_product</a></b> (<span class="main_type"><span class="class">Quaternion</span></span> b)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.free.html" class="method">free</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Frees a <span class="class">Quaternion</span> that was previously 
+                allocated via <a href="Cogl.Quaternion.copy.html" class="method">copy</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Quaternion.get_rotation_angle.html" class="method">get_rotation_angle</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.get_rotation_axis.html" class="method">get_rotation_axis</a></b> (<span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">float</span></span> vector3)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.init.html" class="method">init</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> angle, <span class="main_basic_type"><span class="struct">float</span></span> x, <span class="main_basic_type"><span class="struct">float</span></span> y, <span class="main_basic_type"><span class="struct">float</span></span> z)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Initializes a quaternion that rotates <code>angle</code> degrees 
+                around the axis vector (<code>x</code>, <code>y</code>, <code>z</code>).</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.init_from_angle_vector.html" class="method">init_from_angle_vector</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> angle, <span class="main_basic_type"><span class="struct">float</span></span> axis3f)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Initializes a quaternion that rotates <code>angle</code> degrees 
+                around the given <code>axis</code> vector.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.init_from_array.html" class="method">init_from_array</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> array)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Initializes a [w (x, y,z)] quaternion directly from an array of 4 
+                floats: [w,x,y,z].</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.init_from_euler.html" class="method">init_from_euler</a></b> (<span class="main_type"><a href="Cogl.Euler.html" class="class">Euler</a></span> euler)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.init_from_matrix.html" class="method">init_from_matrix</a></b> (<span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Initializes a quaternion from a rotation matrix.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.init_from_quaternion.html" class="method">init_from_quaternion</a></b> (<span class="main_type"><span class="class">Quaternion</span></span> src)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.init_from_x_rotation.html" class="method">init_from_x_rotation</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> angle)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">XXX: check which direction this rotates</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.init_from_y_rotation.html" class="method">init_from_y_rotation</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> angle)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.init_from_z_rotation.html" class="method">init_from_z_rotation</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> angle)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.init_identity.html" class="method">init_identity</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Initializes the quaternion with the canonical quaternion identity [1 (
+                0, 0, 0)] which represents no rotation.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.invert.html" class="method">invert</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.multiply.html" class="method">multiply</a></b> (<span class="main_type"><span class="class">Quaternion</span></span> left, <span class="main_type"><span class="class">Quaternion</span></span> right)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">This combines the rotations of two quaternions into 
+                <span class="main_keyword">this</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.nlerp.html" class="method">nlerp</a></b> (<span class="main_type"><span class="class">Quaternion</span></span> a, <span class="main_type"><span class="class">Quaternion</span></span> b, <span class="main_basic_type"><span class="struct">float</span></span> t)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Performs a normalized linear interpolation between two quaternions.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.normalize.html" class="method">normalize</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.pow.html" class="method">pow</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> exponent)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.slerp.html" class="method">slerp</a></b> (<span class="main_type"><span class="class">Quaternion</span></span> a, <span class="main_type"><span class="class">Quaternion</span></span> b, <span class="main_basic_type"><span class="struct">float</span></span> t)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Performs a spherical linear interpolation between two quaternions.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Quaternion.squad.html" class="method">squad</a></b> (<span class="main_type"><span class="class">Quaternion</span></span> prev, <span class="main_type"><span class="class">Quaternion</span></span> a, <span class="main_type"><span class="class">Quaternion</span></span> b, <span class="main_type"><span class="class">Quaternion</span></span> next, <span class="main_basic_type"><span class="struct">float</span></span> t)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
         </ul>
         <h3 class="main_title">Fields:</h3>

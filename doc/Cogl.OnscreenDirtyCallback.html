@@ -247,6 +247,31 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">delegate</span> <span class="main_keyword">void</span> <b><span class="delegate">OnscreenDirtyCallback</span></b> (<span class="main_type"><a href="Cogl.Onscreen.html" class="class">Onscreen</a></span> onscreen, <span class="main_type"><a href="Cogl.OnscreenDirtyInfo.html" class="struct">OnscreenDirtyInfo</a></span> info)
+        </div>
+        <div class="description">
+          <p>Is a callback that can be registered via <a href="Cogl.Onscreen.add_dirty_callback.html" class="method">add_dirty_callback</a> to be 
+            called when the windowing system determines that a region of the onscreen window has been lost and the application should redraw it.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">onscreen</td>
+              <td>
+                <p>The onscreen that the frame is associated with</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">info</td>
+              <td>
+                <p>A <a href="Cogl.OnscreenDirtyInfo.html" class="struct">OnscreenDirtyInfo</a> struct containing the details of the  dirty area</p>
+              </td>
+            </tr>
+            <tr class="main_parameter_table_unknown_parameter">
+              <td class="main_parameter_table_name">user_data</td>
+              <td>
+                <p>The user pointer passed to  <a href="Cogl.Onscreen.add_frame_callback.html" class="method">add_frame_callback</a></p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

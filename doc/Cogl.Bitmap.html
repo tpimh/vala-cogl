@@ -63,7 +63,8 @@
         <ul class="navi_inline">
           <li class="static_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">static</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Bitmap.get_size_from_file.html" class="static_method">get_size_from_file</a></b> (<span class="main_basic_type"><span class="class">string</span></span> filename, <span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">int</span></span> width, <span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">int</span></span> height)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Parses an image file enough to extract the width and height of the 
+                bitmap.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Creation methods:</h3>
@@ -74,42 +75,44 @@
             </div></li>
           <li class="creation_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <b><a href="Cogl.Bitmap.Bitmap.for_data.html" class="creation_method">Bitmap.for_data</a></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> context, <span class="main_basic_type"><span class="struct">int</span></span> width, <span class="main_basic_type"><span class="struct">int</span></span> height, <span class="main_type"><a href="Cogl.PixelFormat.html" class="enum">PixelFormat</a></span> format, <span class="main_basic_type"><span class="struct">int</span></span> rowstride, <span class="main_basic_type"><span class="struct">uint8</span></span> data)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Creates a bitmap using some existing data.</span>
             </div></li>
           <li class="creation_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <b><a href="Cogl.Bitmap.Bitmap.from_buffer.html" class="creation_method">Bitmap.from_buffer</a></b> (<span class="main_type"><a href="Cogl.Buffer.html" class="struct">Buffer</a></span> buffer, <span class="main_type"><a href="Cogl.PixelFormat.html" class="enum">PixelFormat</a></span> format, <span class="main_basic_type"><span class="struct">int</span></span> width, <span class="main_basic_type"><span class="struct">int</span></span> height, <span class="main_basic_type"><span class="struct">int</span></span> rowstride, <span class="main_basic_type"><span class="struct">int</span></span> offset)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Wraps some image data that has been uploaded into a 
+                <a href="Cogl.Buffer.html" class="struct">Buffer</a> as a <span class="class">Bitmap</span>.</span>
             </div></li>
           <li class="creation_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <b><a href="Cogl.Bitmap.Bitmap.from_file.html" class="creation_method">Bitmap.from_file</a></b> (<span class="main_basic_type"><span class="class">string</span></span> filename) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Loads an image file from disk.</span>
             </div></li>
           <li class="creation_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <b><a href="Cogl.Bitmap.Bitmap.with_size.html" class="creation_method">Bitmap.with_size</a></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> context, <span class="main_basic_type"><span class="struct">uint</span></span> width, <span class="main_basic_type"><span class="struct">uint</span></span> height, <span class="main_type"><a href="Cogl.PixelFormat.html" class="enum">PixelFormat</a></span> format)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Creates a new <span class="class">Bitmap</span> with the given width, 
+                height and format.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Methods:</h3>
         <ul class="navi_inline">
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">weak</span> <span class="main_type"><a href="Cogl.PixelBuffer.html" class="class">PixelBuffer</a></span> <b><a href="Cogl.Bitmap.get_buffer.html" class="method">get_buffer</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.PixelFormat.html" class="enum">PixelFormat</a></span> <b><a href="Cogl.Bitmap.get_format.html" class="method">get_format</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Cogl.Bitmap.get_height.html" class="method">get_height</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Cogl.Bitmap.get_rowstride.html" class="method">get_rowstride</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Cogl.Bitmap.get_width.html" class="method">get_width</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
         </ul>
         <h3 class="main_title">Inherited Members:</h3>

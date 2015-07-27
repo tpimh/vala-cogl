@@ -247,6 +247,35 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><span class="method">vector3_equal</span></b> (<span class="main_keyword">void</span>* v1, <span class="main_keyword">void</span>* v2)
+        </div>
+        <div class="description">
+          <p>Compares the components of two vectors and returns TRUE if they are the same.</p>
+          <p>The comparison of the components is done with the '==' operator such that -0 is considered equal to 0, but otherwise there is no 
+            fuzziness such as an epsilon to consider vectors that are essentially identical except for some minor precision error differences due to 
+            the way they have been manipulated.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">v1</td>
+              <td>
+                <p>The first 3 component vector you want to compare</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">v2</td>
+              <td>
+                <p>The second 3 component vector you want to compare</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p>TRUE if the vectors are equal else FALSE.</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

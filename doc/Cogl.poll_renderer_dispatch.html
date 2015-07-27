@@ -247,6 +247,37 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><span class="method">poll_renderer_dispatch</span></b> (<span class="main_type"><a href="Cogl.Renderer.html" class="class">Renderer</a></span> renderer, <span class="main_type"><a href="Cogl.PollFD.html" class="struct">PollFD</a></span> poll_fds, <span class="main_basic_type"><span class="struct">int</span></span> n_poll_fds)
+        </div>
+        <div class="description">
+          <p>This should be called whenever an application is woken up from going idle in its main loop.</p>
+          <p> The <code>poll_fds</code> array should contain a list of file descriptors matched with the events that occurred in revents. The events 
+            field is ignored. It is safe to pass in extra file descriptors that Cogl didn't request when calling 
+            <a href="Cogl.poll_renderer_get_info.html" class="method">poll_renderer_get_info</a> or a shorter array missing some file descriptors that
+             Cogl requested.</p>
+          <p>&lt;note&gt;If your application didn't originally create a <a href="Cogl.Renderer.html" class="class">Renderer</a> manually then you can 
+            easily get a <a href="Cogl.Renderer.html" class="class">Renderer</a> pointer by calling <code>cogl_get_renderer</code>.&lt;/note&gt;</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">renderer</td>
+              <td>
+                <p>A <a href="Cogl.Renderer.html" class="class">Renderer</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">poll_fds</td>
+              <td>
+                <p>An array of <a href="Cogl.PollFD.html" class="struct">PollFD</a>&lt;!-- --&gt;s describing the events  that have occurred since the
+                   application went idle.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">n_poll_fds</td>
+              <td>
+                <p>The length of the <code>poll_fds</code> array.</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

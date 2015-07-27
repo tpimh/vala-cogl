@@ -101,6 +101,69 @@
         </div>
         <div class="description">
           <p><b>Warning:</b> draw_attributes is deprecated.</p>
+          <p>First defines a geometry primitive by grouping a set of vertex <code>attributes</code>; specifying a <code>first_vertex</code>; a number 
+            of vertices (<code>n_vertices</code>) and specifying what kind of topology the vertices have via <code>mode</code>.</p>
+          <div class="main_notification_block"><span class="main_block_headline">Note:</span> 
+            <div class="main_block_content">
+              <p>Use <a href="Cogl.Primitive.html" class="class">Primitive</a>&lt;!-- --&gt;s and  <a href="Cogl.Primitive.draw.html" class="method">
+                  draw</a> instead</p>
+            </div>
+          </div>
+          <p>Then the function draws the given <code>primitive</code> geometry to the specified destination <span class="main_keyword">this</span> 
+            using the graphics processing pipeline described by <code>pipeline</code>.</p>
+          <p>The list of <a href="Cogl.Attribute.html" class="class">Attribute</a>&lt;!-- --&gt;s define the attributes of the vertices to be drawn, 
+            such as positions, colors and normals and the number of attributes is given as <code>n_attributes</code>.</p>
+          <p>This drawing api doesn't support high-level meta texture types such as <a href="Cogl.Texture2DSliced.html" class="class">Texture2DSliced
+            </a> so it is the user's responsibility to ensure that only low-level textures that can be directly sampled by a GPU such as 
+            <a href="Cogl.Texture2D.html" class="class">Texture2D</a>, <a href="Cogl.TextureRectangle.html" class="class">TextureRectangle</a> or 
+            <a href="Cogl.Texture3D.html" class="class">Texture3D</a> are associated with layers of the given <code>pipeline</code>.</p>
+          <p>&lt;note&gt;This api doesn't support any of the legacy global state options such as <code>cogl_set_depth_test_enabled</code>, <code>
+              cogl_set_backface_culling_enabled</code> or <code>cogl_program_use</code>&lt;/note&gt;</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">this</td>
+              <td>
+                <p>A destination <a href="Cogl.Framebuffer.html" class="interface">Framebuffer</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">pipeline</td>
+              <td>
+                <p>A <a href="Cogl.Pipeline.html" class="class">Pipeline</a> state object</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">mode</td>
+              <td>
+                <p>The <a href="Cogl.VerticesMode.html" class="enum">VerticesMode</a> defining the topology of vertices</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">first_vertex</td>
+              <td>
+                <p>The vertex offset within the given attributes to draw from</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">n_vertices</td>
+              <td>
+                <p>The number of vertices to draw from the given attributes</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">attributes</td>
+              <td>
+                <p>An array of pointers to <a href="Cogl.Attribute.html" class="class">Attribute</a>&lt;-- --&gt;s defining vertex  geometry</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">n_attributes</td>
+              <td>
+                <p>The number of attributes in the <code>attributes</code> array.</p>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
     </div><br/>

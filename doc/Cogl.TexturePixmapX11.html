@@ -64,22 +64,27 @@
         <ul class="navi_inline">
           <li class="creation_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <b><a href="Cogl.TexturePixmapX11.TexturePixmapX11.html" class="creation_method">TexturePixmapX11</a></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> context, <span class="main_basic_type"><span class="struct">uint32</span></span> pixmap, <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> automatic_updates) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Creates a texture that contains the contents of <code>pixmap</code>.
+              </span>
             </div></li>
         </ul>
         <h3 class="main_title">Methods:</h3>
         <ul class="navi_inline">
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.TexturePixmapX11.is_using_tfp_extension.html" class="method">is_using_tfp_extension</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Checks whether the given <span class="main_keyword">this</span> is 
+                using the GLX_EXT_texture_from_pixmap or similar extension to copy the contents of the pixmap to the texture.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.TexturePixmapX11.set_damage_object.html" class="method">set_damage_object</a></b> (<span class="main_basic_type"><span class="struct">uint32</span></span> damage, <span class="main_type"><a href="Cogl.TexturePixmapX11ReportLevel.html" class="enum">TexturePixmapX11ReportLevel</a></span> report_level)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the damage object that will be used to track automatic updates to
+                 the <span class="main_keyword">this</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.TexturePixmapX11.update_area.html" class="method">update_area</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> x, <span class="main_basic_type"><span class="struct">int</span></span> y, <span class="main_basic_type"><span class="struct">int</span></span> width, <span class="main_basic_type"><span class="struct">int</span></span> height)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Forces an update of the given <span class="main_keyword">this</span> 
+                so that it is refreshed with the contents of the pixmap that was given to 
+                <a href="Cogl.TexturePixmapX11.TexturePixmapX11.html" class="creation_method">TexturePixmapX11</a>.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Inherited Members:</h3>

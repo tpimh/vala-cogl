@@ -247,6 +247,42 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">delegate</span> <span class="main_keyword">void</span> <b><span class="delegate">OnscreenResizeCallback</span></b> (<span class="main_type"><a href="Cogl.Onscreen.html" class="class">Onscreen</a></span> onscreen, <span class="main_basic_type"><span class="struct">int</span></span> width, <span class="main_basic_type"><span class="struct">int</span></span> height)
+        </div>
+        <div class="description">
+          <p>Is a callback type used with the <a href="Cogl.Onscreen.add_resize_callback.html" class="method">add_resize_callback</a> allowing 
+            applications to be notified whenever an <code>onscreen</code> framebuffer is resized.</p>
+          <p>&lt;note&gt;Cogl automatically updates the viewport of an <code>onscreen</code> framebuffer that is resized so this callback is also an 
+            indication that the viewport has been modified too&lt;/note&gt;</p>
+          <p>&lt;note&gt;A resize callback will only ever be called while dispatching Cogl events from the system mainloop; so for example during 
+            <a href="Cogl.poll_renderer_dispatch.html" class="method">poll_renderer_dispatch</a>. This is so that callbacks shouldn't occur while an 
+            application might have arbitrary locks held for example.&lt;/note&gt;</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">onscreen</td>
+              <td>
+                <p>A <a href="Cogl.Onscreen.html" class="class">Onscreen</a> framebuffer that was resized</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">width</td>
+              <td>
+                <p>The new width of <code>onscreen</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">height</td>
+              <td>
+                <p>The new height of <code>onscreen</code></p>
+              </td>
+            </tr>
+            <tr class="main_parameter_table_unknown_parameter">
+              <td class="main_parameter_table_name">user_data</td>
+              <td>
+                <p>The private passed to  <a href="Cogl.Onscreen.add_resize_callback.html" class="method">add_resize_callback</a></p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

@@ -117,206 +117,246 @@
         <ul class="navi_inline">
           <li class="creation_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <b><a href="Cogl.Pipeline.Pipeline.html" class="creation_method">Pipeline</a></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> context)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Allocates and initializes a default simple pipeline that will color a 
+                primitive white.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Methods:</h3>
         <ul class="navi_inline">
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.add_layer_snippet.html" class="method">add_layer_snippet</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer, <span class="main_type"><a href="Cogl.Snippet.html" class="class">Snippet</a></span> snippet)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Adds a shader snippet that will hook on to the given layer of the 
+                pipeline.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.add_snippet.html" class="method">add_snippet</a></b> (<span class="main_type"><a href="Cogl.Snippet.html" class="class">Snippet</a></span> snippet)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Adds a shader snippet to <span class="main_keyword">this</span>.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span class="class">Pipeline</span></span> <b><a href="Cogl.Pipeline.copy.html" class="method">copy</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Creates a new pipeline with the configuration copied from the source 
+                pipeline.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.foreach_layer.html" class="method">foreach_layer</a></b> (<span class="main_type"><a href="Cogl.PipelineLayerCallback.html" class="delegate">PipelineLayerCallback</a></span> callback)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Iterates all the layer indices of the given 
+                <span class="main_keyword">this</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.PipelineAlphaFunc.html" class="enum">PipelineAlphaFunc</a></span> <b><a href="Cogl.Pipeline.get_alpha_test_function.html" class="method">get_alpha_test_function</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Pipeline.get_alpha_test_reference.html" class="method">get_alpha_test_reference</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.get_ambient.html" class="method">get_ambient</a></b> (<span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> ambient)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the current ambient color for <span class="main_keyword">
+                  this</span></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.get_color.html" class="method">get_color</a></b> (<span class="main_keyword">out</span> <span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> color)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the current pipeline color.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.ColorMask.html" class="enum">ColorMask</a></span> <b><a href="Cogl.Pipeline.get_color_mask.html" class="method">get_color_mask</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Gets the current <a href="Cogl.ColorMask.html" class="enum">ColorMask
+                </a> of which channels would be written to the current framebuffer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.PipelineCullFaceMode.html" class="enum">PipelineCullFaceMode</a></span> <b><a href="Cogl.Pipeline.get_cull_face_mode.html" class="method">get_cull_face_mode</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.DepthState.html" class="struct">DepthState</a></span> <b><a href="Cogl.Pipeline.get_depth_state.html" class="method">get_depth_state</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the current depth state configuration for the given 
+                <span class="main_keyword">this</span> as previously set using <a href="Cogl.Pipeline.set_depth_state.html" class="method">
+                  set_depth_state</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.get_diffuse.html" class="method">get_diffuse</a></b> (<span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> diffuse)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the current diffuse color for <span class="main_keyword">
+                  this</span></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.get_emission.html" class="method">get_emission</a></b> (<span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> emission)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the pipelines current emission color.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Winding.html" class="enum">Winding</a></span> <b><a href="Cogl.Pipeline.get_front_face_winding.html" class="method">get_front_face_winding</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">The order of the vertices within a primitive specifies whether it is 
+                considered to be front or back facing.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.PipelineFilter.html" class="enum">PipelineFilter</a></span> <b><a href="Cogl.Pipeline.get_layer_mag_filter.html" class="method">get_layer_mag_filter</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the currently set magnification 
+                <a href="Cogl.PipelineFilter.html" class="enum">PipelineFilter</a> set on the specified layer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.PipelineFilter.html" class="enum">PipelineFilter</a></span> <b><a href="Cogl.Pipeline.get_layer_min_filter.html" class="method">get_layer_min_filter</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the currently set minification 
+                <a href="Cogl.PipelineFilter.html" class="enum">PipelineFilter</a> set on the specified layer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Pipeline.get_layer_point_sprite_coords_enabled.html" class="method">get_layer_point_sprite_coords_enabled</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Gets whether point sprite coordinate generation is enabled for this 
+                texture layer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">weak</span> <span class="main_type"><a href="Cogl.Texture.html" class="interface">Texture</a></span> <b><a href="Cogl.Pipeline.get_layer_texture.html" class="method">get_layer_texture</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.PipelineWrapMode.html" class="enum">PipelineWrapMode</a></span> <b><a href="Cogl.Pipeline.get_layer_wrap_mode_p.html" class="method">get_layer_wrap_mode_p</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Returns the wrap mode for the 'p' coordinate of texture lookups on 
+                this layer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.PipelineWrapMode.html" class="enum">PipelineWrapMode</a></span> <b><a href="Cogl.Pipeline.get_layer_wrap_mode_s.html" class="method">get_layer_wrap_mode_s</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Returns the wrap mode for the 's' coordinate of texture lookups on 
+                this layer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.PipelineWrapMode.html" class="enum">PipelineWrapMode</a></span> <b><a href="Cogl.Pipeline.get_layer_wrap_mode_t.html" class="method">get_layer_wrap_mode_t</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Returns the wrap mode for the 't' coordinate of texture lookups on 
+                this layer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Cogl.Pipeline.get_n_layers.html" class="method">get_n_layers</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the number of layers defined for the given 
+                <span class="main_keyword">this</span></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Pipeline.get_per_vertex_point_size.html" class="method">get_per_vertex_point_size</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description"></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Pipeline.get_point_size.html" class="method">get_point_size</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Get the size of points drawn when 
+                <span class="main_optional_parameter">cogl_vertices_mode_points</span> is used with the vertex buffer API.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Pipeline.get_shininess.html" class="method">get_shininess</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the pipelines current emission color.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.get_specular.html" class="method">get_specular</a></b> (<span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> specular)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the pipelines current specular color.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Cogl.Pipeline.get_uniform_location.html" class="method">get_uniform_location</a></b> (<span class="main_basic_type"><span class="class">string</span></span> uniform_name)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">This is used to get an integer representing the uniform with the name 
+                <code>uniform_name</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Handle.html" class="struct">Handle</a></span> <b><a href="Cogl.Pipeline.get_user_program.html" class="method">get_user_program</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Queries what user program has been associated with the given 
+                <span class="main_keyword">this</span> using <a href="Cogl.Pipeline.set_user_program.html" class="method">set_user_program</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.remove_layer.html" class="method">remove_layer</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">This function removes a layer from your pipeline</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_alpha_test_function.html" class="method">set_alpha_test_function</a></b> (<span class="main_type"><a href="Cogl.PipelineAlphaFunc.html" class="enum">PipelineAlphaFunc</a></span> alpha_func, <span class="main_basic_type"><span class="struct">float</span></span> alpha_reference)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Before a primitive is blended with the framebuffer, it goes through an
+                 alpha test stage which lets you discard fragments based on the current alpha value.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_ambient.html" class="method">set_ambient</a></b> (<span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> ambient)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the pipeline's ambient color, in the standard OpenGL lighting 
+                model.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_ambient_and_diffuse.html" class="method">set_ambient_and_diffuse</a></b> (<span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> color)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Conveniently sets the diffuse and ambient color of 
+                <span class="main_keyword">this</span> at the same time.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Pipeline.set_blend.html" class="method">set_blend</a></b> (<span class="main_basic_type"><span class="class">string</span></span> blend_string) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">If not already familiar; please refer &lt;link 
+                linkend="cogl-Blend-Strings"&gt;here&lt;/link&gt; for an overview of what blend strings are, and their syntax.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_blend_constant.html" class="method">set_blend_constant</a></b> (<span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> constant_color)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">When blending is setup to reference a CONSTANT blend factor then 
+                blending will depend on the constant set with this function.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_color.html" class="method">set_color</a></b> (<span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> color)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the basic color of the pipeline, used when no lighting is 
+                enabled.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_color4f.html" class="method">set_color4f</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> red, <span class="main_basic_type"><span class="struct">float</span></span> green, <span class="main_basic_type"><span class="struct">float</span></span> blue, <span class="main_basic_type"><span class="struct">float</span></span> alpha)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the basic color of the pipeline, used when no lighting is 
+                enabled.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_color4ub.html" class="method">set_color4ub</a></b> (<span class="main_basic_type"><span class="struct">uint8</span></span> red, <span class="main_basic_type"><span class="struct">uint8</span></span> green, <span class="main_basic_type"><span class="struct">uint8</span></span> blue, <span class="main_basic_type"><span class="struct">uint8</span></span> alpha)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the basic color of the pipeline, used when no lighting is 
+                enabled.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_color_mask.html" class="method">set_color_mask</a></b> (<span class="main_type"><a href="Cogl.ColorMask.html" class="enum">ColorMask</a></span> color_mask)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Defines a bit mask of which color channels should be written to the 
+                current framebuffer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_cull_face_mode.html" class="method">set_cull_face_mode</a></b> (<span class="main_type"><a href="Cogl.PipelineCullFaceMode.html" class="enum">PipelineCullFaceMode</a></span> cull_face_mode)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets which faces will be culled when drawing.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Pipeline.set_depth_state.html" class="method">set_depth_state</a></b> (<span class="main_type"><a href="Cogl.DepthState.html" class="struct">DepthState</a></span> state) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">This commits all the depth state configured in <code>state</code> 
+                struct to the given <span class="main_keyword">this</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_diffuse.html" class="method">set_diffuse</a></b> (<span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> diffuse)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the pipeline's diffuse color, in the standard OpenGL lighting 
+                model.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_emission.html" class="method">set_emission</a></b> (<span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> emission)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the pipeline's emissive color, in the standard OpenGL lighting 
+                model.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_front_face_winding.html" class="method">set_front_face_winding</a></b> (<span class="main_type"><a href="Cogl.Winding.html" class="enum">Winding</a></span> front_winding)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">The order of the vertices within a primitive specifies whether it is 
+                considered to be front or back facing.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Pipeline.set_layer_combine.html" class="method">set_layer_combine</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index, <span class="main_basic_type"><span class="class">string</span></span> blend_string) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">If not already familiar; you can refer &lt;link 
+                linkend="cogl-Blend-Strings"&gt;here&lt;/link&gt; for an overview of what blend strings are and there syntax.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_layer_combine_constant.html" class="method">set_layer_combine_constant</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index, <span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> constant)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">When you are using the 'CONSTANT' color source in a layer combine 
+                description then you can use this function to define its value.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_layer_filters.html" class="method">set_layer_filters</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index, <span class="main_type"><a href="Cogl.PipelineFilter.html" class="enum">PipelineFilter</a></span> min_filter, <span class="main_type"><a href="Cogl.PipelineFilter.html" class="enum">PipelineFilter</a></span> mag_filter)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Changes the decimation and interpolation filters used when a texture 
+                is drawn at other scales than 100%.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_layer_matrix.html" class="method">set_layer_matrix</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index, <span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">This function lets you set a matrix that can be used to e.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_layer_null_texture.html" class="method">set_layer_null_texture</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index, <span class="main_type"><a href="Cogl.TextureType.html" class="enum">TextureType</a></span> texture_type)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the texture for this layer to be the default texture for the 
+                given type.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Pipeline.set_layer_point_sprite_coords_enabled.html" class="method">set_layer_point_sprite_coords_enabled</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index, <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> enable) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">When rendering points, if <code>enable</code> is 
+                <span class="main_optional_parameter">true</span> then the texture coordinates for this layer will be replaced with coordinates that 
+                vary from 0.0 to 1.0 across the primitive.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_layer_texture.html" class="method">set_layer_texture</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index, <span class="main_type"><a href="Cogl.Texture.html" class="interface">Texture</a></span> texture)
             </span>
@@ -324,59 +364,73 @@
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_layer_wrap_mode.html" class="method">set_layer_wrap_mode</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index, <span class="main_type"><a href="Cogl.PipelineWrapMode.html" class="enum">PipelineWrapMode</a></span> mode)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the wrap mode for all three coordinates of texture lookups on 
+                this layer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_layer_wrap_mode_p.html" class="method">set_layer_wrap_mode_p</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index, <span class="main_type"><a href="Cogl.PipelineWrapMode.html" class="enum">PipelineWrapMode</a></span> mode)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the wrap mode for the 'p' coordinate of texture lookups on this 
+                layer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_layer_wrap_mode_s.html" class="method">set_layer_wrap_mode_s</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index, <span class="main_type"><a href="Cogl.PipelineWrapMode.html" class="enum">PipelineWrapMode</a></span> mode)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the wrap mode for the 's' coordinate of texture lookups on this 
+                layer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_layer_wrap_mode_t.html" class="method">set_layer_wrap_mode_t</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index, <span class="main_type"><a href="Cogl.PipelineWrapMode.html" class="enum">PipelineWrapMode</a></span> mode)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the wrap mode for the 't' coordinate of texture lookups on this 
+                layer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Pipeline.set_per_vertex_point_size.html" class="method">set_per_vertex_point_size</a></b> (<span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> enable) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets whether to use a per-vertex point size or to use the value set by
+                 <a href="Cogl.Pipeline.set_point_size.html" class="method">set_point_size</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_point_size.html" class="method">set_point_size</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> point_size)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Changes the size of points drawn when 
+                <span class="main_optional_parameter">cogl_vertices_mode_points</span> is used with the attribute buffer API.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_shininess.html" class="method">set_shininess</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> shininess)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the shininess of the pipeline, in the standard OpenGL lighting 
+                model, which determines the size of the specular highlights.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_specular.html" class="method">set_specular</a></b> (<span class="main_type"><a href="Cogl.Color.html" class="class">Color</a></span> specular)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the pipeline's specular color, in the standard OpenGL lighting 
+                model.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_uniform_1f.html" class="method">set_uniform_1f</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> uniform_location, <span class="main_basic_type"><span class="struct">float</span></span> value)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets a new value for the uniform at <code>uniform_location</code>.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_uniform_1i.html" class="method">set_uniform_1i</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> uniform_location, <span class="main_basic_type"><span class="struct">int</span></span> value)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets a new value for the uniform at <code>uniform_location</code>.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_uniform_float.html" class="method">set_uniform_float</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> uniform_location, <span class="main_basic_type"><span class="struct">int</span></span> n_components, <span class="main_basic_type"><span class="struct">int</span></span> count, <span class="main_basic_type"><span class="struct">float</span></span> value)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets new values for the uniform at <code>uniform_location</code>.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_uniform_int.html" class="method">set_uniform_int</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> uniform_location, <span class="main_basic_type"><span class="struct">int</span></span> n_components, <span class="main_basic_type"><span class="struct">int</span></span> count, <span class="main_basic_type"><span class="struct">int</span></span> value)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets new values for the uniform at <code>uniform_location</code>.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_uniform_matrix.html" class="method">set_uniform_matrix</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> uniform_location, <span class="main_basic_type"><span class="struct">int</span></span> dimensions, <span class="main_basic_type"><span class="struct">int</span></span> count, <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> transpose, <span class="main_basic_type"><span class="struct">float</span></span> value)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets new values for the uniform at <code>uniform_location</code>.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Pipeline.set_user_program.html" class="method">set_user_program</a></b> (<span class="main_type"><a href="Cogl.Handle.html" class="struct">Handle</a></span> program)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Associates a linked CoglProgram with the given pipeline so that the 
+                program can take full control of vertex and/or fragment processing.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Inherited Members:</h3>

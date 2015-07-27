@@ -247,6 +247,23 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><span class="method">kms_display_queue_modes_reset</span></b> (<span class="main_type"><a href="Cogl.Display.html" class="class">Display</a></span> display)
+        </div>
+        <div class="description">
+          <p>Asks Cogl to explicitly reset the crtc output modes at the next <a href="Cogl.Onscreen.html" class="class">Onscreen</a> swap_buffers 
+            request.</p>
+          <p> For applications that support VT switching they may want to re-assert the output modes when switching back to the applications VT since 
+            the modes are often not correctly restored automatically.</p>
+          <p>&lt;note&gt;The <code>display</code> must have been either explicitly setup via <a href="Cogl.Display.setup.html" class="method">setup
+            </a> or implicitily setup by having created a context using the <code>display</code>&lt;/note&gt;</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">display</td>
+              <td>
+                <p>A <a href="Cogl.Display.html" class="class">Display</a></p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

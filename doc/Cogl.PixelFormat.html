@@ -65,6 +65,18 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">PixelFormat</span></b>
+        </div>
+        <div class="description">
+          <p>Pixel formats used by Cogl.</p>
+          <p> For the formats with a byte per component, the order of the components specify the order in increasing memory addresses. So for example 
+            <span class="main_optional_parameter">cogl_pixel_format_rgb_888</span> would have the red component in the lowest address, green in the 
+            next address and blue after that regardless of the endianness of the system.</p>
+          <p>For the formats with non byte aligned components the component order specifies the order within a 16-bit or 32-bit number from most 
+            significant bit to least significant. So for <span class="main_optional_parameter">cogl_pixel_format_rgb_565</span>, the red component 
+            would be in bits 11-15, the green component would be in 6-11 and the blue component would be in 1-5. Therefore the order in memory depends
+             on the endianness of the system.</p>
+          <p>When uploading a texture <span class="main_optional_parameter">cogl_pixel_format_any</span> can be used as the internal format. Cogl will
+             try to pick the best format to use internally and convert the texture data if necessary.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -73,34 +85,48 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.PixelFormat.ANY.html">ANY</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.A_8.html">A_8</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.RGB_565.html">RGB_565</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_4444.html">RGBA_4444</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_5551.html">RGBA_5551</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.YUV.html">YUV</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.G_8.html">G_8</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.RG_88.html">RG_88</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.RGB_888.html">RGB_888</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.BGR_888.html">BGR_888</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_8888.html">RGBA_8888</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.BGRA_8888.html">BGRA_8888</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.ARGB_8888.html">ARGB_8888</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.ABGR_8888.html">ABGR_8888</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_1010102.html">RGBA_1010102</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.BGRA_1010102.html">BGRA_1010102</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.ARGB_2101010.html">ARGB_2101010</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.ABGR_2101010.html">ABGR_2101010</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_8888_PRE.html">RGBA_8888_PRE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.BGRA_8888_PRE.html">BGRA_8888_PRE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.ARGB_8888_PRE.html">ARGB_8888_PRE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.ABGR_8888_PRE.html">ABGR_8888_PRE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_4444_PRE.html">RGBA_4444_PRE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_5551_PRE.html">RGBA_5551_PRE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_1010102_PRE.html">RGBA_1010102_PRE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.BGRA_1010102_PRE.html">BGRA_1010102_PRE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.ARGB_2101010_PRE.html">ARGB_2101010_PRE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PixelFormat.ABGR_2101010_PRE.html">ABGR_2101010_PRE</a> - </li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.ANY.html">ANY</a> - <span class="brief_description">Any format</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.A_8.html">A_8</a> - <span class="brief_description">8 bits alpha mask</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.RGB_565.html">RGB_565</a> - <span class="brief_description">RGB, 16 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_4444.html">RGBA_4444</a> - <span class="brief_description">RGBA, 16 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_5551.html">RGBA_5551</a> - <span class="brief_description">RGBA, 16 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.YUV.html">YUV</a> - <span class="brief_description">Not currently supported</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.G_8.html">G_8</a> - <span class="brief_description">Single luminance component</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.RG_88.html">RG_88</a> - <span class="brief_description">RG, 16 bits.</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.RGB_888.html">RGB_888</a> - <span class="brief_description">RGB, 24 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.BGR_888.html">BGR_888</a> - <span class="brief_description">BGR, 24 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_8888.html">RGBA_8888</a> - <span class="brief_description">RGBA, 32 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.BGRA_8888.html">BGRA_8888</a> - <span class="brief_description">BGRA, 32 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.ARGB_8888.html">ARGB_8888</a> - <span class="brief_description">ARGB, 32 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.ABGR_8888.html">ABGR_8888</a> - <span class="brief_description">ABGR, 32 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_1010102.html">RGBA_1010102</a> - <span class="brief_description">RGBA, 32 bits, 10 bpc
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.BGRA_1010102.html">BGRA_1010102</a> - <span class="brief_description">BGRA, 32 bits, 10 bpc
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.ARGB_2101010.html">ARGB_2101010</a> - <span class="brief_description">ARGB, 32 bits, 10 bpc
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.ABGR_2101010.html">ABGR_2101010</a> - <span class="brief_description">ABGR, 32 bits, 10 bpc
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_8888_PRE.html">RGBA_8888_PRE</a> - <span class="brief_description">Premultiplied RGBA, 
+              32 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.BGRA_8888_PRE.html">BGRA_8888_PRE</a> - <span class="brief_description">Premultiplied BGRA, 
+              32 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.ARGB_8888_PRE.html">ARGB_8888_PRE</a> - <span class="brief_description">Premultiplied ARGB, 
+              32 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.ABGR_8888_PRE.html">ABGR_8888_PRE</a> - <span class="brief_description">Premultiplied ABGR, 
+              32 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_4444_PRE.html">RGBA_4444_PRE</a> - <span class="brief_description">Premultiplied RGBA, 
+              16 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_5551_PRE.html">RGBA_5551_PRE</a> - <span class="brief_description">Premultiplied RGBA, 
+              16 bits</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.RGBA_1010102_PRE.html">RGBA_1010102_PRE</a> - <span class="brief_description">Premultiplied 
+              RGBA, 32 bits, 10 bpc</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.BGRA_1010102_PRE.html">BGRA_1010102_PRE</a> - <span class="brief_description">Premultiplied 
+              BGRA, 32 bits, 10 bpc</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.ARGB_2101010_PRE.html">ARGB_2101010_PRE</a> - <span class="brief_description">Premultiplied 
+              ARGB, 32 bits, 10 bpc</span></li>
+          <li class="enumvalue"><a href="Cogl.PixelFormat.ABGR_2101010_PRE.html">ABGR_2101010_PRE</a> - <span class="brief_description">Premultiplied 
+              ABGR, 32 bits, 10 bpc</span></li>
           <li class="enumvalue"><a href="Cogl.PixelFormat.DEPTH_16.html">DEPTH_16</a> - </li>
           <li class="enumvalue"><a href="Cogl.PixelFormat.DEPTH_32.html">DEPTH_32</a> - </li>
           <li class="enumvalue"><a href="Cogl.PixelFormat.DEPTH_24_STENCIL_8.html">DEPTH_24_STENCIL_8</a> - </li>

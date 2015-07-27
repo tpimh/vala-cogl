@@ -247,6 +247,22 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">uint32</span></span> <b><span class="method">x11_onscreen_get_window_xid</span></b> (<span class="main_type"><a href="Cogl.Onscreen.html" class="class">Onscreen</a></span> onscreen)
+        </div>
+        <div class="description">
+          <p>Assuming you know the given <code>onscreen</code> framebuffer is based on an x11 window this queries the XID of that window.</p>
+          <p> If <code>cogl_x11_onscreen_set_foreign_window_xid</code> was previously called then it will return that same XID otherwise it will be 
+            the XID of a window Cogl created internally. If the window has not been allocated yet and a foreign xid has not been set then it's 
+            undefined what value will be returned.</p>
+          <p>It's undefined what this function does if called when not using an x11 based renderer.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">onscreen</td>
+              <td>
+                <p>A <a href="Cogl.Onscreen.html" class="class">Onscreen</a> framebuffer</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

@@ -38,6 +38,13 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">PipelineWrapMode</span></b>
+        </div>
+        <div class="description">
+          <p>The wrap mode specifies what happens when texture coordinates outside the range 0→1 are used.</p>
+          <p> Note that if the filter mode is anything but <span class="main_optional_parameter">cogl_pipeline_filter_nearest</span> then texels 
+            outside the range 0→1 might be used even when the coordinate is exactly 0 or 1 because OpenGL will try to sample neighbouring pixels. 
+            For example if you are trying to render the full texture then you may get artifacts around the edges when the pixels from the other side 
+            are merged in if the wrap mode is set to repeat.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -46,10 +53,13 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.PipelineWrapMode.REPEAT.html">REPEAT</a> - </li>
+          <li class="enumvalue"><a href="Cogl.PipelineWrapMode.REPEAT.html">REPEAT</a> - <span class="brief_description">The texture will be repeated.
+            </span></li>
           <li class="enumvalue"><a href="Cogl.PipelineWrapMode.MIRRORED_REPEAT.html">MIRRORED_REPEAT</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PipelineWrapMode.CLAMP_TO_EDGE.html">CLAMP_TO_EDGE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PipelineWrapMode.AUTOMATIC.html">AUTOMATIC</a> - </li>
+          <li class="enumvalue"><a href="Cogl.PipelineWrapMode.CLAMP_TO_EDGE.html">CLAMP_TO_EDGE</a> - <span class="brief_description">The coordinates
+               outside the  range 0→1 will sample copies of the edge pixels of the  texture.</span></li>
+          <li class="enumvalue"><a href="Cogl.PipelineWrapMode.AUTOMATIC.html">AUTOMATIC</a> - <span class="brief_description">Cogl will try to 
+              automatically  decide which of the above two to use.</span></li>
         </ul>
       </div>
     </div><br/>

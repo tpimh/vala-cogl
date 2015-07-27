@@ -40,6 +40,11 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">PipelineFilter</span></b>
+        </div>
+        <div class="description">
+          <p>Texture filtering is used whenever the current pixel maps either to more than one texture element (texel) or less than one.</p>
+          <p> These filter enums correspond to different strategies used to come up with a pixel color, by possibly referring to multiple neighbouring
+             texels and taking a weighted average or simply using the nearest texel.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -48,12 +53,22 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.PipelineFilter.NEAREST.html">NEAREST</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PipelineFilter.LINEAR.html">LINEAR</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PipelineFilter.NEAREST_MIPMAP_NEAREST.html">NEAREST_MIPMAP_NEAREST</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PipelineFilter.LINEAR_MIPMAP_NEAREST.html">LINEAR_MIPMAP_NEAREST</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PipelineFilter.NEAREST_MIPMAP_LINEAR.html">NEAREST_MIPMAP_LINEAR</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PipelineFilter.LINEAR_MIPMAP_LINEAR.html">LINEAR_MIPMAP_LINEAR</a> - </li>
+          <li class="enumvalue"><a href="Cogl.PipelineFilter.NEAREST.html">NEAREST</a> - <span class="brief_description">Measuring in manhatten 
+              distance from the,  current pixel center, use the nearest texture texel</span></li>
+          <li class="enumvalue"><a href="Cogl.PipelineFilter.LINEAR.html">LINEAR</a> - <span class="brief_description">Use the weighted average of the
+               4 texels  nearest the current pixel center</span></li>
+          <li class="enumvalue"><a href="Cogl.PipelineFilter.NEAREST_MIPMAP_NEAREST.html">NEAREST_MIPMAP_NEAREST</a> - 
+            <span class="brief_description">Select the mimap level whose  texel size most closely matches the current pixel, and use the  
+              <span class="main_optional_parameter">cogl_pipeline_filter_nearest</span> criterion</span></li>
+          <li class="enumvalue"><a href="Cogl.PipelineFilter.LINEAR_MIPMAP_NEAREST.html">LINEAR_MIPMAP_NEAREST</a> - <span class="brief_description">
+              Select the mimap level whose  texel size most closely matches the current pixel, and use the  <span class="main_optional_parameter">
+                cogl_pipeline_filter_linear</span> criterion</span></li>
+          <li class="enumvalue"><a href="Cogl.PipelineFilter.NEAREST_MIPMAP_LINEAR.html">NEAREST_MIPMAP_LINEAR</a> - <span class="brief_description">
+              Select the two mimap levels  whose texel size most closely matches the current pixel, use  the <span class="main_optional_parameter">
+                cogl_pipeline_filter_nearest</span> criterion on each one and take  their weighted average</span></li>
+          <li class="enumvalue"><a href="Cogl.PipelineFilter.LINEAR_MIPMAP_LINEAR.html">LINEAR_MIPMAP_LINEAR</a> - <span class="brief_description">
+              Select the two mimap levels  whose texel size most closely matches the current pixel, use  the <span class="main_optional_parameter">
+                cogl_pipeline_filter_linear</span> criterion on each one and take  their weighted average</span></li>
         </ul>
       </div>
     </div><br/>

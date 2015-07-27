@@ -85,6 +85,20 @@
 
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition">[ <span class="main_type">Compact</span> ]<br/><span class="main_keyword">public</span> <span class="main_keyword">class</span> <b><span class="class">Matrix</span></b>
+        </div>
+        <div class="description">
+          <p>A CoglMatrix holds a 4x4 transform matrix.</p>
+          <p> This is a single precision, column-major matrix which means it is compatible with what OpenGL expects.</p>
+          <p>A CoglMatrix can represent transforms such as, rotations, scaling, translation, sheering, and linear projections. You can combine these 
+            transforms by multiplying multiple matrices in the order you want them applied.</p>
+          <p>The transformation of a vertex (x, y, z, w) by a CoglMatrix is given by:</p>
+          <p><pre class="main_source">  x_new = xx * x + xy * y + xz * z + xw * w<br/>  y_new = yx * x + yy * y + yz * z + yw * w<br/>  z_new = zx * x + zy * y + zz * z + zw * w<br/>  w_new = wx * x + wy * y + wz * z + ww * w</pre>
+          </p>
+          <p>Where w is normally 1</p>
+          <p>&lt;note&gt;You must consider the members of the CoglMatrix structure read only, and all matrix modifications must be done via the 
+            cogl_matrix API. This allows Cogl to annotate the matrices internally. Violation of this will give undefined results. If you need to 
+            initialize a matrix with a constant other than the identity matrix you can use <a href="Cogl.Matrix.init_from_array.html" class="method">
+              init_from_array</a>.&lt;/note&gt;</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -95,118 +109,145 @@
         <ul class="navi_inline">
           <li class="static_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">static</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Matrix.equal.html" class="static_method">equal</a></b> (<span class="main_keyword">void</span>* v1, <span class="main_keyword">void</span>* v2)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Compares two matrices to see if they represent the same 
+                transformation.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Methods:</h3>
         <ul class="navi_inline">
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span class="class">Matrix</span></span> <b><a href="Cogl.Matrix.copy.html" class="method">copy</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Allocates a new <span class="class">Matrix</span> on the heap and 
+                initializes it with the same values as <span class="main_keyword">this</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.free.html" class="method">free</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Frees a <span class="class">Matrix</span> that was previously 
+                allocated via a call to <a href="Cogl.Matrix.copy.html" class="method">copy</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.frustum.html" class="method">frustum</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> left, <span class="main_basic_type"><span class="struct">float</span></span> right, <span class="main_basic_type"><span class="struct">float</span></span> bottom, <span class="main_basic_type"><span class="struct">float</span></span> top, <span class="main_basic_type"><span class="struct">float</span></span> z_near, <span class="main_basic_type"><span class="struct">float</span></span> z_far)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies <span class="main_keyword">this</span> by the given frustum
+                 perspective matrix.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.get_array.html" class="method">get_array</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Casts <span class="main_keyword">this</span> to a float array which 
+                can be directly passed to OpenGL.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Matrix.get_inverse.html" class="method">get_inverse</a></b> (<span class="main_keyword">out</span> <span class="main_type"><span class="class">Matrix</span></span> inverse)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Gets the inverse transform of a given matrix and uses it to initialize
+                 a new <span class="class">Matrix</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.init_from_array.html" class="method">init_from_array</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> array)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Initializes <span class="main_keyword">this</span> with the contents 
+                of <code>array</code></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.init_from_euler.html" class="method">init_from_euler</a></b> (<span class="main_type"><a href="Cogl.Euler.html" class="class">Euler</a></span> euler)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Initializes <span class="main_keyword">this</span> from a 
+                <a href="Cogl.Euler.html" class="class">Euler</a> rotation.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.init_from_quaternion.html" class="method">init_from_quaternion</a></b> (<span class="main_type"><a href="Cogl.Quaternion.html" class="class">Quaternion</a></span> quaternion)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Initializes <span class="main_keyword">this</span> from a 
+                <a href="Cogl.Quaternion.html" class="class">Quaternion</a> rotation.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.init_identity.html" class="method">init_identity</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Resets matrix to the identity matrix:</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.init_translation.html" class="method">init_translation</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> tx, <span class="main_basic_type"><span class="struct">float</span></span> ty, <span class="main_basic_type"><span class="struct">float</span></span> tz)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Resets matrix to the (tx, ty, tz) translation matrix:</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Matrix.is_identity.html" class="method">is_identity</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Determines if the given matrix is an identity matrix.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.look_at.html" class="method">look_at</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> eye_position_x, <span class="main_basic_type"><span class="struct">float</span></span> eye_position_y, <span class="main_basic_type"><span class="struct">float</span></span> eye_position_z, <span class="main_basic_type"><span class="struct">float</span></span> object_x, <span class="main_basic_type"><span class="struct">float</span></span> object_y, <span class="main_basic_type"><span class="struct">float</span></span> object_z, <span class="main_basic_type"><span class="struct">float</span></span> world_up_x, <span class="main_basic_type"><span class="struct">float</span></span> world_up_y, <span class="main_basic_type"><span class="struct">float</span></span> world_up_z)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Applies a view transform <span class="main_keyword">this</span> that 
+                positions the camera at the coordinate (<code>eye_position_x</code>, <code>eye_position_y</code>, <code>eye_position_z</code>) looking
+                 towards an object at the coordinate (<code>object_x</code>, <code>object_y</code>, <code>object_z</code>).</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.multiply.html" class="method">multiply</a></b> (<span class="main_type"><span class="class">Matrix</span></span> a, <span class="main_type"><span class="class">Matrix</span></span> b)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies the two supplied matrices together and stores the resulting
+                 matrix inside <span class="main_keyword">this</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="deprecated"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.ortho.html" class="method">ortho</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> left, <span class="main_basic_type"><span class="struct">float</span></span> right, <span class="main_basic_type"><span class="struct">float</span></span> bottom, <span class="main_basic_type"><span class="struct">float</span></span> top, <span class="main_basic_type"><span class="struct">float</span></span> near, <span class="main_basic_type"><span class="struct">float</span></span> far)
               </span></span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies <span class="main_keyword">this</span> by a parallel 
+                projection matrix.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.orthographic.html" class="method">orthographic</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> x_1, <span class="main_basic_type"><span class="struct">float</span></span> y_1, <span class="main_basic_type"><span class="struct">float</span></span> x_2, <span class="main_basic_type"><span class="struct">float</span></span> y_2, <span class="main_basic_type"><span class="struct">float</span></span> near, <span class="main_basic_type"><span class="struct">float</span></span> far)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies <span class="main_keyword">this</span> by a parallel 
+                projection matrix.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.perspective.html" class="method">perspective</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> fov_y, <span class="main_basic_type"><span class="struct">float</span></span> aspect, <span class="main_basic_type"><span class="struct">float</span></span> z_near, <span class="main_basic_type"><span class="struct">float</span></span> z_far)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies <span class="main_keyword">this</span> by the described 
+                perspective matrix</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.project_points.html" class="method">project_points</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> n_components, <span class="main_basic_type"><span class="struct">ulong</span></span> stride_in, <span class="main_keyword">void</span>* points_in, <span class="main_basic_type"><span class="struct">ulong</span></span> stride_out, <span class="main_keyword">void</span>* points_out, <span class="main_basic_type"><span class="struct">int</span></span> n_points)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Projects an array of input points and writes the result to another 
+                array of output points.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.rotate.html" class="method">rotate</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> angle, <span class="main_basic_type"><span class="struct">float</span></span> x, <span class="main_basic_type"><span class="struct">float</span></span> y, <span class="main_basic_type"><span class="struct">float</span></span> z)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies <span class="main_keyword">this</span> with a rotation 
+                matrix that applies a rotation of <code>angle</code> degrees around the specified 3D vector.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.rotate_euler.html" class="method">rotate_euler</a></b> (<span class="main_type"><a href="Cogl.Euler.html" class="class">Euler</a></span> euler)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies <span class="main_keyword">this</span> with a rotation 
+                transformation described by the given <a href="Cogl.Euler.html" class="class">Euler</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.rotate_quaternion.html" class="method">rotate_quaternion</a></b> (<span class="main_type"><a href="Cogl.Quaternion.html" class="class">Quaternion</a></span> quaternion)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies <span class="main_keyword">this</span> with a rotation 
+                transformation described by the given <a href="Cogl.Quaternion.html" class="class">Quaternion</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.scale.html" class="method">scale</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> sx, <span class="main_basic_type"><span class="struct">float</span></span> sy, <span class="main_basic_type"><span class="struct">float</span></span> sz)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies <span class="main_keyword">this</span> with a transform 
+                matrix that scales along the X, Y and Z axis.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.transform_point.html" class="method">transform_point</a></b> (<span class="main_keyword">ref</span> <span class="main_basic_type"><span class="struct">float</span></span> x, <span class="main_keyword">ref</span> <span class="main_basic_type"><span class="struct">float</span></span> y, <span class="main_keyword">ref</span> <span class="main_basic_type"><span class="struct">float</span></span> z, <span class="main_keyword">ref</span> <span class="main_basic_type"><span class="struct">float</span></span> w)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Transforms a point whos position is given and returned as four float 
+                components.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.transform_points.html" class="method">transform_points</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> n_components, <span class="main_basic_type"><span class="struct">ulong</span></span> stride_in, <span class="main_keyword">void</span>* points_in, <span class="main_basic_type"><span class="struct">ulong</span></span> stride_out, <span class="main_keyword">void</span>* points_out, <span class="main_basic_type"><span class="struct">int</span></span> n_points)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Transforms an array of input points and writes the result to another 
+                array of output points.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.translate.html" class="method">translate</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> x, <span class="main_basic_type"><span class="struct">float</span></span> y, <span class="main_basic_type"><span class="struct">float</span></span> z)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies <span class="main_keyword">this</span> with a transform 
+                matrix that translates along the X, Y and Z axis.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.transpose.html" class="method">transpose</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Replaces <span class="main_keyword">this</span> with its transpose.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.view_2d_in_frustum.html" class="method">view_2d_in_frustum</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> left, <span class="main_basic_type"><span class="struct">float</span></span> right, <span class="main_basic_type"><span class="struct">float</span></span> bottom, <span class="main_basic_type"><span class="struct">float</span></span> top, <span class="main_basic_type"><span class="struct">float</span></span> z_near, <span class="main_basic_type"><span class="struct">float</span></span> z_2d, <span class="main_basic_type"><span class="struct">float</span></span> width_2d, <span class="main_basic_type"><span class="struct">float</span></span> height_2d)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies <span class="main_keyword">this</span> by a view transform 
+                that maps the 2D coordinates (0,0) top left and (<code>width_2d</code>,<code>height_2d</code>) bottom right the full viewport size.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.view_2d_in_perspective.html" class="method">view_2d_in_perspective</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> fov_y, <span class="main_basic_type"><span class="struct">float</span></span> aspect, <span class="main_basic_type"><span class="struct">float</span></span> z_near, <span class="main_basic_type"><span class="struct">float</span></span> z_2d, <span class="main_basic_type"><span class="struct">float</span></span> width_2d, <span class="main_basic_type"><span class="struct">float</span></span> height_2d)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies <code>matrix</code> by a view transform that maps the 2D 
+                coordinates (0,0) top left and (<code>width_2d</code>,<code>height_2d</code>) bottom right the full viewport size.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Fields:</h3>

@@ -63,50 +63,57 @@
         <ul class="navi_inline">
           <li class="creation_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <b><a href="Cogl.Renderer.Renderer.html" class="creation_method">Renderer</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Instantiates a new (unconnected) <span class="class">Renderer</span> 
+                object.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Methods:</h3>
         <ul class="navi_inline">
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Renderer.add_constraint.html" class="method">add_constraint</a></b> (<span class="main_type"><a href="Cogl.RendererConstraint.html" class="enum">RendererConstraint</a></span> constraint)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">This adds a renderer selection <code>constraint</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Renderer.check_onscreen_template.html" class="method">check_onscreen_template</a></b> (<span class="main_type"><a href="Cogl.OnscreenTemplate.html" class="class">OnscreenTemplate</a></span> onscreen_template) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Tests if a given <code>onscreen_template</code> can be supported with 
+                the given <span class="main_keyword">this</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Renderer.connect.html" class="method">connect</a></b> () <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Connects the configured <span class="main_keyword">this</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Renderer.foreach_output.html" class="method">foreach_output</a></b> (<span class="main_type"><a href="Cogl.OutputCallback.html" class="delegate">OutputCallback</a></span> callback)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Iterates all known display outputs for the given 
+                <span class="main_keyword">this</span> and passes a corresponding <a href="Cogl.Output.html" class="class">Output</a> pointer to the 
+                given <code>callback</code> for each one, along with the given <code>user_data</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Driver.html" class="enum">Driver</a></span> <b><a href="Cogl.Renderer.get_driver.html" class="method">get_driver</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Queries what underlying driver is being used by Cogl.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Cogl.Renderer.get_n_fragment_texture_units.html" class="method">get_n_fragment_texture_units</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Queries how many texture units can be used from fragment programs
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.WinsysID.html" class="enum">WinsysID</a></span> <b><a href="Cogl.Renderer.get_winsys_id.html" class="method">get_winsys_id</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Queries which window system backend Cogl has chosen to use.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Renderer.remove_constraint.html" class="method">remove_constraint</a></b> (<span class="main_type"><a href="Cogl.RendererConstraint.html" class="enum">RendererConstraint</a></span> constraint)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">This removes a renderer selection <code>constraint</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Renderer.set_driver.html" class="method">set_driver</a></b> (<span class="main_type"><a href="Cogl.Driver.html" class="enum">Driver</a></span> driver)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Requests that Cogl should try to use a specific underlying driver for 
+                rendering.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Renderer.set_winsys_id.html" class="method">set_winsys_id</a></b> (<span class="main_type"><a href="Cogl.WinsysID.html" class="enum">WinsysID</a></span> winsys_id)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">This allows you to explicitly select a winsys backend to use instead 
+                of letting Cogl automatically select a backend.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Inherited Members:</h3>

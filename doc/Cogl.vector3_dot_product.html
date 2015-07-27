@@ -247,6 +247,42 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><span class="method">vector3_dot_product</span></b> (<span class="main_basic_type"><span class="struct">float</span></span> a, <span class="main_basic_type"><span class="struct">float</span></span> b)
+        </div>
+        <div class="description">
+          <p>Calculates the dot product of the two 3 component vectors.</p>
+          <p> This can be used to determine the magnitude of one vector projected onto another. (for example a surface normal)</p>
+          <p>For example if you have a polygon with a given normal vector and some other point for which you want to calculate its distance from the 
+            polygon, you can create a vector between one of the polygon vertices and that point and use the dot product to calculate the magnitude for
+             that vector but projected onto the normal of the polygon. This way you don't just get the distance from the point to the edge of the 
+            polygon you get the distance from the point to the nearest part of the polygon.</p>
+          <p>&lt;note&gt;If you don't use a unit length normal in the above example then you would then also have to divide the result by the 
+            magnitude of the normal&lt;/note&gt;</p>
+          <p>The dot product is calculated as: <pre class="main_source"> (a-&gt;x * b-&gt;x + a-&gt;y * b-&gt;y + a-&gt;z * b-&gt;z)</pre></p>
+          <p>For reference, the dot product can also be calculated from the angle between two vectors as: <pre class="main_source"> |a||b|cos𝜃</pre>
+          </p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">a</td>
+              <td>
+                <p>Your first 3 component vector</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">b</td>
+              <td>
+                <p>Your second 3 component vector</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p>The dot product of two vectors.</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

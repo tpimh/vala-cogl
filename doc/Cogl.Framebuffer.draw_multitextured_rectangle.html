@@ -99,6 +99,85 @@
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><span class="method">draw_multitextured_rectangle</span></b> (<span class="main_type"><a href="Cogl.Pipeline.html" class="class">Pipeline</a></span> pipeline, <span class="main_basic_type"><span class="struct">float</span></span> x_1, <span class="main_basic_type"><span class="struct">float</span></span> y_1, <span class="main_basic_type"><span class="struct">float</span></span> x_2, <span class="main_basic_type"><span class="struct">float</span></span> y_2, <span class="main_basic_type"><span class="struct">float</span></span>[] tex_coords, <span class="main_basic_type"><span class="struct">int</span></span> tex_coords_len)
         </div>
+        <div class="description">
+          <p>Draws a textured rectangle to <span class="main_keyword">this</span> with the given <code>pipeline</code> state with the top left corner 
+            positioned at (<code>x_1</code>, <code>y_1</code>) and the bottom right corner positioned at (<code>x_2</code>, <code>y_2</code>).</p>
+          <p> As a pipeline may contain multiple texture layers this interface lets you supply texture coordinates for each layer of the pipeline.</p>
+          <p>&lt;note&gt;The position is the position before the rectangle has been transformed by the model-view matrix and the projection matrix.
+            &lt;/note&gt;</p>
+          <p>This is a high level drawing api that can handle any kind of <a href="Cogl.MetaTexture.html" class="struct">MetaTexture</a> texture for 
+            the first layer such as <a href="Cogl.Texture2DSliced.html" class="class">Texture2DSliced</a> textures which may internally be comprised 
+            of multiple low-level textures. This is unlike low-level drawing apis such as <a href="Cogl.Primitive.draw.html" class="method">draw</a> 
+            which only support low level texture types that are directly supported by GPUs such as <a href="Cogl.Texture2D.html" class="class">
+              Texture2D</a>.</p>
+          <p>&lt;note&gt;This api can not currently handle multiple high-level meta texture layers. The first layer may be a high level meta texture 
+            such as <a href="Cogl.Texture2DSliced.html" class="class">Texture2DSliced</a> but all other layers much be low level textures such as 
+            <a href="Cogl.Texture2D.html" class="class">Texture2D</a> and additionally they should be textures that can be sampled using normalized 
+            coordinates (so not <a href="Cogl.TextureRectangle.html" class="class">TextureRectangle</a> textures).&lt;/note&gt;</p>
+          <p>The top left texture coordinate for layer 0 of any pipeline will be (tex_coords[0], tex_coords[1]) and the bottom right coordinate will 
+            be (tex_coords[2], tex_coords[3]). The coordinates for layer 1 would be (tex_coords[4], tex_coords[5]) (tex_coords[6], tex_coords[7]) and 
+            so on...</p>
+          <p>The given texture coordinates should always be normalized such that (0, 0) corresponds to the top left and (1, 1) corresponds to the 
+            bottom right. To map an entire texture across the rectangle pass in tex_coords[0]=0, tex_coords[1]=0, tex_coords[2]=1, tex_coords[3]=1.
+          </p>
+          <p>&lt;note&gt;Even if you have associated a <a href="Cogl.TextureRectangle.html" class="class">TextureRectangle</a> texture which normally 
+            implies working with non-normalized texture coordinates this api should still be passed normalized texture coordinates.&lt;/note&gt;</p>
+          <p>The first pair of coordinates are for the first layer (with the smallest layer index) and if you supply less texture coordinates than 
+            there are layers in the current source material then default texture coordinates (0.0, 0.0, 1.0, 1.0) are generated.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">this</td>
+              <td>
+                <p>A destination <a href="Cogl.Framebuffer.html" class="interface">Framebuffer</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">pipeline</td>
+              <td>
+                <p>A <a href="Cogl.Pipeline.html" class="class">Pipeline</a> state object</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">x_1</td>
+              <td>
+                <p>x coordinate upper left on screen.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">y_1</td>
+              <td>
+                <p>y coordinate upper left on screen.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">x_2</td>
+              <td>
+                <p>x coordinate lower right on screen.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">y_2</td>
+              <td>
+                <p>y coordinate lower right on screen.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">tex_coords</td>
+              <td>
+                <p>An array containing groups of  4 float values: [s_1, t_1, s_2, t_2] that are interpreted as two texture  coordinates; one for the 
+                  top left texel, and one for the bottom right  texel. Each value should be between 0.0 and 1.0, where the coordinate  (0.0, 0.0) 
+                  represents the top left of the texture, and (1.0, 1.0) the  bottom right.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">tex_coords_len</td>
+              <td>
+                <p>The length of the <code>tex_coords</code> array. (For one layer  and one group of texture coordinates, this would be 4)</p>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div><br/>
     <div class="site_footer">Generated by <a href="http://www.valadoc.org/">Valadoc</a>

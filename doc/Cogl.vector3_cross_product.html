@@ -247,6 +247,44 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><span class="method">vector3_cross_product</span></b> (<span class="main_basic_type"><span class="struct">float</span></span> result, <span class="main_basic_type"><span class="struct">float</span></span> u, <span class="main_basic_type"><span class="struct">float</span></span> v)
+        </div>
+        <div class="description">
+          <p>Calculates the cross product between the two vectors <code>u</code> and <code>v</code>.</p>
+          <p>The cross product is a vector perpendicular to both <code>u</code> and <code>v</code>. This can be useful for calculating the normal of a
+             polygon by creating two vectors in its plane using the polygons vertices and taking their cross product.</p>
+          <p>If the two vectors are parallel then the cross product is 0.</p>
+          <p>You can use a right hand rule to determine which direction the perpendicular vector will point: If you place the two vectors tail, to 
+            tail and imagine grabbing the perpendicular line that extends through the common tail with your right hand such that you fingers rotate in
+             the direction from <code>u</code> to <code>v</code> then the resulting vector points along your extended thumb.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">result</td>
+              <td>
+                <p>Where you want the result written</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">u</td>
+              <td>
+                <p>Your first 3 component vector</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">v</td>
+              <td>
+                <p>Your second 3 component vector</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p>The cross product between two vectors <code>u</code> and <code>v</code>.</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

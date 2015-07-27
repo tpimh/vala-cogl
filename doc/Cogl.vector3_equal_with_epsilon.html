@@ -247,6 +247,41 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><span class="method">vector3_equal_with_epsilon</span></b> (<span class="main_basic_type"><span class="struct">float</span></span> vector0, <span class="main_basic_type"><span class="struct">float</span></span> vector1, <span class="main_basic_type"><span class="struct">float</span></span> epsilon)
+        </div>
+        <div class="description">
+          <p>Compares the components of two vectors using the given epsilon and returns TRUE if they are the same, using an internal epsilon for 
+            comparing the floats.</p>
+          <p>Each component is compared against the epsilon value in this way: <pre class="main_source">  if (fabsf (vector0-&gt;x - vector1-&gt;x) &lt; epsilon)</pre>
+          </p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">vector0</td>
+              <td>
+                <p>The first 3 component vector you want to compare</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">vector1</td>
+              <td>
+                <p>The second 3 component vector you want to compare</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">epsilon</td>
+              <td>
+                <p>The allowable difference between components to still be  considered equal</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p>TRUE if the vectors are equal else FALSE.</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

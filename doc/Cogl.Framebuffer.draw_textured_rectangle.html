@@ -99,6 +99,90 @@
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><span class="method">draw_textured_rectangle</span></b> (<span class="main_type"><a href="Cogl.Pipeline.html" class="class">Pipeline</a></span> pipeline, <span class="main_basic_type"><span class="struct">float</span></span> x_1, <span class="main_basic_type"><span class="struct">float</span></span> y_1, <span class="main_basic_type"><span class="struct">float</span></span> x_2, <span class="main_basic_type"><span class="struct">float</span></span> y_2, <span class="main_basic_type"><span class="struct">float</span></span> s_1, <span class="main_basic_type"><span class="struct">float</span></span> t_1, <span class="main_basic_type"><span class="struct">float</span></span> s_2, <span class="main_basic_type"><span class="struct">float</span></span> t_2)
         </div>
+        <div class="description">
+          <p>Draws a textured rectangle to <span class="main_keyword">this</span> using the given <code>pipeline</code> state with the top left corner
+             positioned at (<code>x_1</code>, <code>y_1</code>) and the bottom right corner positioned at (<code>x_2</code>, <code>y_2</code>).</p>
+          <p> The top left corner will have texture coordinates of (<code>s_1</code>, <code>t_1</code>) and the bottom right corner will have texture 
+            coordinates of (<code>s_2</code>, <code>t_2</code>).</p>
+          <p>&lt;note&gt;The position is the position before the rectangle has been transformed by the model-view matrix and the projection matrix.
+            &lt;/note&gt;</p>
+          <p>This is a high level drawing api that can handle any kind of <a href="Cogl.MetaTexture.html" class="struct">MetaTexture</a> texture such 
+            as <a href="Cogl.Texture2DSliced.html" class="class">Texture2DSliced</a> textures which may internally be comprised of multiple low-level 
+            textures. This is unlike low-level drawing apis such as <a href="Cogl.Primitive.draw.html" class="method">draw</a> which only support low 
+            level texture types that are directly supported by GPUs such as <a href="Cogl.Texture2D.html" class="class">Texture2D</a>.</p>
+          <p>&lt;note&gt;The given texture coordinates will only be used for the first texture layer of the pipeline and if your pipeline has more 
+            than one layer then all other layers will have default texture coordinates of <code>s_1</code>=0.0 <code>t_1</code>=0.0 <code>s_2</code>
+            =1.0 <code>t_2</code>=1.0 &lt;/note&gt;</p>
+          <p>The given texture coordinates should always be normalized such that (0, 0) corresponds to the top left and (1, 1) corresponds to the 
+            bottom right. To map an entire texture across the rectangle pass in <code>s_1</code>=0, <code>t_1</code>=0, <code>s_2</code>=1, <code>t_2
+            </code>=1.</p>
+          <p>&lt;note&gt;Even if you have associated a <a href="Cogl.TextureRectangle.html" class="class">TextureRectangle</a> texture with one of 
+            your <code>pipeline</code> layers which normally implies working with non-normalized texture coordinates this api should still be passed 
+            normalized texture coordinates.&lt;/note&gt;</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">this</td>
+              <td>
+                <p>A destination <a href="Cogl.Framebuffer.html" class="interface">Framebuffer</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">pipeline</td>
+              <td>
+                <p>A <a href="Cogl.Pipeline.html" class="class">Pipeline</a> state object</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">x_1</td>
+              <td>
+                <p>x coordinate upper left on screen.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">y_1</td>
+              <td>
+                <p>y coordinate upper left on screen.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">x_2</td>
+              <td>
+                <p>x coordinate lower right on screen.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">y_2</td>
+              <td>
+                <p>y coordinate lower right on screen.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">s_1</td>
+              <td>
+                <p>S texture coordinate of the top-left coorner</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">t_1</td>
+              <td>
+                <p>T texture coordinate of the top-left coorner</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">s_2</td>
+              <td>
+                <p>S texture coordinate of the bottom-right coorner</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">t_2</td>
+              <td>
+                <p>T texture coordinate of the bottom-right coorner</p>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div><br/>
     <div class="site_footer">Generated by <a href="http://www.valadoc.org/">Valadoc</a>

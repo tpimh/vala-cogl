@@ -36,6 +36,17 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">FrameEvent</span></b>
+        </div>
+        <div class="description">
+          <p>Identifiers that are passed to <a href="Cogl.FrameCallback.html" class="delegate">FrameCallback</a> functions (registered using 
+            <a href="Cogl.Onscreen.add_frame_callback.html" class="method">add_frame_callback</a>) that mark the progression of a frame in some way 
+            which usually means that new information will have been accumulated in the frame's corresponding 
+            <a href="Cogl.FrameInfo.html" class="class">FrameInfo</a> object.</p>
+          <p>The last event that will be sent for a frame will be a <code>COGL_FRAME_EVENT_COMPLETE</code> event and so these are a good opportunity 
+            to collect statistics about a frame since the <a href="Cogl.FrameInfo.html" class="class">FrameInfo</a> should hold the most data at this 
+            point.</p>
+          <p>&lt;note&gt;A frame may not be completed before the next frame can start so applications should avoid needing to collect all statistics 
+            for a particular frame before they can start a new frame.&lt;/note&gt;</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -44,8 +55,10 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.FrameEvent.SYNC.html">SYNC</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FrameEvent.COMPLETE.html">COMPLETE</a> - </li>
+          <li class="enumvalue"><a href="Cogl.FrameEvent.SYNC.html">SYNC</a> - <span class="brief_description">Notifies that the system compositor has
+                acknowledged a frame and is ready for a  new frame to be created.</span></li>
+          <li class="enumvalue"><a href="Cogl.FrameEvent.COMPLETE.html">COMPLETE</a> - <span class="brief_description">Notifies that a frame has 
+              ended.</span></li>
         </ul>
       </div>
     </div><br/>

@@ -91,59 +91,72 @@
           <ul class="navi_inline">
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Texture.allocate.html" class="method">allocate</a></b> () <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Explicitly allocates the storage for the given 
+                  <span class="main_keyword">this</span> which allows you to be sure that there is enough memory for the texture and if not then the 
+                  error can be handled gracefully.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.TextureComponents.html" class="enum">TextureComponents</a></span> <b><a href="Cogl.Texture.get_components.html" class="method">get_components</a></b> ()
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Queries what components the given <span class="main_keyword">this
+                  </span> stores internally as set via <a href="Cogl.Texture.set_components.html" class="method">set_components</a>.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Cogl.Texture.get_data.html" class="method">get_data</a></b> (<span class="main_type"><a href="Cogl.PixelFormat.html" class="enum">PixelFormat</a></span> format, <span class="main_basic_type"><span class="struct">uint</span></span> rowstride, <span class="main_basic_type"><span class="struct">uint8</span></span> data)
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Copies the pixel data from a cogl texture to system memory.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Texture.get_gl_texture.html" class="method">get_gl_texture</a></b> (<span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">uint</span></span> out_gl_handle, <span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">uint</span></span> out_gl_target)
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Queries the GL handles for a GPU side texture through its 
+                  <span class="interface">Texture</span>.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">uint</span></span> <b><a href="Cogl.Texture.get_height.html" class="method">get_height</a></b> ()
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Queries the height of a cogl texture.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Cogl.Texture.get_max_waste.html" class="method">get_max_waste</a></b> ()
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Queries the maximum wasted (unused) pixels in one dimension of a GPU
+                   side texture.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Texture.get_premultiplied.html" class="method">get_premultiplied</a></b> ()
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Queries the pre-multiplied alpha status for internally stored red, 
+                  green and blue components for the given <span class="main_keyword">this</span> as set by 
+                  <a href="Cogl.Texture.set_premultiplied.html" class="method">set_premultiplied</a>.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">uint</span></span> <b><a href="Cogl.Texture.get_width.html" class="method">get_width</a></b> ()
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Queries the width of a cogl texture.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Texture.is_sliced.html" class="method">is_sliced</a></b> ()
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Queries if a texture is sliced (stored as multiple GPU side tecture 
+                  objects).</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Texture.set_components.html" class="method">set_components</a></b> (<span class="main_type"><a href="Cogl.TextureComponents.html" class="enum">TextureComponents</a></span> components)
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Affects the internal storage format for this texture by specifying 
+                  what components will be required for sampling later.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Texture.set_data.html" class="method">set_data</a></b> (<span class="main_type"><a href="Cogl.PixelFormat.html" class="enum">PixelFormat</a></span> format, <span class="main_basic_type"><span class="struct">int</span></span> rowstride, <span class="main_basic_type"><span class="struct">uint8</span></span> data, <span class="main_basic_type"><span class="struct">int</span></span> level) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description"><code>texture</code> a <span class="interface">Texture</span>.
+                </span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Texture.set_premultiplied.html" class="method">set_premultiplied</a></b> (<span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> premultiplied)
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Affects the internal storage format for this texture by specifying 
+                  whether red, green and blue color components should be stored as pre-multiplied alpha values.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Texture.set_region.html" class="method">set_region</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> src_x, <span class="main_basic_type"><span class="struct">int</span></span> src_y, <span class="main_basic_type"><span class="struct">int</span></span> dst_x, <span class="main_basic_type"><span class="struct">int</span></span> dst_y, <span class="main_basic_type"><span class="struct">uint</span></span> dst_width, <span class="main_basic_type"><span class="struct">uint</span></span> dst_height, <span class="main_basic_type"><span class="struct">int</span></span> width, <span class="main_basic_type"><span class="struct">int</span></span> height, <span class="main_type"><a href="Cogl.PixelFormat.html" class="enum">PixelFormat</a></span> format, <span class="main_basic_type"><span class="struct">uint</span></span> rowstride, <span class="main_basic_type"><span class="struct">uint8</span></span> data)
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Sets the pixels in a rectangular subregion of 
+                  <span class="main_keyword">this</span> from an in-memory buffer containing pixel data.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Texture.set_region_from_bitmap.html" class="method">set_region_from_bitmap</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> src_x, <span class="main_basic_type"><span class="struct">int</span></span> src_y, <span class="main_basic_type"><span class="struct">int</span></span> dst_x, <span class="main_basic_type"><span class="struct">int</span></span> dst_y, <span class="main_basic_type"><span class="struct">uint</span></span> dst_width, <span class="main_basic_type"><span class="struct">uint</span></span> dst_height, <span class="main_type"><a href="Cogl.Bitmap.html" class="class">Bitmap</a></span> bitmap)
               </span>
-              <div class="leaf_brief_description">
+              <div class="leaf_brief_description"><span class="brief_description">Copies a specified source region from <code>bitmap</code> to the 
+                  position (<code>src_x</code>, <code>src_y</code>) of the given destination texture <code>handle</code>.</span>
               </div></li>
           </ul>
           <h3 class="main_title">Inherited Members:</h3>

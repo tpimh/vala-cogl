@@ -36,6 +36,17 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">SystemError</span></b>
+        </div>
+        <div class="description">
+          <p>Error enumeration for Cogl</p>
+          <p>The <code>COGL_SYSTEM_ERROR_UNSUPPORTED</code> error can be thrown for a variety of reasons. For example:</p>
+          <p>&lt;itemizedlist&gt;  &lt;listitem&gt;&lt;para&gt;You've tried to use a feature that is not  advertised by 
+            <a href="Cogl.has_feature.html" class="method">has_feature</a>. This could happen if you create  a 2d texture with a non-power-of-two size
+             when  <span class="main_optional_parameter">cogl_feature_id_texture_npot</span> is not advertised.&lt;/para&gt;&lt;/listitem&gt;  &lt;
+            listitem&gt;&lt;para&gt;The GPU can not handle the configuration you have  requested. An example might be if you try to use too many 
+            texture  layers in a single <a href="Cogl.Pipeline.html" class="class">Pipeline</a>&lt;/para&gt;&lt;/listitem&gt;  &lt;listitem&gt;&lt;
+            para&gt;The driver does not support some  configuration.&lt;/para&gt;&lt;/listiem&gt; &lt;/itemizedlist&gt;</p>
+          <p>Currently this is only used by Cogl API marked as experimental so this enum should also be considered experimental.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -44,8 +55,10 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.SystemError.COGL_SYSTEM_ERROR_UNSUPPORTED.html">COGL_SYSTEM_ERROR_UNSUPPORTED</a> - </li>
-          <li class="enumvalue"><a href="Cogl.SystemError.COGL_SYSTEM_ERROR_NO_MEMORY.html">COGL_SYSTEM_ERROR_NO_MEMORY</a> - </li>
+          <li class="enumvalue"><a href="Cogl.SystemError.COGL_SYSTEM_ERROR_UNSUPPORTED.html">COGL_SYSTEM_ERROR_UNSUPPORTED</a> - 
+            <span class="brief_description">You tried to use a feature or  configuration not currently available.</span></li>
+          <li class="enumvalue"><a href="Cogl.SystemError.COGL_SYSTEM_ERROR_NO_MEMORY.html">COGL_SYSTEM_ERROR_NO_MEMORY</a> - 
+            <span class="brief_description">You tried to allocate a resource  such as a texture and there wasn't enough memory.</span></li>
         </ul>
       </div>
     </div><br/>

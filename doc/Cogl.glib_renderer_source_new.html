@@ -247,6 +247,36 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span class="abstract_class">Source</span></span> <b><span class="method">glib_renderer_source_new</span></b> (<span class="main_type"><a href="Cogl.Renderer.html" class="class">Renderer</a></span> renderer, <span class="main_basic_type"><span class="struct">int</span></span> priority)
+        </div>
+        <div class="description">
+          <p>Creates a <span class="class">SignalSource</span> which handles Cogl's internal system event processing.</p>
+          <p> This can be used as a convenience instead of <a href="Cogl.poll_renderer_get_info.html" class="method">poll_renderer_get_info</a> and 
+            <a href="Cogl.poll_renderer_dispatch.html" class="method">poll_renderer_dispatch</a> in applications that are already using the GLib main 
+            loop. After this is called the <span class="class">SignalSource</span> should be attached to the main loop using <span class="method">
+              attach</span>.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">renderer</td>
+              <td>
+                <p>A <a href="Cogl.Renderer.html" class="class">Renderer</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">priority</td>
+              <td>
+                <p>The priority of the <span class="class">SignalSource</span></p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p>a new <span class="class">SignalSource</span></p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

@@ -40,6 +40,11 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">PollFDEvent</span></b>
+        </div>
+        <div class="description">
+          <p>A bitmask of events that Cogl may need to wake on for a file descriptor.</p>
+          <p> Note that these all have the same values as the corresponding defines for the poll function call on Unix so they may be directly passed 
+            to poll.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -48,12 +53,15 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.PollFDEvent.IN.html">IN</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PollFDEvent.PRI.html">PRI</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PollFDEvent.OUT.html">OUT</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PollFDEvent.ERR.html">ERR</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PollFDEvent.HUP.html">HUP</a> - </li>
-          <li class="enumvalue"><a href="Cogl.PollFDEvent.NVAL.html">NVAL</a> - </li>
+          <li class="enumvalue"><a href="Cogl.PollFDEvent.IN.html">IN</a> - <span class="brief_description">there is data to read</span></li>
+          <li class="enumvalue"><a href="Cogl.PollFDEvent.PRI.html">PRI</a> - <span class="brief_description">data can be written (without blocking)
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.PollFDEvent.OUT.html">OUT</a> - <span class="brief_description">there is urgent data to read.</span>
+          </li>
+          <li class="enumvalue"><a href="Cogl.PollFDEvent.ERR.html">ERR</a> - <span class="brief_description">error condition</span></li>
+          <li class="enumvalue"><a href="Cogl.PollFDEvent.HUP.html">HUP</a> - <span class="brief_description">hung up (the connection has been broken,
+               usually  for pipes and sockets).</span></li>
+          <li class="enumvalue"><a href="Cogl.PollFDEvent.NVAL.html">NVAL</a> - <span class="brief_description">invalid request.</span></li>
         </ul>
       </div>
     </div><br/>

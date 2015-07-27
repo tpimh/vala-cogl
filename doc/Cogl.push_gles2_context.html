@@ -247,6 +247,53 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><span class="method">push_gles2_context</span></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> ctx, <span class="main_type"><a href="Cogl.GLES2Context.html" class="class">GLES2Context</a></span> gles2_ctx, <span class="main_type"><a href="Cogl.Framebuffer.html" class="interface">Framebuffer</a></span> read_buffer, <span class="main_type"><a href="Cogl.Framebuffer.html" class="interface">Framebuffer</a></span> write_buffer) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
+        </div>
+        <div class="description">
+          <p>Pushes the given <code>gles2_ctx</code> onto a stack associated with <code>ctx</code> so that the OpenGLES 2.0 api can be used instead of
+             the Cogl rendering apis to read and write to the specified framebuffers.</p>
+          <p>Usage of the api available through a <code>CoglGLES2Vtable</code> is only allowed between <span class="method">push_gles2_context</span> 
+            and <a href="Cogl.pop_gles2_context.html" class="method">pop_gles2_context</a> calls.</p>
+          <p>If there is a runtime problem with switching over to the given <code>gles2_ctx</code> then this function will return 
+            <span class="main_optional_parameter">false</span> and return an error through <span class="main_keyword">throws</span>.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">ctx</td>
+              <td>
+                <p>A <a href="Cogl.Context.html" class="class">Context</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">gles2_ctx</td>
+              <td>
+                <p>A <a href="Cogl.GLES2Context.html" class="class">GLES2Context</a> allocated with  
+                  <a href="Cogl.GLES2Context.GLES2Context.html" class="creation_method">GLES2Context</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">read_buffer</td>
+              <td>
+                <p>A <a href="Cogl.Framebuffer.html" class="interface">Framebuffer</a> to access to read operations  such as glReadPixels. (must be a 
+                  <code>CoglOffscreen</code>  framebuffer currently)</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">write_buffer</td>
+              <td>
+                <p>A <a href="Cogl.Framebuffer.html" class="interface">Framebuffer</a> to access for drawing operations  such as glDrawArrays. (must 
+                  be a <code>CoglOffscreen</code>  framebuffer currently)</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p><span class="main_optional_parameter">true</span> if operation was successfull or <span class="main_optional_parameter">false
+                  </span>  otherwise and <span class="main_keyword">throws</span> will be updated.</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

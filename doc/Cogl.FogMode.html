@@ -37,6 +37,12 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">FogMode</span></b>
+        </div>
+        <div class="description">
+          <p>The fog mode determines the equation used to calculate the fogging blend factor while fogging is enabled.</p>
+          <p> The simplest <span class="main_optional_parameter">cogl_fog_mode_linear</span> mode determines f as:</p>
+          <p><pre class="main_source">  f = end - eye_distance / end - start</pre></p>
+          <p>Where eye_distance is the distance of the current fragment in eye coordinates from the origin.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -45,9 +51,12 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.FogMode.LINEAR.html">LINEAR</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FogMode.EXPONENTIAL.html">EXPONENTIAL</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FogMode.EXPONENTIAL_SQUARED.html">EXPONENTIAL_SQUARED</a> - </li>
+          <li class="enumvalue"><a href="Cogl.FogMode.LINEAR.html">LINEAR</a> - <span class="brief_description">Calculates the fog blend factor as: <pre class="main_source">  f = end - eye_distance / end - start</pre>
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.FogMode.EXPONENTIAL.html">EXPONENTIAL</a> - <span class="brief_description">Calculates the fog blend 
+              factor as: <pre class="main_source">  f = e ^ -(density * eye_distance)</pre></span></li>
+          <li class="enumvalue"><a href="Cogl.FogMode.EXPONENTIAL_SQUARED.html">EXPONENTIAL_SQUARED</a> - <span class="brief_description">Calculates 
+              the fog blend factor as: <pre class="main_source">  f = e ^ -(density * eye_distance)^2</pre></span></li>
         </ul>
       </div>
     </div><br/>

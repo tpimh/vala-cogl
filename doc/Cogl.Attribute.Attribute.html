@@ -50,6 +50,87 @@
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <b><span class="creation_method">Attribute</span></b> (<span class="main_type"><a href="Cogl.AttributeBuffer.html" class="class">AttributeBuffer</a></span> attribute_buffer, <span class="main_basic_type"><span class="class">string</span></span> name, <span class="main_basic_type"><span class="struct">ulong</span></span> stride, <span class="main_basic_type"><span class="struct">ulong</span></span> offset, <span class="main_basic_type"><span class="struct">int</span></span> components, <span class="main_type"><a href="Cogl.AttributeType.html" class="enum">AttributeType</a></span> type)
         </div>
+        <div class="description">
+          <p>Describes the layout for a list of vertex attribute values (For example, a list of texture coordinates or colors).</p>
+          <p>The <code>name</code> is used to access the attribute inside a GLSL vertex shader and there are some special names you should use if they
+             are applicable:  &lt;itemizedlist&gt;  &lt;listitem&gt;"cogl_position_in" (used for vertex positions)&lt;/listitem&gt;  &lt;listitem&gt;
+            "cogl_color_in" (used for vertex colors)&lt;/listitem&gt;  &lt;listitem&gt;"cogl_tex_coord0_in", "cogl_tex_coord1", ... (used for vertex 
+            texture coordinates)&lt;/listitem&gt;  &lt;listitem&gt;"cogl_normal_in" (used for vertex normals)&lt;/listitem&gt;  &lt;listitem&gt;
+            "cogl_point_size_in" (used to set the size of points  per-vertex. Note this can only be used if  <span class="main_optional_parameter">
+              cogl_feature_id_point_size_attribute</span> is advertised and  <a href="Cogl.Pipeline.set_per_vertex_point_size.html" class="method">
+              set_per_vertex_point_size</a> is called on the pipeline.  &lt;/listitem&gt;  &lt;/itemizedlist&gt;</p>
+          <p>The attribute values corresponding to different vertices can either be tightly packed or interleaved with other attribute values. For 
+            example it's common to define a structure for a single vertex like: <pre class="main_source">typedef struct<br/>{<br/>  float x, y, z; /&lt;!-- --&gt;* position attribute *&lt;!-- --&gt;/<br/>  float s, t; /&lt;!-- --&gt;* texture coordinate attribute *&lt;!-- --&gt;/<br/>} MyVertex;</pre>
+          </p>
+          <p>And then create an array of vertex data something like: <pre class="main_source">MyVertex vertices[100] = { .... }</pre></p>
+          <p>In this case, to describe either the position or texture coordinate attribute you have to move &lt;literal&gt;sizeof (MyVertex)&lt;
+            /literal&gt; bytes to move from one vertex to the next. This is called the attribute <code>stride</code>. If you weren't interleving 
+            attributes and you instead had a packed array of float x, y pairs then the attribute stride would be &lt;literal&gt;(2 * sizeof (float))
+            &lt;/literal&gt;. So the <code>stride</code> is the number of bytes to move to find the attribute value of the next vertex.</p>
+          <p>Normally a list of attributes starts at the beginning of an array. So for the &lt;literal&gt;MyVertex&lt;/literal&gt; example above the 
+            <code>offset</code> is the offset inside the &lt;literal&gt;MyVertex&lt;/literal&gt; structure to the first component of the attribute. 
+            For the texture coordinate attribute the offset would be &lt;literal&gt;offsetof (MyVertex, s)&lt;/literal&gt; or instead of using the 
+            offsetof macro you could use &lt;literal&gt;sizeof (float) * 3&lt;/literal&gt;. If you've divided your <code>array</code> into blocks of 
+            non-interleved attributes then you will need to calculate the <code>offset</code> as the number of bytes in blocks preceding the attribute
+             you're describing.</p>
+          <p>An attribute often has more than one component. For example a color is often comprised of 4 red, green, blue and alpha <code>components
+            </code>, and a position may be comprised of 2 x and y <code>components</code>. You should aim to keep the number of components to a 
+            minimum as more components means more data needs to be mapped into the GPU which can be a bottlneck when dealing with a large number of 
+            vertices.</p>
+          <p>Finally you need to specify the component data type. Here you should aim to use the smallest type that meets your precision requirements.
+             Again the larger the type then more data needs to be mapped into the GPU which can be a bottlneck when dealing with a large number of 
+            vertices.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">attribute_buffer</td>
+              <td>
+                <p>The <a href="Cogl.AttributeBuffer.html" class="class">AttributeBuffer</a> containing the actual  attribute data</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">name</td>
+              <td>
+                <p>The name of the attribute (used to reference it from GLSL)</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">stride</td>
+              <td>
+                <p>The number of bytes to jump to get to the next attribute  value for the next vertex. (Usually  &lt;literal&gt;sizeof (MyVertex)&lt;
+                  /literal&gt;)</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">offset</td>
+              <td>
+                <p>The byte offset from the start of <code>attribute_buffer</code> for  the first attribute value. (Usually  &lt;literal&gt;offsetof (
+                  MyVertex, component0)&lt;/literal&gt;</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">components</td>
+              <td>
+                <p>The number of components (e.g. 4 for an rgba color or  3 for and (x,y,z) position)</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">type</td>
+              <td>
+                <p>FIXME</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p>A newly allocated <a href="Cogl.Attribute.html" class="class">Attribute</a>  describing the layout for a list of attribute values  
+                  stored in <code>array</code>.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div><br/>
     <div class="site_footer">Generated by <a href="http://www.valadoc.org/">Valadoc</a>

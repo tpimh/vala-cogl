@@ -101,6 +101,41 @@
         </div>
         <div class="description">
           <p><b>Warning:</b> draw_primitive is deprecated.</p>
+          <p>Draws the given <code>primitive</code> geometry to the specified destination <span class="main_keyword">this</span> using the graphics 
+            processing state described by <code>pipeline</code>.</p>
+          <div class="main_notification_block"><span class="main_block_headline">Note:</span> 
+            <div class="main_block_content">
+              <p>Use <a href="Cogl.Primitive.html" class="class">Primitive</a>&lt;!-- --&gt;s and  <a href="Cogl.Primitive.draw.html" class="method">
+                  draw</a> instead</p>
+            </div>
+          </div>
+          <p>This drawing api doesn't support high-level meta texture types such as <a href="Cogl.Texture2DSliced.html" class="class">Texture2DSliced
+            </a> so it is the user's responsibility to ensure that only low-level textures that can be directly sampled by a GPU such as 
+            <a href="Cogl.Texture2D.html" class="class">Texture2D</a>, <a href="Cogl.TextureRectangle.html" class="class">TextureRectangle</a> or 
+            <a href="Cogl.Texture3D.html" class="class">Texture3D</a> are associated with layers of the given <code>pipeline</code>.</p>
+          <p>&lt;note&gt;This api doesn't support any of the legacy global state options such as <code>cogl_set_depth_test_enabled</code>, <code>
+              cogl_set_backface_culling_enabled</code> or <code>cogl_program_use</code>&lt;/note&gt;</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">this</td>
+              <td>
+                <p>A destination <a href="Cogl.Framebuffer.html" class="interface">Framebuffer</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">pipeline</td>
+              <td>
+                <p>A <a href="Cogl.Pipeline.html" class="class">Pipeline</a> state object</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">primitive</td>
+              <td>
+                <p>A <a href="Cogl.Primitive.html" class="class">Primitive</a> geometry object</p>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
     </div><br/>

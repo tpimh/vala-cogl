@@ -50,6 +50,16 @@
 
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition">[ <span class="main_type">Compact</span> ]<br/><span class="main_keyword">public</span> <span class="main_keyword">class</span> <b><span class="class">Euler</span></b>
+        </div>
+        <div class="description">
+          <p>Represents an ordered rotation first of <code>heading</code> degrees around an object's y axis, then <code>pitch</code> degrees around an
+             object's x axis and finally <code>roll</code> degrees around an object's z axis.</p>
+          <p>&lt;note&gt;It's important to understand the that axis are associated with the object being rotated, so the axis also rotate in sequence 
+            with the rotations being applied.&lt;/note&gt;</p>
+          <p>The members of a <span class="class">Euler</span> can be initialized, for example, with <a href="Cogl.Euler.init.html" class="method">
+              init</a> and cogl_euler_init_from_quaternion ().</p>
+          <p>You may also want to look at <a href="Cogl.Quaternion.init_from_euler.html" class="method">init_from_euler</a> if you want to do 
+            interpolation between 3d rotations.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -60,30 +70,38 @@
         <ul class="navi_inline">
           <li class="static_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">static</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Euler.equal.html" class="static_method">equal</a></b> (<span class="main_keyword">void</span>* v1, <span class="main_keyword">void</span>* v2)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Compares the two given euler angles <code>v1</code> and <code>v1
+                </code> and it they are equal returns <span class="main_optional_parameter">true</span> else <span class="main_optional_parameter">
+                  false</span>.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Methods:</h3>
         <ul class="navi_inline">
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span class="class">Euler</span></span> <b><a href="Cogl.Euler.copy.html" class="method">copy</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Allocates a new <span class="class">Euler</span> and initilizes it 
+                with the component angles of <span class="main_keyword">this</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Euler.free.html" class="method">free</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Frees a <span class="class">Euler</span> that was previously allocated
+                 using <a href="Cogl.Euler.copy.html" class="method">copy</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Euler.init.html" class="method">init</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> heading, <span class="main_basic_type"><span class="struct">float</span></span> pitch, <span class="main_basic_type"><span class="struct">float</span></span> roll)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Initializes <span class="main_keyword">this</span> to represent a 
+                rotation of <code>x_angle</code> degrees around the x axis, then <code>y_angle</code> degrees around the y_axis and <code>z_angle
+                </code> degrees around the z axis.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Euler.init_from_matrix.html" class="method">init_from_matrix</a></b> (<span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Extracts a euler rotation from the given <code>matrix</code> and 
+                initializses <span class="main_keyword">this</span> with the component x, y and z rotation angles.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Euler.init_from_quaternion.html" class="method">init_from_quaternion</a></b> (<span class="main_type"><a href="Cogl.Quaternion.html" class="class">Quaternion</a></span> quaternion)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Initializes a <span class="main_keyword">this</span> rotation with the
+                 equivalent rotation represented by the given <code>quaternion</code>.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Fields:</h3>

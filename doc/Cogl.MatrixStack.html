@@ -59,6 +59,26 @@
 
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">class</span> <b><span class="class">MatrixStack</span></b> : <span class="main_type"><a href="Cogl.Object.html" class="abstract_class">Object</a></span>
+        </div>
+        <div class="description">
+          <p>Tracks your current position within a hierarchy and lets you build up a graph of transformations as you traverse through a hierarchy such
+             as a scenegraph.</p>
+          <p>A <span class="class">MatrixStack</span> always maintains a reference to a single transformation at any point in time, representing the 
+            transformation at the current position in the hierarchy. You can get a reference to the current transformation by calling 
+            <a href="Cogl.MatrixStack.get_entry.html" class="method">get_entry</a>.</p>
+          <p>When a <span class="class">MatrixStack</span> is first created with <a href="Cogl.MatrixStack.MatrixStack.html" class="creation_method">
+              MatrixStack</a> then it is conceptually positioned at the root of your hierarchy and the current transformation simply represents an 
+            identity transformation.</p>
+          <p>As you traverse your object hierarchy (your scenegraph) then you should call <a href="Cogl.MatrixStack.push.html" class="method">push</a>
+             whenever you move down one level and call <a href="Cogl.MatrixStack.pop.html" class="method">pop</a> whenever you move back up one level 
+            towards the root.</p>
+          <p>At any time you can apply a set of operations, such as "rotate", "scale", "translate" on top of the current transformation of a 
+            <span class="class">MatrixStack</span> using functions such as <a href="Cogl.MatrixStack.rotate.html" class="method">rotate</a>, 
+            <a href="Cogl.MatrixStack.scale.html" class="method">scale</a> and <a href="Cogl.MatrixStack.translate.html" class="method">translate</a>.
+             These operations will derive a new current transformation and will never affect a transformation that you have referenced using 
+            <a href="Cogl.MatrixStack.get_entry.html" class="method">get_entry</a>.</p>
+          <p>Internally applying operations to a <span class="class">MatrixStack</span> builds up a graph of 
+            <a href="Cogl.MatrixEntry.html" class="class">MatrixEntry</a> structures which each represent a single immutable transform.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -69,74 +89,90 @@
         <ul class="navi_inline">
           <li class="creation_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <b><a href="Cogl.MatrixStack.MatrixStack.html" class="creation_method">MatrixStack</a></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> ctx)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Allocates a new <span class="class">MatrixStack</span> that can be 
+                used to build up transformations relating to objects in a scenegraph like hierarchy.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Methods:</h3>
         <ul class="navi_inline">
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.frustum.html" class="method">frustum</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> left, <span class="main_basic_type"><span class="struct">float</span></span> right, <span class="main_basic_type"><span class="struct">float</span></span> bottom, <span class="main_basic_type"><span class="struct">float</span></span> top, <span class="main_basic_type"><span class="struct">float</span></span> z_near, <span class="main_basic_type"><span class="struct">float</span></span> z_far)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Replaces the current matrix with a perspective matrix for a given 
+                viewing frustum defined by 4 side clip planes that all cross through the origin and 2 near and far clip planes.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> <b><a href="Cogl.MatrixStack.@get.html" class="method">@get</a></b> (<span class="main_keyword">out</span> <span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Resolves the current <span class="main_keyword">this</span> transform 
+                into a <a href="Cogl.Matrix.html" class="class">Matrix</a> by combining the operations that have been applied to build up the current 
+                transform.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">weak</span> <span class="main_type"><a href="Cogl.MatrixEntry.html" class="class">MatrixEntry</a></span> <b><a href="Cogl.MatrixStack.get_entry.html" class="method">get_entry</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Gets a reference to the current transform represented by a 
+                <a href="Cogl.MatrixEntry.html" class="class">MatrixEntry</a> pointer.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.MatrixStack.get_inverse.html" class="method">get_inverse</a></b> (<span class="main_keyword">out</span> <span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> inverse)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Gets the inverse transform of the current matrix and uses it to 
+                initialize a new <a href="Cogl.Matrix.html" class="class">Matrix</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.load_identity.html" class="method">load_identity</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Resets the current matrix to the identity matrix.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.multiply.html" class="method">multiply</a></b> (<span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies the current matrix by the given matrix.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.orthographic.html" class="method">orthographic</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> x_1, <span class="main_basic_type"><span class="struct">float</span></span> y_1, <span class="main_basic_type"><span class="struct">float</span></span> x_2, <span class="main_basic_type"><span class="struct">float</span></span> y_2, <span class="main_basic_type"><span class="struct">float</span></span> near, <span class="main_basic_type"><span class="struct">float</span></span> far)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Replaces the current matrix with an orthographic projection matrix.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.perspective.html" class="method">perspective</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> fov_y, <span class="main_basic_type"><span class="struct">float</span></span> aspect, <span class="main_basic_type"><span class="struct">float</span></span> z_near, <span class="main_basic_type"><span class="struct">float</span></span> z_far)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Replaces the current matrix with a perspective matrix based on the 
+                provided values.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.pop.html" class="method">pop</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Restores the previous transform that was last saved by calling 
+                <a href="Cogl.MatrixStack.push.html" class="method">push</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.push.html" class="method">push</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Saves the current transform and starts a new transform that derives 
+                from the current transform.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.rotate.html" class="method">rotate</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> angle, <span class="main_basic_type"><span class="struct">float</span></span> x, <span class="main_basic_type"><span class="struct">float</span></span> y, <span class="main_basic_type"><span class="struct">float</span></span> z)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies the current matrix by one that rotates the around the 
+                axis-vector specified by <code>x</code>, <code>y</code> and <code>z</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.rotate_euler.html" class="method">rotate_euler</a></b> (<span class="main_type"><a href="Cogl.Euler.html" class="class">Euler</a></span> euler)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies the current matrix by one that rotates according to the 
+                rotation described by <code>euler</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.rotate_quaternion.html" class="method">rotate_quaternion</a></b> (<span class="main_type"><a href="Cogl.Quaternion.html" class="class">Quaternion</a></span> quaternion)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies the current matrix by one that rotates according to the 
+                rotation described by <code>quaternion</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.scale.html" class="method">scale</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> x, <span class="main_basic_type"><span class="struct">float</span></span> y, <span class="main_basic_type"><span class="struct">float</span></span> z)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies the current matrix by one that scales the x, y and z axes 
+                by the given values.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.@set.html" class="method">@set</a></b> (<span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Replaces the current <span class="main_keyword">this</span> matrix 
+                value with the value of <code>matrix</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.translate.html" class="method">translate</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> x, <span class="main_basic_type"><span class="struct">float</span></span> y, <span class="main_basic_type"><span class="struct">float</span></span> z)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Multiplies the current matrix by one that translates along all three 
+                axes according to the given values.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Inherited Members:</h3>

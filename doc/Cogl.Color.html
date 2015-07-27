@@ -78,6 +78,10 @@
 
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition">[ <span class="main_type">Compact</span> ]<br/><span class="main_keyword">public</span> <span class="main_keyword">class</span> <b><span class="class">Color</span></b>
+        </div>
+        <div class="description">
+          <p>A structure for holding a color definition.</p>
+          <p> The contents of the CoglColor structure are private and should never by accessed directly.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -88,157 +92,190 @@
         <ul class="navi_inline">
           <li class="static_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">static</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Color.equal.html" class="static_method">equal</a></b> (<span class="main_keyword">void</span>* v1, <span class="main_keyword">void</span>* v2)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Compares two <span class="class">Color</span>&lt;!-- --&gt;s and 
+                checks if they are the same.</span>
             </div></li>
           <li class="static_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">static</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.init_from_hsl.html" class="static_method">init_from_hsl</a></b> (<span class="main_keyword">out</span> <span class="main_type"><span class="class">Color</span></span> color, <span class="main_basic_type"><span class="struct">float</span></span> hue, <span class="main_basic_type"><span class="struct">float</span></span> saturation, <span class="main_basic_type"><span class="struct">float</span></span> luminance)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Converts a color expressed in HLS (hue, luminance and saturation) 
+                values into a <span class="class">Color</span>.</span>
             </div></li>
         </ul>
         <h3 class="main_title">Creation methods:</h3>
         <ul class="navi_inline">
           <li class="creation_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <b><a href="Cogl.Color.Color.html" class="creation_method">Color</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Creates a new (empty) color</span>
             </div></li>
         </ul>
         <h3 class="main_title">Methods:</h3>
         <ul class="navi_inline">
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span class="class">Color</span></span> <b><a href="Cogl.Color.copy.html" class="method">copy</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Creates a copy of <span class="main_keyword">this</span></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.free.html" class="method">free</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Frees the resources allocated by 
+                <a href="Cogl.Color.Color.html" class="creation_method">Color</a> and <a href="Cogl.Color.copy.html" class="method">copy</a></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Color.get_alpha.html" class="method">get_alpha</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the alpha channel of <span class="main_keyword">this</span> 
+                as a fixed point value between 0 and 1.0.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">uint8</span></span> <b><a href="Cogl.Color.get_alpha_byte.html" class="method">get_alpha_byte</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the alpha channel of <span class="main_keyword">this</span> 
+                as a byte value between 0 and 255</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Color.get_alpha_float.html" class="method">get_alpha_float</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the alpha channel of <span class="main_keyword">this</span> 
+                as a floating point value between 0.0 and 1.0</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Color.get_blue.html" class="method">get_blue</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the blue channel of <span class="main_keyword">this</span> 
+                as a fixed point value between 0 and 1.0.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">uint8</span></span> <b><a href="Cogl.Color.get_blue_byte.html" class="method">get_blue_byte</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the blue channel of <span class="main_keyword">this</span> 
+                as a byte value between 0 and 255</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Color.get_blue_float.html" class="method">get_blue_float</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the blue channel of <span class="main_keyword">this</span> 
+                as a floating point value between 0.0 and 1.0</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Color.get_green.html" class="method">get_green</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the green channel of <span class="main_keyword">this</span> 
+                as a fixed point value between 0 and 1.0.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">uint8</span></span> <b><a href="Cogl.Color.get_green_byte.html" class="method">get_green_byte</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the green channel of <span class="main_keyword">this</span> 
+                as a byte value between 0 and 255</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Color.get_green_float.html" class="method">get_green_float</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the green channel of <span class="main_keyword">this</span> 
+                as a floating point value between 0.0 and 1.0</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Color.get_red.html" class="method">get_red</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the red channel of <span class="main_keyword">this</span> as
+                 a fixed point value between 0 and 1.0.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">uint8</span></span> <b><a href="Cogl.Color.get_red_byte.html" class="method">get_red_byte</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the red channel of <span class="main_keyword">this</span> as
+                 a byte value between 0 and 255</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Color.get_red_float.html" class="method">get_red_float</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Retrieves the red channel of <span class="main_keyword">this</span> as
+                 a floating point value between 0.0 and 1.0</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.init_from_4f.html" class="method">init_from_4f</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> red, <span class="main_basic_type"><span class="struct">float</span></span> green, <span class="main_basic_type"><span class="struct">float</span></span> blue, <span class="main_basic_type"><span class="struct">float</span></span> alpha)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the values of the passed channels into a <span class="class">
+                  Color</span></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.init_from_4fv.html" class="method">init_from_4fv</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> color_array)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the values of the passed channels into a <span class="class">
+                  Color</span></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.init_from_4ub.html" class="method">init_from_4ub</a></b> (<span class="main_basic_type"><span class="struct">uint8</span></span> red, <span class="main_basic_type"><span class="struct">uint8</span></span> green, <span class="main_basic_type"><span class="struct">uint8</span></span> blue, <span class="main_basic_type"><span class="struct">uint8</span></span> alpha)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the values of the passed channels into a <span class="class">
+                  Color</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.premultiply.html" class="method">premultiply</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Converts a non-premultiplied color to a pre-multiplied color.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_alpha.html" class="method">set_alpha</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> alpha)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the alpha channel of <span class="main_keyword">this</span> to 
+                <code>alpha</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_alpha_byte.html" class="method">set_alpha_byte</a></b> (<span class="main_basic_type"><span class="struct">uint8</span></span> alpha)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the alpha channel of <span class="main_keyword">this</span> to 
+                <code>alpha</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_alpha_float.html" class="method">set_alpha_float</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> alpha)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the alpha channel of <span class="main_keyword">this</span> to 
+                <code>alpha</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_blue.html" class="method">set_blue</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> blue)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the blue channel of <span class="main_keyword">this</span> to 
+                <code>blue</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_blue_byte.html" class="method">set_blue_byte</a></b> (<span class="main_basic_type"><span class="struct">uint8</span></span> blue)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the blue channel of <span class="main_keyword">this</span> to 
+                <code>blue</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_blue_float.html" class="method">set_blue_float</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> blue)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the blue channel of <span class="main_keyword">this</span> to 
+                <code>blue</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="deprecated"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_from_4f.html" class="method">set_from_4f</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> red, <span class="main_basic_type"><span class="struct">float</span></span> green, <span class="main_basic_type"><span class="struct">float</span></span> blue, <span class="main_basic_type"><span class="struct">float</span></span> alpha)
               </span></span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the values of the passed channels into a <span class="class">
+                  Color</span></span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="deprecated"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_from_4ub.html" class="method">set_from_4ub</a></b> (<span class="main_basic_type"><span class="struct">uint8</span></span> red, <span class="main_basic_type"><span class="struct">uint8</span></span> green, <span class="main_basic_type"><span class="struct">uint8</span></span> blue, <span class="main_basic_type"><span class="struct">uint8</span></span> alpha)
               </span></span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the values of the passed channels into a <span class="class">
+                  Color</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_green.html" class="method">set_green</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> green)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the green channel of <span class="main_keyword">this</span> to 
+                <code>green</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_green_byte.html" class="method">set_green_byte</a></b> (<span class="main_basic_type"><span class="struct">uint8</span></span> green)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the green channel of <span class="main_keyword">this</span> to 
+                <code>green</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_green_float.html" class="method">set_green_float</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> green)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the green channel of <span class="main_keyword">this</span> to 
+                <code>green</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_red.html" class="method">set_red</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> red)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the red channel of <span class="main_keyword">this</span> to 
+                <code>red</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_red_byte.html" class="method">set_red_byte</a></b> (<span class="main_basic_type"><span class="struct">uint8</span></span> red)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the red channel of <span class="main_keyword">this</span> to 
+                <code>red</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.set_red_float.html" class="method">set_red_float</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> red)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Sets the red channel of <span class="main_keyword">this</span> to 
+                <code>red</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.to_hsl.html" class="method">to_hsl</a></b> (<span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">float</span></span> hue, <span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">float</span></span> saturation, <span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">float</span></span> luminance)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Converts <span class="main_keyword">this</span> to the HLS format.
+              </span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Color.unpremultiply.html" class="method">unpremultiply</a></b> ()
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Converts a pre-multiplied color to a non-premultiplied color.</span>
             </div></li>
         </ul>
       </div>

@@ -38,6 +38,14 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition">[ <span class="main_type">Flags</span> ]<br/><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">RendererConstraint</span></b>
+        </div>
+        <div class="description">
+          <p>These constraint flags are hard-coded features of the different renderer backends.</p>
+          <p> Sometimes a platform may support multiple rendering options which Cogl will usually choose from automatically. Some of these features 
+            are important to higher level applications and frameworks though, such as whether a renderer is X11 based because an application might 
+            only support X11 based input handling. An application might also need to ensure EGL is used internally too if they depend on access to an 
+            EGLDisplay for some purpose.</p>
+          <p>Applications should ideally minimize how many of these constraints they depend on to ensure maximum portability.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -46,10 +54,15 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.RendererConstraint.USES_X11.html">USES_X11</a> - </li>
-          <li class="enumvalue"><a href="Cogl.RendererConstraint.USES_XLIB.html">USES_XLIB</a> - </li>
-          <li class="enumvalue"><a href="Cogl.RendererConstraint.USES_EGL.html">USES_EGL</a> - </li>
-          <li class="enumvalue"><a href="Cogl.RendererConstraint.SUPPORTS_COGL_GLES2.html">SUPPORTS_COGL_GLES2</a> - </li>
+          <li class="enumvalue"><a href="Cogl.RendererConstraint.USES_X11.html">USES_X11</a> - <span class="brief_description">Require the renderer to
+               be X11 based</span></li>
+          <li class="enumvalue"><a href="Cogl.RendererConstraint.USES_XLIB.html">USES_XLIB</a> - <span class="brief_description">Require the renderer 
+              to be X11  based and use Xlib</span></li>
+          <li class="enumvalue"><a href="Cogl.RendererConstraint.USES_EGL.html">USES_EGL</a> - <span class="brief_description">Require the renderer to
+               be EGL based</span></li>
+          <li class="enumvalue"><a href="Cogl.RendererConstraint.SUPPORTS_COGL_GLES2.html">SUPPORTS_COGL_GLES2</a> - <span class="brief_description">
+              Require that the  renderer supports creating a <a href="Cogl.GLES2Context.html" class="class">GLES2Context</a> via  
+              <a href="Cogl.GLES2Context.GLES2Context.html" class="creation_method">GLES2Context</a>.</span></li>
         </ul>
       </div>
     </div><br/>

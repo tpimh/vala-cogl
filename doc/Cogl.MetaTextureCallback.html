@@ -247,6 +247,43 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">delegate</span> <span class="main_keyword">void</span> <b><span class="delegate">MetaTextureCallback</span></b> (<span class="main_type"><a href="Cogl.Texture.html" class="interface">Texture</a></span> sub_texture, <span class="main_basic_type"><span class="struct">float</span></span> sub_texture_coords, <span class="main_basic_type"><span class="struct">float</span></span> meta_coords)
+        </div>
+        <div class="description">
+          <p>A callback used with <code>cogl_meta_texture_foreach_in_region</code> to retrieve details of all the low-level 
+            <a href="Cogl.Texture.html" class="interface">Texture</a>&lt;!-- --&gt;s that make up a given 
+            <a href="Cogl.MetaTexture.html" class="struct">MetaTexture</a>.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">sub_texture</td>
+              <td>
+                <p>A low-level <a href="Cogl.Texture.html" class="interface">Texture</a> making up part of a  
+                  <a href="Cogl.MetaTexture.html" class="struct">MetaTexture</a>.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">sub_texture_coords</td>
+              <td>
+                <p>A float 4-tuple ordered like  (tx1,ty1,tx2,ty2) defining what region of the  current <code>sub_texture</code> maps to a sub-region 
+                  of a  <a href="Cogl.MetaTexture.html" class="struct">MetaTexture</a>. (tx1,ty1) is the top-left  sub-region coordinate and (tx2,ty2)
+                   is the  bottom-right. These are low-level texture  coordinates.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">meta_coords</td>
+              <td>
+                <p>A float 4-tuple ordered like (tx1,ty1,tx2,ty2)  defining what sub-region of a <a href="Cogl.MetaTexture.html" class="struct">
+                    MetaTexture</a> this  low-level <code>sub_texture</code> maps too. (tx1,ty1) is  the top-left sub-region coordinate and (tx2,ty2) 
+                  is  the bottom-right. These are high-level meta-texture  coordinates.</p>
+              </td>
+            </tr>
+            <tr class="main_parameter_table_unknown_parameter">
+              <td class="main_parameter_table_name">user_data</td>
+              <td>
+                <p>A private pointer passed to  <code>cogl_meta_texture_foreach_in_region</code>.</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

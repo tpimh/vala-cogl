@@ -40,6 +40,82 @@
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <b><span class="creation_method">Texture2DSliced.from_data</span></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> ctx, <span class="main_basic_type"><span class="struct">int</span></span> width, <span class="main_basic_type"><span class="struct">int</span></span> height, <span class="main_basic_type"><span class="struct">int</span></span> max_waste, <span class="main_type"><a href="Cogl.PixelFormat.html" class="enum">PixelFormat</a></span> format, <span class="main_basic_type"><span class="struct">int</span></span> rowstride, <span class="main_basic_type"><span class="struct">uint8</span></span> data) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
         </div>
+        <div class="description">
+          <p>Creates a new <a href="Cogl.Texture2DSliced.html" class="class">Texture2DSliced</a> texture based on data residing in memory.</p>
+          <p>A <a href="Cogl.Texture2DSliced.html" class="class">Texture2DSliced</a> may internally be comprised of 1 or more 
+            <a href="Cogl.Texture2D.html" class="class">Texture2D</a> textures depending on GPU limitations. For example if the GPU only supports 
+            power-of-two sized textures then a sliced texture will turn a non-power-of-two size into a combination of smaller power-of-two sized 
+            textures. If the requested texture size is larger than is supported by the hardware then the texture will be sliced into smaller textures 
+            that can be accessed by the hardware.</p>
+          <p><code>max_waste</code> is used as a threshold for recursively slicing the right-most or bottom-most slices into smaller sizes until the 
+            wasted padding at the bottom and right of the textures is less than specified. A negative <code>max_waste</code> will disable slicing.</p>
+          <p>&lt;note&gt;This api will always immediately allocate GPU memory for all the required texture slices and upload the given data so that 
+            the <code>data</code> pointer does not need to remain valid once this function returns. This means it is not possible to configure the 
+            texture before it is allocated. If you do need to configure the texture before allocation (to specify constraints on the internal format 
+            for example) then you can instead create a <a href="Cogl.Bitmap.html" class="class">Bitmap</a> for your data and use 
+            <a href="Cogl.Texture2DSliced.Texture2DSliced.from_bitmap.html" class="creation_method">Texture2DSliced.from_bitmap</a> or use 
+            <a href="Cogl.Texture2DSliced.Texture2DSliced.with_size.html" class="creation_method">Texture2DSliced.with_size</a> and then upload data 
+            using <a href="Cogl.Texture.set_data.html" class="method">set_data</a>&lt;/note&gt;</p>
+          <p>&lt;note&gt;It's possible for the allocation of a sliced texture to fail due to impossible slicing constraints if a negative <code>
+              max_waste</code> value is given. If the given virtual texture size is larger than is supported by the hardware but slicing is disabled 
+            the texture size would be too large to handle.&lt;/note&gt;</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">ctx</td>
+              <td>
+                <p>A <a href="Cogl.Context.html" class="class">Context</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">width</td>
+              <td>
+                <p>width of texture in pixels</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">height</td>
+              <td>
+                <p>height of texture in pixels</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">max_waste</td>
+              <td>
+                <p>The threshold of how wide a strip of wasted texels  are allowed along the right and bottom textures before  they must be sliced to 
+                  reduce the amount of waste. A  negative can be passed to disable slicing.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">format</td>
+              <td>
+                <p>the <a href="Cogl.PixelFormat.html" class="enum">PixelFormat</a> the buffer is stored in in RAM</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">rowstride</td>
+              <td>
+                <p>the memory offset in bytes between the start of each  row in <code>data</code>. A value of 0 will make Cogl automatically  
+                  calculate <code>rowstride</code> from <code>width</code> and <code>format</code>.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">data</td>
+              <td>
+                <p>pointer the memory region where the source buffer resides</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p>A newly created <a href="Cogl.Texture2DSliced.html" class="class">Texture2DSliced</a>  or <span class="main_optional_parameter">
+                    null</span> on failure and <span class="main_keyword">throws</span> will be updated.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div><br/>
     <div class="site_footer">Generated by <a href="http://www.valadoc.org/">Valadoc</a>

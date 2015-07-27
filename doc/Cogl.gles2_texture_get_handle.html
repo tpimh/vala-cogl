@@ -247,6 +247,53 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><span class="method">gles2_texture_get_handle</span></b> (<span class="main_type"><a href="Cogl.Texture.html" class="interface">Texture</a></span> texture, <span class="main_basic_type"><span class="struct">uint</span></span> handle, <span class="main_basic_type"><span class="struct">uint</span></span> target)
+        </div>
+        <div class="description">
+          <p>Gets an OpenGL ES 2.0 texture handle for a <a href="Cogl.Texture.html" class="interface">Texture</a> that can then be referenced by a 
+            <a href="Cogl.GLES2Context.html" class="class">GLES2Context</a>.</p>
+          <p> As well as returning a texture handle the texture's target (such as GL_TEXTURE_2D) is also returned.</p>
+          <p>If the <a href="Cogl.Texture.html" class="interface">Texture</a> can not be shared with a <a href="Cogl.GLES2Context.html" class="class">
+              GLES2Context</a> then this function will return <span class="main_optional_parameter">false</span>.</p>
+          <p>This api does not affect the lifetime of the CoglTexture and you must take care not to reference the returned handle after the original 
+            texture has been freed.</p>
+          <p>&lt;note&gt;This interface is only intended for sharing textures to read from. The behaviour is undefined if the texture is modified by a
+             GLES2 context.&lt;/note&gt;</p>
+          <p>&lt;note&gt;This function will only return <span class="main_optional_parameter">true</span> for low-level 
+            <a href="Cogl.Texture.html" class="interface">Texture</a>&lt;!-- --&gt;s such as <a href="Cogl.Texture2D.html" class="class">Texture2D</a>
+             or <a href="Cogl.Texture3D.html" class="class">Texture3D</a> but not for high level meta textures such as 
+            <a href="Cogl.Texture2DSliced.html" class="class">Texture2DSliced</a>&lt;/note&gt;</p>
+          <p>&lt;note&gt;The handle returned should not be passed directly to a system OpenGL ES 2.0 library, the handle is only intended to be used 
+            via a <code>CoglGLES2Vtable</code> or via libcogl-gles2.&lt;/note&gt;</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">texture</td>
+              <td>
+                <p>A <a href="Cogl.Texture.html" class="interface">Texture</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">handle</td>
+              <td>
+                <p>A return location for an OpenGL ES 2.0 texture handle</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">target</td>
+              <td>
+                <p>A return location for an OpenGL ES 2.0 texture target</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p><span class="main_optional_parameter">true</span> if a handle and target could be returned  otherwise 
+                  <span class="main_optional_parameter">false</span> is returned.</p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

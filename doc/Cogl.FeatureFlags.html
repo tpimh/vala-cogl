@@ -58,6 +58,9 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition">[ <span class="main_type">Flags</span> ]<br/><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">FeatureFlags</span></b>
+        </div>
+        <div class="description">
+          <p>Flags for the supported features.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -66,30 +69,56 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_RECTANGLE.html">TEXTURE_RECTANGLE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_NPOT.html">TEXTURE_NPOT</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_YUV.html">TEXTURE_YUV</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_READ_PIXELS.html">TEXTURE_READ_PIXELS</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.SHADERS_GLSL.html">SHADERS_GLSL</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.OFFSCREEN.html">OFFSCREEN</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.OFFSCREEN_MULTISAMPLE.html">OFFSCREEN_MULTISAMPLE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.OFFSCREEN_BLIT.html">OFFSCREEN_BLIT</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.FOUR_CLIP_PLANES.html">FOUR_CLIP_PLANES</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.STENCIL_BUFFER.html">STENCIL_BUFFER</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.VBOS.html">VBOS</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.PBOS.html">PBOS</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.UNSIGNED_INT_INDICES.html">UNSIGNED_INT_INDICES</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.DEPTH_RANGE.html">DEPTH_RANGE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_NPOT_BASIC.html">TEXTURE_NPOT_BASIC</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_NPOT_MIPMAP.html">TEXTURE_NPOT_MIPMAP</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_NPOT_REPEAT.html">TEXTURE_NPOT_REPEAT</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.POINT_SPRITE.html">POINT_SPRITE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_3D.html">TEXTURE_3D</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.SHADERS_ARBFP.html">SHADERS_ARBFP</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.MAP_BUFFER_FOR_READ.html">MAP_BUFFER_FOR_READ</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.MAP_BUFFER_FOR_WRITE.html">MAP_BUFFER_FOR_WRITE</a> - </li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_RECTANGLE.html">TEXTURE_RECTANGLE</a> - <span class="brief_description">
+              ARB_texture_rectangle support</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_NPOT.html">TEXTURE_NPOT</a> - <span class="brief_description">Non power of two 
+              textures are supported  by the hardware.</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_YUV.html">TEXTURE_YUV</a> - <span class="brief_description">ycbcr conversion 
+              support</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_READ_PIXELS.html">TEXTURE_READ_PIXELS</a> - <span class="brief_description"><code>
+                glReadPixels</code> support</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.SHADERS_GLSL.html">SHADERS_GLSL</a> - <span class="brief_description">GLSL support</span>
+          </li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.OFFSCREEN.html">OFFSCREEN</a> - <span class="brief_description">FBO support</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.OFFSCREEN_MULTISAMPLE.html">OFFSCREEN_MULTISAMPLE</a> - <span class="brief_description">
+              Multisample support on FBOs</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.OFFSCREEN_BLIT.html">OFFSCREEN_BLIT</a> - <span class="brief_description">Blit support on 
+              FBOs</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.FOUR_CLIP_PLANES.html">FOUR_CLIP_PLANES</a> - <span class="brief_description">At least 4 
+              clip planes available</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.STENCIL_BUFFER.html">STENCIL_BUFFER</a> - <span class="brief_description">Stencil buffer 
+              support</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.VBOS.html">VBOS</a> - <span class="brief_description">VBO support</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.PBOS.html">PBOS</a> - <span class="brief_description">PBO support</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.UNSIGNED_INT_INDICES.html">UNSIGNED_INT_INDICES</a> - <span class="brief_description">Set 
+              if  <span class="main_optional_parameter">cogl_indices_type_unsigned_int</span> is supported in  <code>cogl_vertex_buffer_indices_new
+              </code>.</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.DEPTH_RANGE.html">DEPTH_RANGE</a> - <span class="brief_description"><code>
+                cogl_material_set_depth_range</code> support</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_NPOT_BASIC.html">TEXTURE_NPOT_BASIC</a> - <span class="brief_description">The 
+              hardware supports non power  of two textures, but you also need to check the  <span class="main_optional_parameter">
+                cogl_feature_texture_npot_mipmap</span> and <span class="main_optional_parameter">cogl_feature_texture_npot_repeat</span>  features to
+               know if the hardware supports npot texture mipmaps  or repeat modes other than  <span class="main_optional_parameter">
+                cogl_pipeline_wrap_mode_clamp_to_edge</span> respectively.</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_NPOT_MIPMAP.html">TEXTURE_NPOT_MIPMAP</a> - <span class="brief_description">
+              Mipmapping is supported in  conjuntion with non power of two textures.</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_NPOT_REPEAT.html">TEXTURE_NPOT_REPEAT</a> - <span class="brief_description">Repeat 
+              modes other than  <span class="main_optional_parameter">cogl_pipeline_wrap_mode_clamp_to_edge</span> are supported by the  hardware.
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.POINT_SPRITE.html">POINT_SPRITE</a> - <span class="brief_description">Whether  <code>
+                cogl_material_set_layer_point_sprite_coords_enabled</code> is supported.</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.TEXTURE_3D.html">TEXTURE_3D</a> - <span class="brief_description">3D texture support</span>
+          </li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.SHADERS_ARBFP.html">SHADERS_ARBFP</a> - <span class="brief_description">ARBFP support
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.MAP_BUFFER_FOR_READ.html">MAP_BUFFER_FOR_READ</a> - <span class="brief_description">Whether
+               <a href="Cogl.Buffer.map.html" class="static_method">map</a> is  supported with CoglBufferAccess including read support.</span></li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.MAP_BUFFER_FOR_WRITE.html">MAP_BUFFER_FOR_WRITE</a> - <span class="brief_description">
+              Whether <a href="Cogl.Buffer.map.html" class="static_method">map</a> is  supported with CoglBufferAccess including write support.</span>
+          </li>
           <li class="enumvalue"><a href="Cogl.FeatureFlags.ONSCREEN_MULTIPLE.html">ONSCREEN_MULTIPLE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.FeatureFlags.DEPTH_TEXTURE.html">DEPTH_TEXTURE</a> - </li>
+          <li class="enumvalue"><a href="Cogl.FeatureFlags.DEPTH_TEXTURE.html">DEPTH_TEXTURE</a> - <span class="brief_description">Whether 
+              <a href="Cogl.Framebuffer.html" class="interface">Framebuffer</a> support rendering the  depth buffer to a texture.</span></li>
         </ul>
       </div>
     </div><br/>

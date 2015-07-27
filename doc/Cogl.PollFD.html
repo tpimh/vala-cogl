@@ -44,6 +44,14 @@
 
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">struct</span> <b><span class="struct">PollFD</span></b>
+        </div>
+        <div class="description">
+          <p>A struct for describing the state of a file descriptor that Cogl needs to block on.</p>
+          <p> The <code>events</code> field contains a bitmask of <a href="Cogl.PollFDEvent.html" class="enum">PollFDEvent</a>&lt;!-- --&gt;s that 
+            should cause the application to wake up. After the application is woken up from idle it should pass back an array of <span class="struct">
+              PollFD</span>&lt;!-- --&gt;s to Cogl and update the <code>revents</code> mask to the actual events that occurred on the file descriptor.
+          </p>
+          <p>Note that CoglPollFD is deliberately exactly the same as struct pollfd on Unix so that it can simply be cast when calling poll.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

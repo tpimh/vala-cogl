@@ -247,6 +247,22 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><span class="method">pop_gles2_context</span></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> ctx)
+        </div>
+        <div class="description">
+          <p>Restores the previously active <a href="Cogl.GLES2Context.html" class="class">GLES2Context</a> if there were nested calls to 
+            <a href="Cogl.push_gles2_context.html" class="method">push_gles2_context</a> or otherwise restores the ability to render with the Cogl api
+             instead of OpenGLES 2.0.</p>
+          <p>The behaviour is undefined if calls to <span class="method">pop_gles2_context</span> are not balenced with the number of corresponding 
+            calls to <a href="Cogl.push_gles2_context.html" class="method">push_gles2_context</a>.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">ctx</td>
+              <td>
+                <p>A <a href="Cogl.Context.html" class="class">Context</a></p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

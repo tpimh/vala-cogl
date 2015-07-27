@@ -247,6 +247,32 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">delegate</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><span class="delegate">PrimitiveAttributeCallback</span></b> (<span class="main_type"><a href="Cogl.Primitive.html" class="class">Primitive</a></span> primitive, <span class="main_type"><a href="Cogl.Attribute.html" class="class">Attribute</a></span> attribute)
+        </div>
+        <div class="description">
+          <p>The callback prototype used with <a href="Cogl.Primitive.foreach_attribute.html" class="method">foreach_attribute</a> for iterating all 
+            the attributes of a <a href="Cogl.Primitive.html" class="class">Primitive</a>.</p>
+          <p>The function should return TRUE to continue iteration or FALSE to stop.</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">primitive</td>
+              <td>
+                <p>The <a href="Cogl.Primitive.html" class="class">Primitive</a> whose attributes are being iterated</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">attribute</td>
+              <td>
+                <p>The <a href="Cogl.Attribute.html" class="class">Attribute</a></p>
+              </td>
+            </tr>
+            <tr class="main_parameter_table_unknown_parameter">
+              <td class="main_parameter_table_name">user_data</td>
+              <td>
+                <p>The private data passed to <a href="Cogl.Primitive.foreach_attribute.html" class="method">foreach_attribute</a></p>
+              </td>
+            </tr>
+          </table>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>

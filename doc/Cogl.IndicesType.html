@@ -37,6 +37,13 @@
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">enum</span> <b><span class="enum">IndicesType</span></b>
+        </div>
+        <div class="description">
+          <p>You should aim to use the smallest data type that gives you enough range, since it reduces the size of your index array and can help 
+            reduce the demand on memory bandwidth.</p>
+          <p>Note that <span class="main_optional_parameter">cogl_indices_type_unsigned_int</span> is only supported if the 
+            <span class="main_optional_parameter">cogl_feature_id_unsigned_int_indices</span> feature is available. This should always be available on
+             OpenGL but on OpenGL ES it will only be available if the GL_OES_element_index_uint extension is advertized.</p>
         </div><br/>
         <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
         </div>
@@ -45,9 +52,12 @@
         <h2 class="main_title">Content:</h2>
         <h3 class="main_title">Enum values:</h3>
         <ul class="navi_inline">
-          <li class="enumvalue"><a href="Cogl.IndicesType.BYTE.html">BYTE</a> - </li>
-          <li class="enumvalue"><a href="Cogl.IndicesType.SHORT.html">SHORT</a> - </li>
-          <li class="enumvalue"><a href="Cogl.IndicesType.INT.html">INT</a> - </li>
+          <li class="enumvalue"><a href="Cogl.IndicesType.BYTE.html">BYTE</a> - <span class="brief_description">Your indices are unsigned bytes</span>
+          </li>
+          <li class="enumvalue"><a href="Cogl.IndicesType.SHORT.html">SHORT</a> - <span class="brief_description">Your indices are unsigned shorts
+            </span></li>
+          <li class="enumvalue"><a href="Cogl.IndicesType.INT.html">INT</a> - <span class="brief_description">Your indices are unsigned ints</span>
+          </li>
         </ul>
       </div>
     </div><br/>

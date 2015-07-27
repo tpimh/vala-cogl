@@ -100,6 +100,68 @@
         <h2 class="main_title">Description:</h2>
         <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><span class="method">set_layer_combine</span></b> (<span class="main_basic_type"><span class="struct">int</span></span> layer_index, <span class="main_basic_type"><span class="class">string</span></span> blend_string) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
         </div>
+        <div class="description">
+          <p>If not already familiar; you can refer &lt;link linkend="cogl-Blend-Strings"&gt;here&lt;/link&gt; for an overview of what blend strings 
+            are and there syntax.</p>
+          <p>These are all the functions available for texture combining: &lt;itemizedlist&gt;  &lt;listitem&gt;REPLACE(arg0) = arg0&lt;/listitem&gt; 
+             &lt;listitem&gt;MODULATE(arg0, arg1) = arg0 x arg1&lt;/listitem&gt;  &lt;listitem&gt;ADD(arg0, arg1) = arg0 + arg1&lt;/listitem&gt;  &lt;
+            listitem&gt;ADD_SIGNED(arg0, arg1) = arg0 + arg1 - 0.5&lt;/listitem&gt;  &lt;listitem&gt;INTERPOLATE(arg0, arg1, arg2) = arg0 x arg2 + 
+            arg1 x (1 - arg2)&lt;/listitem&gt;  &lt;listitem&gt;SUBTRACT(arg0, arg1) = arg0 - arg1&lt;/listitem&gt;  &lt;listitem&gt;  &lt;
+            programlisting&gt;  DOT3_RGB(arg0, arg1) = 4 x ((arg0[R] - 0.5)) * (arg1[R] - 0.5) +  (arg0[G] - 0.5)) * (arg1[G] - 0.5) +  (arg0[B] - 0.5
+            )) * (arg1[B] - 0.5))  &lt;/programlisting&gt;  &lt;/listitem&gt;  &lt;listitem&gt;  &lt;programlisting&gt;  DOT3_RGBA(arg0, arg1) = 4 x (
+            (arg0[R] - 0.5)) * (arg1[R] - 0.5) +  (arg0[G] - 0.5)) * (arg1[G] - 0.5) +  (arg0[B] - 0.5)) * (arg1[B] - 0.5))  &lt;/programlisting&gt;  
+            &lt;/listitem&gt; &lt;/itemizedlist&gt;</p>
+          <p>Refer to the &lt;link linkend="cogl-Blend-String-syntax"&gt;color-source syntax&lt;/link&gt; for describing the arguments. The valid 
+            source names for texture combining are: &lt;variablelist&gt;  &lt;varlistentry&gt;  &lt;term&gt;TEXTURE&lt;/term&gt;  &lt;listitem&gt;Use 
+            the color from the current texture layer&lt;/listitem&gt;  &lt;/varlistentry&gt;  &lt;varlistentry&gt;  &lt;term&gt;TEXTURE_0, TEXTURE_1, 
+            etc&lt;/term&gt;  &lt;listitem&gt;Use the color from the specified texture layer&lt;/listitem&gt;  &lt;/varlistentry&gt;  &lt;varlistentry
+            &gt;  &lt;term&gt;CONSTANT&lt;/term&gt;  &lt;listitem&gt;Use the color from the constant given with  
+            <a href="Cogl.Pipeline.set_layer_combine_constant.html" class="method">set_layer_combine_constant</a>&lt;/listitem&gt;  &lt;/varlistentry
+            &gt;  &lt;varlistentry&gt;  &lt;term&gt;PRIMARY&lt;/term&gt;  &lt;listitem&gt;Use the color of the pipeline as set with  
+            <a href="Cogl.Pipeline.set_color.html" class="method">set_color</a>&lt;/listitem&gt;  &lt;/varlistentry&gt;  &lt;varlistentry&gt;  &lt;
+            term&gt;PREVIOUS&lt;/term&gt;  &lt;listitem&gt;Either use the texture color from the previous layer, or  if this is layer 0, use the color
+             of the pipeline as set with  <a href="Cogl.Pipeline.set_color.html" class="method">set_color</a>&lt;/listitem&gt;  &lt;/varlistentry&gt; 
+            &lt;/variablelist&gt;</p>
+          <p>&lt;refsect2 id="cogl-Layer-Combine-Examples"&gt;  &lt;title&gt;Layer Combine Examples&lt;/title&gt;  &lt;para&gt;This is effectively 
+            what the default blending is:&lt;/para&gt;  &lt;informalexample&gt;&lt;programlisting&gt;  RGBA = MODULATE (PREVIOUS, TEXTURE)  &lt;
+            /programlisting&gt;&lt;/informalexample&gt;  &lt;para&gt;This could be used to cross-fade between two images, using  the alpha component 
+            of a constant as the interpolator. The constant  color is given by calling  
+            <a href="Cogl.Pipeline.set_layer_combine_constant.html" class="method">set_layer_combine_constant</a>.&lt;/para&gt;  &lt;informalexample
+            &gt;&lt;programlisting&gt;  RGBA = INTERPOLATE (PREVIOUS, TEXTURE, CONSTANT[A])  &lt;/programlisting&gt;&lt;/informalexample&gt; &lt;
+            /refsect2&gt;</p>
+          <p>&lt;note&gt;You can't give a multiplication factor for arguments as you can with blending.&lt;/note&gt;</p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">this</td>
+              <td>
+                <p>A <a href="Cogl.Pipeline.html" class="class">Pipeline</a> object</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">layer_index</td>
+              <td>
+                <p>Specifies the layer you want define a combine function for</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">blend_string</td>
+              <td>
+                <p>A &lt;link linkend="cogl-Blend-Strings"&gt;Cogl blend string&lt;/link&gt;  describing the desired texture combine function.</p>
+              </td>
+            </tr>
+          </table>
+          <h2 class="main_title">Returns:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td>
+                <p><span class="main_optional_parameter">true</span> if the blend string was successfully parsed, and the  described texture combining
+                   is supported by the underlying driver and  or hardware. On failure, <span class="main_optional_parameter">false</span> is returned 
+                  and <span class="main_keyword">throws</span> is set</p>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div><br/>
     <div class="site_footer">Generated by <a href="http://www.valadoc.org/">Valadoc</a>
