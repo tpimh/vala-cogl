@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Cogl.MatrixStack &ndash; doc &ndash; Vala Binding Reference</title>
+    <link href="../style.css" rel="stylesheet" type="text/css"/><script src="../scripts.js" type="text/javascript">
+    </script>
+  </head>
+  <body>
+    <div class="site_header">Cogl.MatrixStack &ndash; doc Reference Manual</div>
+    <div class="site_body">
+      <div class="site_navigation">
+        <ul class="navi_main">
+          <li class="package_index"><a href="../index.html">Packages</a></li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="package"><a href="index.htm">doc</a></li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="namespace"><a href="Cogl.html">Cogl</a></li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="class">MatrixStack</li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="creation_method"><a href="Cogl.MatrixStack.MatrixStack.html">MatrixStack</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.@get.html">@get</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.@set.html">@set</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.frustum.html">frustum</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.get_entry.html">get_entry</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.get_inverse.html">get_inverse</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.load_identity.html">load_identity</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.multiply.html">multiply</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.orthographic.html">orthographic</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.perspective.html">perspective</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.pop.html">pop</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.push.html">push</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.rotate.html">rotate</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.rotate_euler.html">rotate_euler</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.rotate_quaternion.html">rotate_quaternion</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.scale.html">scale</a></li>
+          <li class="method"><a href="Cogl.MatrixStack.translate.html">translate</a></li>
+        </ul>
+      </div>
+      <div class="site_content">
+        <h1 class="main_title">MatrixStack</h1>
+        <hr class="main_hr"/>
+        <h2 class="main_title">Object Hierarchy:</h2>
+        <img class="main_diagram" usemap="#Cogl.MatrixStack" alt="Object hierarchy for MatrixStack" src="img/Cogl.MatrixStack.png"/>
+
+      <map id="Cogl.MatrixStack" name="Cogl.MatrixStack">
+<area shape="rect" id="node1" href="Cogl.MatrixStack.html" title="Cogl.MatrixStack" alt="" coords="5,101,157,149"/>
+<area shape="rect" id="node2" href="Cogl.Object.html" title="Cogl.Object" alt="" coords="26,5,137,53"/>
+</map>
+
+        <h2 class="main_title">Description:</h2>
+        <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">class</span> <b><span class="class">MatrixStack</span></b> : <span class="main_type"><a href="Cogl.Object.html" class="abstract_class">Object</a></span>
+        </div><br/>
+        <div class="namespace_note"><b>Namespace:</b> <a href="Cogl.html">Cogl</a>
+        </div>
+        <div class="package_note"><b>Package:</b> <a href="index.htm">doc</a>
+        </div>
+        <h2 class="main_title">Content:</h2>
+        <h3 class="main_title">Creation methods:</h3>
+        <ul class="navi_inline">
+          <li class="creation_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <b><a href="Cogl.MatrixStack.MatrixStack.html" class="creation_method">MatrixStack</a></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> ctx)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+        </ul>
+        <h3 class="main_title">Methods:</h3>
+        <ul class="navi_inline">
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.frustum.html" class="method">frustum</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> left, <span class="main_basic_type"><span class="struct">float</span></span> right, <span class="main_basic_type"><span class="struct">float</span></span> bottom, <span class="main_basic_type"><span class="struct">float</span></span> top, <span class="main_basic_type"><span class="struct">float</span></span> z_near, <span class="main_basic_type"><span class="struct">float</span></span> z_far)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> <b><a href="Cogl.MatrixStack.@get.html" class="method">@get</a></b> (<span class="main_keyword">out</span> <span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">weak</span> <span class="main_type"><a href="Cogl.MatrixEntry.html" class="class">MatrixEntry</a></span> <b><a href="Cogl.MatrixStack.get_entry.html" class="method">get_entry</a></b> ()
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.MatrixStack.get_inverse.html" class="method">get_inverse</a></b> (<span class="main_keyword">out</span> <span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> inverse)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.load_identity.html" class="method">load_identity</a></b> ()
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.multiply.html" class="method">multiply</a></b> (<span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.orthographic.html" class="method">orthographic</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> x_1, <span class="main_basic_type"><span class="struct">float</span></span> y_1, <span class="main_basic_type"><span class="struct">float</span></span> x_2, <span class="main_basic_type"><span class="struct">float</span></span> y_2, <span class="main_basic_type"><span class="struct">float</span></span> near, <span class="main_basic_type"><span class="struct">float</span></span> far)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.perspective.html" class="method">perspective</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> fov_y, <span class="main_basic_type"><span class="struct">float</span></span> aspect, <span class="main_basic_type"><span class="struct">float</span></span> z_near, <span class="main_basic_type"><span class="struct">float</span></span> z_far)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.pop.html" class="method">pop</a></b> ()
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.push.html" class="method">push</a></b> ()
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.rotate.html" class="method">rotate</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> angle, <span class="main_basic_type"><span class="struct">float</span></span> x, <span class="main_basic_type"><span class="struct">float</span></span> y, <span class="main_basic_type"><span class="struct">float</span></span> z)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.rotate_euler.html" class="method">rotate_euler</a></b> (<span class="main_type"><a href="Cogl.Euler.html" class="class">Euler</a></span> euler)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.rotate_quaternion.html" class="method">rotate_quaternion</a></b> (<span class="main_type"><a href="Cogl.Quaternion.html" class="class">Quaternion</a></span> quaternion)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.scale.html" class="method">scale</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> x, <span class="main_basic_type"><span class="struct">float</span></span> y, <span class="main_basic_type"><span class="struct">float</span></span> z)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.@set.html" class="method">@set</a></b> (<span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.MatrixStack.translate.html" class="method">translate</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> x, <span class="main_basic_type"><span class="struct">float</span></span> y, <span class="main_basic_type"><span class="struct">float</span></span> z)
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+        </ul>
+        <h3 class="main_title">Inherited Members:</h3>
+        <div class="box">
+          <div class="headline">
+            <div class="text">All known members inherited from class Cogl.Object</div>
+            <div class="toggle">
+              <img onclick="toggle_box  (this, 'box-content-10')" src="../coll_open.png">&nbsp;</div>
+            </div>
+            <div class="content" id="box-content-10">
+              <div class="column">
+                <ul class="navi_inline">
+                  <li class="static_method"><a href="Cogl.Object.value_set_object.html">value_set_object</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <ul class="navi_inline">
+                </ul>
+              </div>
+              <div class="column">
+                <ul class="navi_inline">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><br/>
+      <div class="site_footer">Generated by <a href="http://www.valadoc.org/">Valadoc</a>
+      </div>
+    </body>
+  </html>
