@@ -2,7 +2,7 @@ SRCS = cogl-info.vala
 PROGRAM = cogl-info
 VALAPKGS = --pkg cogl-2.0 --vapidir=../vapi
 VALAOPTS =
-CFLAGS = -X -I/usr/include/cogl -X -lcogl
+CFLAGS = -X $(shell pkg-config --libs --cflags cogl-2.0-experimental | sed 's/ -/ -X -/g')
 
 all: $(PROGRAM)
 
