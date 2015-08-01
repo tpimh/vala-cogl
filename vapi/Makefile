@@ -1,6 +1,6 @@
 METADATA = metadata
 VAPIDIR = $(shell pkg-config libvala-`valac --api-version` --variable vapidir)
-GIRDIR = /usr/share/gir-1.0
+GIRDIR = $(shell pkg-config gobject-introspection-1.0 --variable girdir)
 
 all: cogl-2.0.vapi cogl-pango-2.0.vapi
 
