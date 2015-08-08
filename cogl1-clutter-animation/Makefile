@@ -2,7 +2,7 @@ SRCS = cogl1-clutter-animation.vala
 PROGRAM = cogl1-clutter-animation
 VALAPKGS = --pkg clutter-1.0
 VALAOPTS =
-CFLAGS =
+CFLAGS = -X $(shell pkg-config --libs --cflags cogl-1.0 clutter-1.0 | sed 's/ -/ -X -/g')
 
 all: $(PROGRAM)
 
