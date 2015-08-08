@@ -28,7 +28,7 @@ class Hello {
 
                     fb.clear4f(BufferBit.COLOR, 0, 0, 0, 1);
                     triangle.draw(fb, pipeline);
-                    ((Onscreen)fb).swap_buffers();
+                    (fb as Onscreen).swap_buffers();
 
                     return false;
                 });
@@ -54,7 +54,7 @@ class Hello {
 
         onscreen = new Onscreen(ctx, 640, 480);
         onscreen.show();
-        fb = (Framebuffer)onscreen;
+        fb = onscreen as Framebuffer;
 
         onscreen.set_resizable((Bool)true);
 
@@ -64,13 +64,13 @@ class Hello {
         cogl_source = glib_source_new(ctx, Priority.DEFAULT);
         cogl_source.attach(null);
 
-        ((Onscreen)fb).add_frame_callback((onscreen, event, info) => {
+        (fb as Onscreen).add_frame_callback((onscreen, event, info) => {
                 if (event == FrameEvent.SYNC) {
                     draw_ready = true;
                     maybe_redraw();
                 }
             }, null);
-        ((Onscreen)fb).add_dirty_callback((onscreen, info) => {
+        (fb as Onscreen).add_dirty_callback((onscreen, info) => {
                 is_dirty = true;
                 maybe_redraw();
             }, null);
