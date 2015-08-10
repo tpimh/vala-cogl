@@ -50,7 +50,7 @@ class Hello {
 
         try {
             ctx = new Context(null);
-        } catch (GLib.Error e) {
+        } catch (Error e) {
             stderr.printf("Failed to create context: %s\n", e.message);
             return 1;
         }
