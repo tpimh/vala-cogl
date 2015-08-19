@@ -88,6 +88,9 @@ class Hello {
                 is_dirty = true;
                 maybe_redraw();
             }, null);
+        (fb as Onscreen).add_resize_callback((onscreen, width, height) => {
+                stdout.printf("resize: %dx%d\n", width, height);
+            }, null);
 
         loop = new MainLoop(null, true);
         loop.run();
