@@ -6,7 +6,7 @@ all: cogl-2.0.vapi cogl-pango-2.0.vapi
 
 cogl-2.0.vapi:
 	vapigen --library=cogl-2.0 --pkg glib-2.0 --pkg gobject-2.0 \
-        --metadatadir=$(METADATA) --directory=. $(GIRDIR)/Cogl-2.0.gir
+        --metadatadir=$(METADATA) --directory=. $(GIRDIR)/Cogl-2.0.gir $(METADATA)/cogl-2.0-custom.vala
 	uniq cogl-2.0.vapi | sponge cogl-2.0.vapi # this is really nasty hack
 
 cogl-pango-2.0.vapi:
