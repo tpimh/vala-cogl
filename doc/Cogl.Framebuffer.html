@@ -54,10 +54,12 @@
           <li class="method"><a href="Cogl.Framebuffer.get_dither_enabled.html">get_dither_enabled</a></li>
           <li class="method"><a href="Cogl.Framebuffer.get_green_bits.html">get_green_bits</a></li>
           <li class="method"><a href="Cogl.Framebuffer.get_height.html">get_height</a></li>
+          <li class="method"><a href="Cogl.Framebuffer.get_is_stereo.html">get_is_stereo</a></li>
           <li class="method"><a href="Cogl.Framebuffer.get_modelview_matrix.html">get_modelview_matrix</a></li>
           <li class="method"><a href="Cogl.Framebuffer.get_projection_matrix.html">get_projection_matrix</a></li>
           <li class="method"><a href="Cogl.Framebuffer.get_red_bits.html">get_red_bits</a></li>
           <li class="method"><a href="Cogl.Framebuffer.get_samples_per_pixel.html">get_samples_per_pixel</a></li>
+          <li class="method"><a href="Cogl.Framebuffer.get_stereo_mode.html">get_stereo_mode</a></li>
           <li class="method"><a href="Cogl.Framebuffer.get_viewport4fv.html">get_viewport4fv</a></li>
           <li class="method"><a href="Cogl.Framebuffer.get_viewport_height.html">get_viewport_height</a></li>
           <li class="method"><a href="Cogl.Framebuffer.get_viewport_width.html">get_viewport_width</a></li>
@@ -88,6 +90,7 @@
           <li class="method"><a href="Cogl.Framebuffer.set_modelview_matrix.html">set_modelview_matrix</a></li>
           <li class="method"><a href="Cogl.Framebuffer.set_projection_matrix.html">set_projection_matrix</a></li>
           <li class="method"><a href="Cogl.Framebuffer.set_samples_per_pixel.html">set_samples_per_pixel</a></li>
+          <li class="method"><a href="Cogl.Framebuffer.set_stereo_mode.html">set_stereo_mode</a></li>
           <li class="method"><a href="Cogl.Framebuffer.set_viewport.html">set_viewport</a></li>
           <li class="method"><a href="Cogl.Framebuffer.transform.html">transform</a></li>
           <li class="method"><a href="Cogl.Framebuffer.translate.html">translate</a></li>
@@ -282,6 +285,10 @@
               <div class="leaf_brief_description"><span class="brief_description">Queries the current height of the given <span class="main_keyword">
                     this</span>.</span>
               </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Framebuffer.get_is_stereo.html" class="method">get_is_stereo</a></b> ()
+              </span>
+              <div class="leaf_brief_description">
+              </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Framebuffer.get_modelview_matrix.html" class="method">get_modelview_matrix</a></b> (<span class="main_keyword">out</span> <span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
               </span>
               <div class="leaf_brief_description"><span class="brief_description">Stores the current model-view matrix in <code>matrix</code>.</span>
@@ -299,6 +306,11 @@
               </span>
               <div class="leaf_brief_description"><span class="brief_description">Gets the number of points that are sampled per-pixel when 
                   rasterizing geometry.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.StereoMode.html" class="enum">StereoMode</a></span> <b><a href="Cogl.Framebuffer.get_stereo_mode.html" class="method">get_stereo_mode</a></b> ()
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Gets the current <a href="Cogl.StereoMode.html" class="enum">
+                    StereoMode</a>, which defines which stereo buffers should be drawn to.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Framebuffer.get_viewport4fv.html" class="method">get_viewport4fv</a></b> (<span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">float</span></span>[] viewport)
               </span>
@@ -455,6 +467,10 @@
               <div class="leaf_brief_description"><span class="brief_description">Requires that when rendering to <span class="main_keyword">this
                   </span> then <code>n</code> point samples should be made per pixel which will all contribute to the final resolved color for that 
                   pixel.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Framebuffer.set_stereo_mode.html" class="method">set_stereo_mode</a></b> (<span class="main_type"><a href="Cogl.StereoMode.html" class="enum">StereoMode</a></span> stereo_mode)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Sets which stereo buffers should be drawn to.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Framebuffer.set_viewport.html" class="method">set_viewport</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> x, <span class="main_basic_type"><span class="struct">float</span></span> y, <span class="main_basic_type"><span class="struct">float</span></span> width, <span class="main_basic_type"><span class="struct">float</span></span> height)
               </span>

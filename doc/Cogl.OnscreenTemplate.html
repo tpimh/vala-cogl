@@ -29,6 +29,7 @@
         <ul class="navi_main">
           <li class="creation_method"><a href="Cogl.OnscreenTemplate.OnscreenTemplate.html">OnscreenTemplate</a></li>
           <li class="method"><a href="Cogl.OnscreenTemplate.set_samples_per_pixel.html">set_samples_per_pixel</a></li>
+          <li class="method"><a href="Cogl.OnscreenTemplate.set_stereo_enabled.html">set_stereo_enabled</a></li>
           <li class="method"><a href="Cogl.OnscreenTemplate.set_swap_throttled.html">set_swap_throttled</a></li>
         </ul>
       </div>
@@ -65,6 +66,12 @@
             <div class="leaf_brief_description"><span class="brief_description">Requires that any future CoglOnscreen framebuffers derived from this 
                 template must support making at least <code>n</code> samples per pixel which will all contribute to the final resolved color for that 
                 pixel.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.OnscreenTemplate.set_stereo_enabled.html" class="method">set_stereo_enabled</a></b> (<span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> enabled)
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Sets whether future <a href="Cogl.Onscreen.html" class="class">
+                  Onscreen</a> framebuffers derived from this template are attempted to be created with both left and right buffers, for use with 
+                stereo display.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.OnscreenTemplate.set_swap_throttled.html" class="method">set_swap_throttled</a></b> (<span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> throttled)
             </span>

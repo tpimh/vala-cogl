@@ -58,6 +58,7 @@
           <li class="enum"><a href="Cogl.RendererError.html">RendererError</a></li>
           <li class="enum"><a href="Cogl.ShaderType.html">ShaderType</a></li>
           <li class="enum"><a href="Cogl.SnippetHook.html">SnippetHook</a></li>
+          <li class="enum"><a href="Cogl.StereoMode.html">StereoMode</a></li>
           <li class="enum"><a href="Cogl.SubpixelOrder.html">SubpixelOrder</a></li>
           <li class="enum"><a href="Cogl.SystemError.html">SystemError</a></li>
           <li class="enum"><a href="Cogl.TextureComponents.html">TextureComponents</a></li>
@@ -164,9 +165,6 @@
           <li class="method"><a href="Cogl.debug_matrix_print.html">debug_matrix_print</a></li>
           <li class="method"><a href="Cogl.debug_object_foreach_type.html">debug_object_foreach_type</a></li>
           <li class="method"><a href="Cogl.debug_object_print_instances.html">debug_object_print_instances</a></li>
-          <li class="method"><a href="Cogl.error_copy.html">error_copy</a></li>
-          <li class="method"><a href="Cogl.error_free.html">error_free</a></li>
-          <li class="method"><a href="Cogl.error_matches.html">error_matches</a></li>
           <li class="method"><a href="Cogl.foreach_feature.html">foreach_feature</a></li>
           <li class="method"><a href="Cogl.get_clock_time.html">get_clock_time</a></li>
           <li class="method"><a href="Cogl.get_draw_framebuffer.html">get_draw_framebuffer</a></li>
@@ -177,36 +175,6 @@
           <li class="method"><a href="Cogl.glib_source_new.html">glib_source_new</a></li>
           <li class="method"><span class="deprecated"><a href="Cogl.gtype_matrix_get_type.html">gtype_matrix_get_type</a></span></li>
           <li class="method"><a href="Cogl.has_feature.html">has_feature</a></li>
-          <li class="method"><a href="Cogl.is_atlas_texture.html">is_atlas_texture</a></li>
-          <li class="method"><a href="Cogl.is_attribute.html">is_attribute</a></li>
-          <li class="method"><a href="Cogl.is_attribute_buffer.html">is_attribute_buffer</a></li>
-          <li class="method"><a href="Cogl.is_bitmap.html">is_bitmap</a></li>
-          <li class="method"><a href="Cogl.is_buffer.html">is_buffer</a></li>
-          <li class="method"><a href="Cogl.is_context.html">is_context</a></li>
-          <li class="method"><a href="Cogl.is_display.html">is_display</a></li>
-          <li class="method"><a href="Cogl.is_frame_info.html">is_frame_info</a></li>
-          <li class="method"><a href="Cogl.is_framebuffer.html">is_framebuffer</a></li>
-          <li class="method"><a href="Cogl.is_gles2_context.html">is_gles2_context</a></li>
-          <li class="method"><a href="Cogl.is_index_buffer.html">is_index_buffer</a></li>
-          <li class="method"><a href="Cogl.is_indices.html">is_indices</a></li>
-          <li class="method"><a href="Cogl.is_matrix_stack.html">is_matrix_stack</a></li>
-          <li class="method"><a href="Cogl.is_onscreen.html">is_onscreen</a></li>
-          <li class="method"><a href="Cogl.is_onscreen_template.html">is_onscreen_template</a></li>
-          <li class="method"><a href="Cogl.is_output.html">is_output</a></li>
-          <li class="method"><a href="Cogl.is_pipeline.html">is_pipeline</a></li>
-          <li class="method"><a href="Cogl.is_pixel_buffer.html">is_pixel_buffer</a></li>
-          <li class="method"><a href="Cogl.is_primitive.html">is_primitive</a></li>
-          <li class="method"><a href="Cogl.is_primitive_texture.html">is_primitive_texture</a></li>
-          <li class="method"><a href="Cogl.is_renderer.html">is_renderer</a></li>
-          <li class="method"><a href="Cogl.is_snippet.html">is_snippet</a></li>
-          <li class="method"><a href="Cogl.is_sub_texture.html">is_sub_texture</a></li>
-          <li class="method"><a href="Cogl.is_swap_chain.html">is_swap_chain</a></li>
-          <li class="method"><a href="Cogl.is_texture.html">is_texture</a></li>
-          <li class="method"><a href="Cogl.is_texture_2d.html">is_texture_2d</a></li>
-          <li class="method"><a href="Cogl.is_texture_2d_sliced.html">is_texture_2d_sliced</a></li>
-          <li class="method"><a href="Cogl.is_texture_3d.html">is_texture_3d</a></li>
-          <li class="method"><a href="Cogl.is_texture_pixmap_x11.html">is_texture_pixmap_x11</a></li>
-          <li class="method"><a href="Cogl.is_texture_rectangle.html">is_texture_rectangle</a></li>
           <li class="method"><a href="Cogl.kms_display_queue_modes_reset.html">kms_display_queue_modes_reset</a></li>
           <li class="method"><a href="Cogl.kms_display_set_ignore_crtc.html">kms_display_set_ignore_crtc</a></li>
           <li class="method"><a href="Cogl.kms_display_set_layout.html">kms_display_set_layout</a></li>
@@ -423,6 +391,8 @@
           <li class="enum"><a href="Cogl.SnippetHook.html">SnippetHook</a> - <span class="brief_description"><span class="enum">SnippetHook</span> is 
               used to specify a location within a <a href="Cogl.Pipeline.html" class="class">Pipeline</a> where the code of the snippet should be used
                when it is attached to a pipeline.</span></li>
+          <li class="enum"><a href="Cogl.StereoMode.html">StereoMode</a> - <span class="brief_description">Represents how draw should affect the two 
+              buffers of a stereo framebuffer.</span></li>
           <li class="enum"><a href="Cogl.SubpixelOrder.html">SubpixelOrder</a> - <span class="brief_description">Some output devices (such as LCD 
               panels) display colors by making each pixel consist of smaller "subpixels" that each have a particular color.</span></li>
           <li class="enum"><a href="Cogl.SystemError.html">SystemError</a> - <span class="brief_description">Error enumeration for Cogl</span></li>
@@ -586,20 +556,6 @@
             <div class="leaf_brief_description"><span class="brief_description">Prints a list of all the object types that Cogl uses along with the 
                 number of objects of that type that are currently in use.</span>
             </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span class="class">Error</span></span> <b><a href="Cogl.error_copy.html" class="method">error_copy</a></b> (<span class="main_type"><span class="class">Error</span></span> error)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Makes a copy of <code>error</code> which can later be freed using 
-                <a href="Cogl.error_free.html" class="method">error_free</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.error_free.html" class="method">error_free</a></b> (<span class="main_type"><span class="class">Error</span></span> error)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Frees a <code>CoglError</code> and associated resources.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.error_matches.html" class="method">error_matches</a></b> (<span class="main_type"><span class="class">Error</span></span> error, <span class="main_basic_type"><span class="struct">uint32</span></span> domain, <span class="main_basic_type"><span class="struct">int</span></span> code)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Returns <span class="main_optional_parameter">true</span> if error 
-                matches <code>domain</code> and <code>code</code>, <span class="main_optional_parameter">false</span> otherwise.</span>
-            </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.foreach_feature.html" class="method">foreach_feature</a></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> context, <span class="main_type"><a href="Cogl.FeatureCallback.html" class="delegate">FeatureCallback</a></span> callback)
             </span>
             <div class="leaf_brief_description"><span class="brief_description">Iterates through all the context level features currently supported 
@@ -647,153 +603,6 @@
             </span>
             <div class="leaf_brief_description"><span class="brief_description">Checks if a given <code>feature</code> is currently available</span>
             </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_atlas_texture.html" class="method">is_atlas_texture</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Checks whether the given object references a 
-                <a href="Cogl.AtlasTexture.html" class="class">AtlasTexture</a></span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_attribute.html" class="method">is_attribute</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.Attribute.html" class="class">Attribute</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_attribute_buffer.html" class="method">is_attribute_buffer</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.AttributeBuffer.html" class="class">AttributeBuffer</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_bitmap.html" class="method">is_bitmap</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Checks whether <code>object</code> is a 
-                <a href="Cogl.Bitmap.html" class="class">Bitmap</a></span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_buffer.html" class="method">is_buffer</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Checks whether <code>buffer</code> is a buffer object.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_context.html" class="method">is_context</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references an existing context object.
-              </span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_display.html" class="method">is_display</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.Display.html" class="class">Display</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_frame_info.html" class="method">is_frame_info</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.FrameInfo.html" class="class">FrameInfo</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_framebuffer.html" class="method">is_framebuffer</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.Framebuffer.html" class="interface">Framebuffer</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_gles2_context.html" class="method">is_gles2_context</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.GLES2Context.html" class="class">GLES2Context</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_index_buffer.html" class="method">is_index_buffer</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.IndexBuffer.html" class="class">IndexBuffer</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_indices.html" class="method">is_indices</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.Indices.html" class="class">Indices</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_matrix_stack.html" class="method">is_matrix_stack</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Determines if the given 
-                <a href="Cogl.Object.html" class="abstract_class">Object</a> refers to a <a href="Cogl.MatrixStack.html" class="class">MatrixStack</a>
-                .</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_onscreen.html" class="method">is_onscreen</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.Onscreen.html" class="class">Onscreen</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_onscreen_template.html" class="method">is_onscreen_template</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.OnscreenTemplate.html" class="class">OnscreenTemplate</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_output.html" class="method">is_output</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.Output.html" class="class">Output</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_pipeline.html" class="method">is_pipeline</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given <code>object</code> references an existing 
-                pipeline object.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_pixel_buffer.html" class="method">is_pixel_buffer</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Checks whether <code>object</code> is a pixel buffer.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_primitive.html" class="method">is_primitive</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.Primitive.html" class="class">Primitive</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_primitive_texture.html" class="method">is_primitive_texture</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a primitive texture object.
-              </span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_renderer.html" class="method">is_renderer</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Determines if the given <code>object</code> is a 
-                <a href="Cogl.Renderer.html" class="class">Renderer</a></span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_snippet.html" class="method">is_snippet</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given <code>object</code> references an existing 
-                snippet object.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_sub_texture.html" class="method">is_sub_texture</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Checks whether <code>object</code> is a 
-                <a href="Cogl.SubTexture.html" class="class">SubTexture</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_swap_chain.html" class="method">is_swap_chain</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description">
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_texture.html" class="method">is_texture</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a texture object.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_texture_2d.html" class="method">is_texture_2d</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references an existing 
-                <a href="Cogl.Texture2D.html" class="class">Texture2D</a> object.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_texture_2d_sliced.html" class="method">is_texture_2d_sliced</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references a 
-                <a href="Cogl.Texture2DSliced.html" class="class">Texture2DSliced</a>.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_texture_3d.html" class="method">is_texture_3d</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Checks whether the given object references a 
-                <a href="Cogl.Texture3D.html" class="class">Texture3D</a></span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_texture_pixmap_x11.html" class="method">is_texture_pixmap_x11</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Checks whether <code>object</code> points to a 
-                <a href="Cogl.TexturePixmapX11.html" class="class">TexturePixmapX11</a> instance.</span>
-            </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.is_texture_rectangle.html" class="method">is_texture_rectangle</a></b> (<span class="main_keyword">void</span>* object)
-            </span>
-            <div class="leaf_brief_description"><span class="brief_description">Gets whether the given object references an existing 
-                <a href="Cogl.TextureRectangle.html" class="class">TextureRectangle</a> object.</span>
-            </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.kms_display_queue_modes_reset.html" class="method">kms_display_queue_modes_reset</a></b> (<span class="main_type"><a href="Cogl.Display.html" class="class">Display</a></span> display)
             </span>
             <div class="leaf_brief_description"><span class="brief_description">Asks Cogl to explicitly reset the crtc output modes at the next 
@@ -801,12 +610,13 @@
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.kms_display_set_ignore_crtc.html" class="method">kms_display_set_ignore_crtc</a></b> (<span class="main_type"><a href="Cogl.Display.html" class="class">Display</a></span> display, <span class="main_basic_type"><span class="struct">uint32</span></span> id, <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> ignore)
             </span>
-            <div class="leaf_brief_description">
+            <div class="leaf_brief_description"><span class="brief_description">Tells cogl to ignore (or stop ignoring) a ctrc which means it never 
+                flips buffers at this crtc.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.kms_display_set_layout.html" class="method">kms_display_set_layout</a></b> (<span class="main_type"><a href="Cogl.Display.html" class="class">Display</a></span> display, <span class="main_basic_type"><span class="struct">int</span></span> width, <span class="main_basic_type"><span class="struct">int</span></span> height, <span class="main_type"><a href="Cogl.KmsCrtc.html" class="struct">KmsCrtc</a></span> crtcs, <span class="main_basic_type"><span class="struct">int</span></span> n_crtcs) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
             </span>
-            <div class="leaf_brief_description"><span class="brief_description">Tells cogl to ignore (or stop ignoring) a ctrc which means it never 
-                flips buffers at this crtc.</span>
+            <div class="leaf_brief_description"><span class="brief_description">Configures <code>display</code> to use a framebuffer sized <code>width
+                </code> x <code>height</code>, covering the CRTCS in <code>crtcs</code>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Cogl.kms_renderer_get_kms_fd.html" class="method">kms_renderer_get_kms_fd</a></b> (<span class="main_type"><a href="Cogl.Renderer.html" class="class">Renderer</a></span> renderer)
             </span>
