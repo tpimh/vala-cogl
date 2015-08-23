@@ -28,3 +28,5 @@ FeatureID.ogl_feature_id_fence name="FENCE"
 FeatureID.ogl_feature_id_per_vertex_point_size name="PER_VERTEX_POINT_SIZE"
 FeatureID.ogl_feature_id_texture_rg name="TEXTURE_RG"
 FeatureID.ogl_feature_id_buffer_age name="BUFFER_AGE"
+error_* skip
+is_* skip
