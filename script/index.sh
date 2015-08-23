@@ -45,9 +45,23 @@ function create_gnu_index ()
     (
 
         # print the html header
-        echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">';
-        echo "<html><head><title>Index of http://${DOMAIN}${SUBDIR}</title></head>";
+        echo '<!DOCTYPE html>';
+        echo "<html><head><title>Index of ${SUBDIR}</title><meta charset=\"utf-8\"/></head>";
         echo "<body><h1>Index of ${SUBDIR}</h1><pre>      Name                                        Last modified      Size";
+
+	if [ -z "$TOPDIR" ]; then
+	    echo "      <a href=\"..\">../</a>"
+	fi
+
+	DEPTH=0
+	if [ -z "$DIRS" ]; then
+	    DIRS="."
+	    DEPTH=1
+	fi
+
+	if [ -z "$FILES" ]; then
+	    FILES="."
+	fi
 
         # start of content output
         (
@@ -55,7 +69,7 @@ function create_gnu_index ()
             IFS=$'\n';
 
             # pretty sweet, will mimick the normal apache output
-            for L in $(find -L . -mount -depth -maxdepth 1 -type f ! -name 'index.html' -printf "      <a href=\"%f\">%-44f@_@%Td-%Tb-%TY %Tk:%TM  @%f@\n"|sort|sed 's,\([\ ]\+\)@_@,</a>\1,g');
+            for L in $(find -L `echo $FILES | tr ' ' "$IFS"` -mount -depth -maxdepth 1 -type f ! -name 'index.html' -printf "      <a href=\"%f\">%-44f@_@%Td-%Tb-%TY %Tk:%TM  @%f@\n"|sort|sed 's,\([\ ]\+\)@_@,</a>\1,g');
             do
                 # file
                 F=$(sed -e 's,^.*@\([^@]\+\)@.*$,\1,g'<<<"$L");
@@ -64,15 +78,15 @@ function create_gnu_index ()
                 F=$(du -bh $F | cut -f1);
 
                 # output with correct format
-                sed -e 's,\ @.*$, '"$F"',g'<<<"$L";
+                sed -e 's/\ @.*$/ '"$F"'/g'<<<"$L";
             done;
         )
 
         # now output a list of all directories in this dir (maxdepth 1) other than '.' outputting in a sorted manner exactly like apache
-        find -L . -mount -depth -maxdepth 1 -type d ! -name '.' -printf "      <a href=\"%f\">%-43f@_@%Td-%Tb-%TY %Tk:%TM  -\n"|sort -d|sed 's,\([\ ]\+\)@_@,/</a>\1,g'
+        find -L $DIRS -mount -depth -maxdepth $DEPTH -type d ! -name '.' -printf "      <a href=\"%f\">%-43f@_@%Td-%Tb-%TY %Tk:%TM  -\n"|sort -d|sed 's,\([\ ]\+\)@_@,/</a>\1,g'
 
         # print the footer html
-        echo "</pre><address>Apache Server at ${DOMAIN}</address></body></html>";
+        echo "</pre><address>gnu-mirror-index-creator for ${DOMAIN}</address></body></html>";
 
     # finally save the output of the subshell to index.html
     )  > $F;
@@ -81,13 +95,15 @@ function create_gnu_index ()
 
 
 
+LDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/..
 
 # start the run ( use function so everything is local and contained )
 #    $1 is absolute document_root with trailing '/'
 #    $2 is subdir like '/subdir/' if thats the web root, '/' if no subdir
 #    $3 is the domain 'subdomain.domain.tld'
-create_gnu_index "${HOME}/sites/gnu.askapache.com/htdocs/" "/" "gnu.askapache.com"
-
+LANG=C LC_TIME=C TOPDIR="TRUE" DIRS="doc vapi pdf" FILES="/dev/zero" create_gnu_index "${LDIR}/" "/vala-cogl/" "blog.golovin.in"
+LANG=C LC_TIME=C FILES="cogl-2.0.vapi cogl-pango-2.0.vapi" create_gnu_index "${LDIR}/vapi/" "/vala-cogl/vapi/" "blog.golovin.in"
+LANG=C LC_TIME=C create_gnu_index "${LDIR}/pdf/" "/vala-cogl/pdf/" "blog.golovin.in"
 
 # takes about 1-5 seconds to complete
 exit
