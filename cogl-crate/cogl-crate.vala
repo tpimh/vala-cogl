@@ -14,6 +14,8 @@ class Crate {
 
     public static Timer timer;
 
+    public static bool swap_ready;
+
     /* A cube modelled using 4 vertices for each face.
      *
      * We use an index buffer when drawing the cube later so the GPU will
@@ -96,9 +98,6 @@ class Crate {
         Onscreen onscreen;
         float fovy, aspect, z_near, z_2d, z_far;
         DepthState depth_state;
-
-        Source cogl_source;
-        MainLoop loop;
 
         try {
             ctx = new Context(null);
@@ -185,22 +184,28 @@ class Crate {
             return 1;
         }
 
-        cogl_source = glib_source_new(ctx, Priority.DEFAULT);
-        cogl_source.attach(null);
+        swap_ready = true;
 
         onscreen.add_frame_callback((onscreen, event, info) => {
                 if (event == FrameEvent.SYNC) {
-                    paint();
-                    onscreen.swap_buffers();
+                    swap_ready = true;
                 }
             }, null); /* destroy notify */
-        onscreen.add_dirty_callback((onscreen, info) => {
-                    paint();
-                    onscreen.swap_buffers();
-            }, null);
 
-        loop = new MainLoop(null, true);
-        loop.run();
+        while (true) {
+            Cogl.PollFD[] poll_fds;
+            int64 timeout;
+
+            if (swap_ready) {
+                paint();
+                onscreen.swap_buffers();
+                swap_ready = false;
+            }
+
+            poll_renderer_get_info(ctx.get_renderer(), out poll_fds, out timeout);
+            Posix.poll((Posix.pollfd[])poll_fds, (int)(timeout == -1 ? -1 : timeout / 1000));
+            poll_renderer_dispatch(ctx.get_renderer(), poll_fds);
+        }
 
         return 0;
     }
