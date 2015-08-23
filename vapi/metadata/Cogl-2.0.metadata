@@ -30,3 +30,8 @@ FeatureID.ogl_feature_id_texture_rg name="TEXTURE_RG"
 FeatureID.ogl_feature_id_buffer_age name="BUFFER_AGE"
 error_* skip
 is_* skip
+get_rectangle_indices skip=false
+Matrix struct
+poll_renderer_get_info.timeout out
+poll_renderer_get_info.poll_fds out array array_length_idx=2
+poll_renderer_dispatch.poll_fds array array_length_idx=2
