@@ -312,6 +312,7 @@ namespace Cogl {
 		[CCode (has_construct_function = false)]
 		public OnscreenTemplate (Cogl.SwapChain swap_chain);
 		public void set_samples_per_pixel (int n);
+		public void set_stereo_enabled (Cogl.Bool enabled);
 		public void set_swap_throttled (Cogl.Bool throttled);
 	}
 	[CCode (cheader_filename = "cogl/cogl.h", type_id = "cogl_output_get_gtype ()")]
@@ -555,6 +556,8 @@ namespace Cogl {
 		public TexturePixmapX11 (Cogl.Context context, uint32 pixmap, Cogl.Bool automatic_updates) throws GLib.Error;
 		public static uint32 error_quark ();
 		public Cogl.Bool is_using_tfp_extension ();
+		[CCode (has_construct_function = false)]
+		public TexturePixmapX11.left (Cogl.Context context, uint32 pixmap, Cogl.Bool automatic_updates) throws GLib.Error;
 		public void set_damage_object (uint32 damage, Cogl.TexturePixmapX11ReportLevel report_level);
 		public void update_area (int x, int y, int width, int height);
 	}
@@ -601,10 +604,12 @@ namespace Cogl {
 		public Cogl.Bool get_dither_enabled ();
 		public int get_green_bits ();
 		public int get_height ();
+		public Cogl.Bool get_is_stereo ();
 		public void get_modelview_matrix (out unowned Cogl.Matrix matrix);
 		public void get_projection_matrix (out unowned Cogl.Matrix matrix);
 		public int get_red_bits ();
 		public int get_samples_per_pixel ();
+		public Cogl.StereoMode get_stereo_mode ();
 		public void get_viewport4fv ([CCode (array_length = false)] out unowned float[] viewport);
 		public float get_viewport_height ();
 		public float get_viewport_width ();
@@ -635,6 +640,7 @@ namespace Cogl {
 		public void set_modelview_matrix (Cogl.Matrix matrix);
 		public void set_projection_matrix (Cogl.Matrix matrix);
 		public void set_samples_per_pixel (int samples_per_pixel);
+		public void set_stereo_mode (Cogl.StereoMode stereo_mode);
 		public void set_viewport (float x, float y, float width, float height);
 		public void transform (Cogl.Matrix matrix);
 		public void translate (float x, float y, float z);
@@ -660,9 +666,11 @@ namespace Cogl {
 	[SimpleType]
 	public struct Angle : int32 {
 	}
+	[BooleanType]
 	[CCode (cheader_filename = "cogl/cogl.h")]
+	[GIR (name = "Bool")]
 	[SimpleType]
-	public struct Bool : int {
+	public struct Bool : bool {
 	}
 	[CCode (cheader_filename = "cogl/cogl.h")]
 	[SimpleType]
@@ -1164,6 +1172,12 @@ namespace Cogl {
 		LAYER_FRAGMENT,
 		TEXTURE_LOOKUP
 	}
+	[CCode (cheader_filename = "cogl/cogl.h", cprefix = "COGL_STEREO_", type_id = "cogl_stereo_mode_get_type ()")]
+	public enum StereoMode {
+		BOTH,
+		LEFT,
+		RIGHT
+	}
 	[CCode (cheader_filename = "cogl/cogl.h", cprefix = "COGL_SUBPIXEL_ORDER_", has_type_id = false)]
 	public enum SubpixelOrder {
 		UNKNOWN,
@@ -1263,6 +1277,7 @@ namespace Cogl {
 		EGL_WAYLAND,
 		EGL_KMS,
 		EGL_ANDROID,
+		EGL_MIR,
 		WGL,
 		SDL
 	}
@@ -1321,12 +1336,6 @@ namespace Cogl {
 	[CCode (cheader_filename = "cogl/cogl.h")]
 	public static void debug_object_print_instances ();
 	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static GLib.Error error_copy (GLib.Error error);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static void error_free (GLib.Error error);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool error_matches (GLib.Error error, uint32 domain, int code);
-	[CCode (cheader_filename = "cogl/cogl.h")]
 	public static void foreach_feature (Cogl.Context context, Cogl.FeatureCallback callback);
 	[CCode (cheader_filename = "cogl/cogl.h")]
 	public static int64 get_clock_time (Cogl.Context context);
@@ -1347,66 +1356,6 @@ namespace Cogl {
 	public static GLib.Type gtype_matrix_get_type ();
 	[CCode (cheader_filename = "cogl/cogl.h")]
 	public static Cogl.Bool has_feature (Cogl.Context context, Cogl.FeatureID feature);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_atlas_texture (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_attribute (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_attribute_buffer (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_bitmap (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_buffer (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_context (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_display (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_frame_info (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_framebuffer (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_gles2_context (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_index_buffer (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_indices (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_matrix_stack (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_onscreen (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_onscreen_template (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_output (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_pipeline (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_pixel_buffer (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_primitive (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_primitive_texture (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_renderer (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_snippet (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_sub_texture (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_swap_chain (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_texture (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_texture_2d (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_texture_2d_sliced (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_texture_3d (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_texture_pixmap_x11 (void* object);
-	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static Cogl.Bool is_texture_rectangle (void* object);
 	[CCode (cheader_filename = "cogl/cogl.h")]
 	public static void kms_display_queue_modes_reset (Cogl.Display display);
 	[CCode (cheader_filename = "cogl/cogl.h")]
