@@ -11,5 +11,6 @@ cogl-info/cogl-info.exe
 cogl-texture/cogl-texture
 cogl-texture/cogl-texture.exe
 vapi/cogl-2.0.vapi
+vapi/cogl-gst-2.0.vapi
 vapi/cogl-pango-2.0.vapi
 vapi/doc
