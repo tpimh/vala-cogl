@@ -4,7 +4,7 @@ This is a collection of examples of what can be done with [Cogl](http://www.cogl
 If you are searching for bindings for Cogl 2.0 and it's documentation, you can find it here: [vapi](http://blog.golovin.in/vala-cogl/vapi) and [valadoc](http://blog.golovin.in/vala-cogl/doc).
 
 ## Contents
-  * **cogl-crate** — currently incomplete, lacks pango text, but compiles (original [here](https://github.com/GNOME/cogl/blob/master/examples/cogl-crate.c))
+  * **cogl-crate** — `cogl-crate` in Vala (original [here](https://github.com/GNOME/cogl/blob/master/examples/cogl-crate.c)) with Cogl 2.0 API
   * **cogl-hello** — `cogl-hello` in Vala (original [here](https://github.com/GNOME/cogl/blob/master/examples/cogl-hello.c)) with Cogl 2.0 API
   * **cogl-info** — `cogl-info` utility reimplemented in Vala (original [here](https://github.com/GNOME/cogl/blob/master/examples/cogl-info.c)) with Cogl 2.0 API
   * **cogl-texture** — slight modification to hello example to draw textures
