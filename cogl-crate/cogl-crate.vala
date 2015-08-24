@@ -1,4 +1,5 @@
 using Cogl;
+using CoglPango;
 
 class Crate {
     public static Framebuffer fb;
@@ -12,9 +13,22 @@ class Crate {
     public static Texture texture;
     public static Pipeline crate_pipeline;
 
+    public static FontMap pango_font_map;
+    public static Pango.Context pango_context;
+    public static Pango.FontDescription pango_font_desc;
+
+    public static Pango.Layout hello_label;
+    public static int hello_label_width;
+    public static int hello_label_height;
+
     public static Timer timer;
 
     public static bool swap_ready;
+
+    /* A static identity matrix initialized for convenience. */
+    public static Matrix identity;
+    /* static colors initialized for convenience. */
+    public static Color white;
 
     /* A cube modelled using 4 vertices for each face.
      *
@@ -91,12 +105,18 @@ class Crate {
         prim.draw(fb, crate_pipeline);
 
         fb.pop_matrix();
+
+        /* And finally render our Pango layouts... */
+
+        show_layout(fb, hello_label, (framebuffer_width / 2) - (hello_label_width / 2),
+            (framebuffer_height / 2) - (hello_label_height / 2), white);
     }
 
     public static int main(string[] args) {
         Context ctx;
         Onscreen onscreen;
         float fovy, aspect, z_near, z_2d, z_far;
+        Pango.Rectangle hello_label_size;
         DepthState depth_state;
 
         try {
@@ -141,6 +161,12 @@ class Crate {
         view.view_2d_in_perspective(fovy, aspect, z_near, z_2d, framebuffer_width, framebuffer_height);
         fb.set_modelview_matrix(view);
 
+        /* Initialize some convenient constants */
+        identity = Matrix();
+        identity.init_identity();
+        white = new Color();
+        white.init_from_4ub(0xff, 0xff, 0xff, 0xff);
+
         /* rectangle indices allow the GPU to interpret a list of quads (the
          * faces of our cube) as a list of triangles.
          *
@@ -183,6 +209,28 @@ class Crate {
             stderr.printf("Failed to set depth state: %s\n", e.message);
             return 1;
         }
+
+        /* Setup a Pango font map and context */
+
+        pango_font_map = FontMap.new() as FontMap;
+
+        FontMap.set_use_mipmapping(pango_font_map, (Bool)true);
+
+        pango_context = FontMap.create_context(pango_font_map);
+
+        pango_font_desc = new Pango.FontDescription();
+        pango_font_desc.set_family("Sans");
+        pango_font_desc.set_size(30 * Pango.SCALE);
+
+        /* Setup the "Hello Cogl" text */
+
+        hello_label = new Pango.Layout(pango_context);
+        hello_label.set_font_description(pango_font_desc);
+        hello_label.set_text("Hello Cogl", -1);
+
+        hello_label.get_extents(null, out hello_label_size);
+        hello_label_width = hello_label_size.width / Pango.SCALE;
+        hello_label_height = hello_label_size.height / Pango.SCALE;
 
         swap_ready = true;
 
