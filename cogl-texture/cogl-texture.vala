@@ -12,11 +12,14 @@ class Hello {
     public static bool is_dirty;
     public static bool draw_ready;
 
+    public static float scale_x;
+    public static float scale_y;
+
     public static const VertexP2T2 picture_vertices[] = {
-        { -0.5f, -0.5f, 0.0f, 1.0f },
-        { 0.5f, -0.5f, 1.0f, 1.0f },
-        { 0.5f, 0.5f, 1.0f, 0.0f },
-        { -0.5f, 0.5f, 0.0f, 0.0f }
+        { -1.0f, -1.0f, 0.0f, 1.0f },
+        { 1.0f, -1.0f, 1.0f, 1.0f },
+        { 1.0f, 1.0f, 1.0f, 0.0f },
+        { -1.0f, 1.0f, 0.0f, 0.0f }
     };
 
     public static void maybe_redraw(){
@@ -29,8 +32,11 @@ class Hello {
                     is_dirty = false;
                     draw_ready = false;
 
+                    fb.push_matrix();
                     fb.clear(BufferBit.COLOR, background);
+                    fb.scale(scale_x, scale_y, 0);
                     picture.draw(fb, pipeline);
+                    fb.pop_matrix();
                     (fb as Onscreen).swap_buffers();
 
                     return false;
@@ -90,6 +96,8 @@ class Hello {
             }, null);
         (fb as Onscreen).add_resize_callback((onscreen, width, height) => {
                 stdout.printf("resize: %dx%d\n", width, height);
+                scale_x = 256.0f / width;
+                scale_y = 256.0f / height;
             }, null);
 
         loop = new MainLoop(null, true);
