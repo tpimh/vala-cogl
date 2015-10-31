@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>CoglGst.VideoSink &ndash; doc &ndash; Vala Binding Reference</title>
+    <link href="../style.css" rel="stylesheet" type="text/css"/><script src="../scripts.js" type="text/javascript">
+    </script>
+  </head>
+  <body>
+    <div class="site_header">CoglGst.VideoSink &ndash; doc Reference Manual</div>
+    <div class="site_body">
+      <div class="site_navigation">
+        <ul class="navi_main">
+          <li class="package_index"><a href="../index.html">Packages</a></li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="package"><a href="index.htm">doc</a></li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="namespace"><a href="CoglGst.html">CoglGst</a></li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="class">VideoSink</li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="property"><a href="CoglGst.VideoSink.update_priority.html">update_priority</a></li>
+          <li class="creation_method"><a href="CoglGst.VideoSink.VideoSink.html">VideoSink</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.attach_frame.html">attach_frame</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.fit_size.html">fit_size</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.get_aspect.html">get_aspect</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.get_free_layer.html">get_free_layer</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.get_height_for_width.html">get_height_for_width</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.get_natural_height.html">get_natural_height</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.get_natural_size.html">get_natural_size</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.get_natural_width.html">get_natural_width</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.get_pipeline.html">get_pipeline</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.get_width_for_height.html">get_width_for_height</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.is_ready.html">is_ready</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.set_context.html">set_context</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.set_default_sample.html">set_default_sample</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.set_first_layer.html">set_first_layer</a></li>
+          <li class="method"><a href="CoglGst.VideoSink.setup_pipeline.html">setup_pipeline</a></li>
+          <li class="signal"><a href="CoglGst.VideoSink.new_frame.html">new_frame</a></li>
+          <li class="signal"><a href="CoglGst.VideoSink.pipeline_ready.html">pipeline_ready</a></li>
+        </ul>
+      </div>
+      <div class="site_content">
+        <h1 class="main_title">VideoSink</h1>
+        <hr class="main_hr"/>
+        <h2 class="main_title">Object Hierarchy:</h2>
+        <img class="main_diagram" usemap="#CoglGst.VideoSink" alt="Object hierarchy for VideoSink" src="img/CoglGst.VideoSink.png"/>
+
+      <map id="CoglGst.VideoSink" name="CoglGst.VideoSink">
+<area shape="rect" id="node1" href="CoglGst.VideoSink.html" title="CoglGst.VideoSink" alt="" coords="19,485,183,533"/>
+</map>
+
+        <h2 class="main_title">Description:</h2>
+        <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">class</span> <b><span class="class">VideoSink</span></b> : <span class="main_type"><span class="abstract_class">Sink</span></span>
+        </div>
+        <div class="description">
+          <p>The <span class="class">VideoSink</span> structure contains only private data and should be accessed using the provided API.</p>
+        </div><br/>
+        <div class="namespace_note"><b>Namespace:</b> <a href="CoglGst.html">CoglGst</a>
+        </div>
+        <div class="package_note"><b>Package:</b> <a href="index.htm">doc</a>
+        </div>
+        <h2 class="main_title">Content:</h2>
+        <h3 class="main_title">Properties:</h3>
+        <ul class="navi_inline">
+          <li class="property"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="CoglGst.VideoSink.update_priority.html" class="property">update_priority</a></b> { <span class="main_keyword">set</span>; <span class="main_keyword">get</span>; }
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+        </ul>
+        <h3 class="main_title">Creation methods:</h3>
+        <ul class="navi_inline">
+          <li class="creation_method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <b><a href="CoglGst.VideoSink.VideoSink.html" class="creation_method">VideoSink</a></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> ctx)
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Creates a new <span class="class">VideoSink</span> which will create 
+                resources for use with the given context.</span>
+            </div></li>
+        </ul>
+        <h3 class="main_title">Methods:</h3>
+        <ul class="navi_inline">
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="CoglGst.VideoSink.attach_frame.html" class="method">attach_frame</a></b> (<span class="main_type"><a href="Cogl.Pipeline.html" class="class">Pipeline</a></span> pln)
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Updates the given pipeline with the textures for the current frame.
+              </span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="CoglGst.VideoSink.fit_size.html" class="method">fit_size</a></b> (<span class="main_type"><a href="CoglGst.Rectangle.html" class="class">Rectangle</a></span> available, <span class="main_keyword">ref</span> <span class="main_type"><a href="CoglGst.Rectangle.html" class="class">Rectangle</a></span> output)
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Calculates a suitable <code>output</code> rectangle that can fit 
+                inside the <code>available</code> space while maintaining the aspect ratio of the current video.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="CoglGst.VideoSink.get_aspect.html" class="method">get_aspect</a></b> ()
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Returns a width-for-height aspect ratio that lets you calculate a 
+                suitable width for displaying your video based on a given height by multiplying your chosen height by the returned aspect ratio.
+              </span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="CoglGst.VideoSink.get_free_layer.html" class="method">get_free_layer</a></b> ()
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">This can be used when doing specialised rendering of the video by 
+                customizing the pipeline.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="CoglGst.VideoSink.get_height_for_width.html" class="method">get_height_for_width</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> width)
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Calculates a suitable output height for a specific output <code>width
+                </code> that will maintain the video's aspect ratio.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="CoglGst.VideoSink.get_natural_height.html" class="method">get_natural_height</a></b> ()
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Considering the real resolution of the video as well as the aspect 
+                ratio of pixel data that may need to be stretched when being displayed; this function calculates what the natural size of the 
+                underlying video source is, and returns its height.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="CoglGst.VideoSink.get_natural_size.html" class="method">get_natural_size</a></b> (<span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">float</span></span> width, <span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">float</span></span> height)
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Considering the real resolution of the video as well as the aspect 
+                ratio of pixel data that may need to be stretched when being displayed; this function calculates what the natural size of the 
+                underlying video source is.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="CoglGst.VideoSink.get_natural_width.html" class="method">get_natural_width</a></b> ()
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Considering the real resolution of the video as well as the aspect 
+                ratio of pixel data that may need to be stretched when being displayed; this function calculates what the natural size of the 
+                underlying video source is, and returns its width.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">weak</span> <span class="main_type"><a href="Cogl.Pipeline.html" class="class">Pipeline</a></span> <b><a href="CoglGst.VideoSink.get_pipeline.html" class="method">get_pipeline</a></b> ()
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Returns a pipeline suitable for rendering the current frame of the 
+                given video sink.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="CoglGst.VideoSink.get_width_for_height.html" class="method">get_width_for_height</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> height)
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Calculates a suitable output width for a specific output <code>height
+                </code> that will maintain the video's aspect ratio.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="CoglGst.VideoSink.is_ready.html" class="method">is_ready</a></b> ()
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Returns whether the pipeline is ready and so 
+                <a href="CoglGst.VideoSink.get_pipeline.html" class="method">get_pipeline</a> and 
+                <a href="CoglGst.VideoSink.setup_pipeline.html" class="method">setup_pipeline</a> can be called without causing error.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="CoglGst.VideoSink.set_context.html" class="method">set_context</a></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> ctx)
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Sets the <a href="Cogl.Context.html" class="class">Context</a> that 
+                the video sink should use for creating any resources.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="CoglGst.VideoSink.set_default_sample.html" class="method">set_default_sample</a></b> (<span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> default_sample)
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">By default the pipeline generated by 
+                <a href="CoglGst.VideoSink.setup_pipeline.html" class="method">setup_pipeline</a> and 
+                <a href="CoglGst.VideoSink.get_pipeline.html" class="method">get_pipeline</a> will have a layer with a shader snippet that 
+                automatically samples the video.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="CoglGst.VideoSink.set_first_layer.html" class="method">set_first_layer</a></b> (<span class="main_basic_type"><span class="struct">int</span></span> first_layer)
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Sets the index of the first layer that the sink will use for its 
+                rendering.</span>
+            </div></li>
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="CoglGst.VideoSink.setup_pipeline.html" class="method">setup_pipeline</a></b> (<span class="main_type"><a href="Cogl.Pipeline.html" class="class">Pipeline</a></span> pipeline)
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">Configures the given pipeline so that will be able to render the video
+                 for the <span class="main_keyword">this</span>.</span>
+            </div></li>
+        </ul>
+        <h3 class="main_title">Signals:</h3>
+        <ul class="navi_inline">
+          <li class="signal"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">virtual</span> <span class="main_keyword">signal</span> <span class="main_keyword">void</span> <b><a href="CoglGst.VideoSink.new_frame.html" class="signal">new_frame</a></b> ()
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">The sink will emit this signal whenever there are new textures 
+                available for a new frame of the video.</span>
+            </div></li>
+          <li class="signal"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">virtual</span> <span class="main_keyword">signal</span> <span class="main_keyword">void</span> <b><a href="CoglGst.VideoSink.pipeline_ready.html" class="signal">pipeline_ready</a></b> ()
+            </span>
+            <div class="leaf_brief_description"><span class="brief_description">The sink will emit this signal as soon as it has gathered enough 
+                information from the video to configure a pipeline.</span>
+            </div></li>
+        </ul>
+        <h3 class="main_title">Inherited Members:</h3>
+        <div class="box">
+          <div class="headline">
+            <div class="text">All known members inherited from class Gst.Base.Sink</div>
+            <div class="toggle">
+              <img onclick="toggle_box  (this, 'box-content-43')" src="../coll_open.png">&nbsp;</div>
+            </div>
+            <div class="content" id="box-content-43">
+              <div class="column">
+                <ul class="navi_inline">
+                  <li class="property">@async</li>
+                  <li class="property">blocksize</li>
+                  <li class="property">enable_last_sample</li>
+                  <li class="property">last_sample</li>
+                  <li class="property">max_bitrate</li>
+                  <li class="property">max_lateness</li>
+                  <li class="property">qos</li>
+                  <li class="property">render_delay</li>
+                  <li class="property">sync</li>
+                  <li class="property">throttle_time</li>
+                  <li class="property">ts_offset</li>
+                  <li class="virtual_method">activate_pull</li>
+                  <li class="method">do_preroll</li>
+                  <li class="virtual_method">event</li>
+                  <li class="virtual_method">fixate</li>
+                  <li class="method">get_blocksize</li>
+                  <li class="virtual_method">get_caps</li>
+                  <li class="method">get_last_sample</li>
+                  <li class="method">get_latency</li>
+                  <li class="method">get_max_bitrate</li>
+                  <li class="method">get_max_lateness</li>
+                  <li class="method">get_render_delay</li>
+                  <li class="method">get_sync</li>
+                </ul>
+              </div>
+              <div class="column">
+                <ul class="navi_inline">
+                  <li class="method">get_throttle_time</li>
+                  <li class="virtual_method">get_times</li>
+                  <li class="method">get_ts_offset</li>
+                  <li class="method">is_async_enabled</li>
+                  <li class="method">is_last_sample_enabled</li>
+                  <li class="method">is_qos_enabled</li>
+                  <li class="virtual_method">prepare</li>
+                  <li class="virtual_method">prepare_list</li>
+                  <li class="virtual_method">preroll</li>
+                  <li class="virtual_method">propose_allocation</li>
+                  <li class="virtual_method">query</li>
+                  <li class="method">query_latency</li>
+                  <li class="virtual_method">render</li>
+                  <li class="virtual_method">render_list</li>
+                  <li class="method">set_async_enabled</li>
+                  <li class="method">set_blocksize</li>
+                  <li class="virtual_method">set_caps</li>
+                  <li class="method">set_last_sample_enabled</li>
+                  <li class="method">set_max_bitrate</li>
+                  <li class="method">set_max_lateness</li>
+                  <li class="method">set_qos_enabled</li>
+                  <li class="method">set_render_delay</li>
+                  <li class="method">set_sync</li>
+                </ul>
+              </div>
+              <div class="column">
+                <ul class="navi_inline">
+                  <li class="method">set_throttle_time</li>
+                  <li class="method">set_ts_offset</li>
+                  <li class="virtual_method">start</li>
+                  <li class="virtual_method">stop</li>
+                  <li class="virtual_method">unlock</li>
+                  <li class="virtual_method">unlock_stop</li>
+                  <li class="method">wait</li>
+                  <li class="method">wait_clock</li>
+                  <li class="virtual_method">wait_event</li>
+                  <li class="method">wait_preroll</li>
+                  <li class="field">can_activate_pull</li>
+                  <li class="field">can_activate_push</li>
+                  <li class="field">eos</li>
+                  <li class="field">have_newsegment</li>
+                  <li class="field">have_preroll</li>
+                  <li class="field">need_preroll</li>
+                  <li class="field">offset</li>
+                  <li class="field">pad_mode</li>
+                  <li class="field">playing_async</li>
+                  <li class="field">preroll_cond</li>
+                  <li class="field">preroll_lock</li>
+                  <li class="field">segment</li>
+                  <li class="field">sinkpad</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="headline">
+              <div class="text">All known members inherited from class Gst.Element</div>
+              <div class="toggle">
+                <img onclick="toggle_box  (this, 'box-content-44')" src="../coll_open.png">&nbsp;</div>
+              </div>
+              <div class="content" id="box-content-44">
+                <div class="column">
+                  <ul class="navi_inline">
+                    <li class="static_method">add_metadata</li>
+                    <li class="static_method">add_pad_template</li>
+                    <li class="static_method">add_static_metadata</li>
+                    <li class="static_method">get_metadata</li>
+                    <li class="static_method">get_pad_template</li>
+                    <li class="static_method">get_pad_template_list</li>
+                    <li class="static_method">make_from_uri</li>
+                    <li class="static_method">register</li>
+                    <li class="static_method">set_metadata</li>
+                    <li class="static_method">set_static_metadata</li>
+                    <li class="static_method">state_change_return_get_name</li>
+                    <li class="static_method">state_get_name</li>
+                    <li class="method">abort_state</li>
+                    <li class="method">add_pad</li>
+                    <li class="virtual_method">change_state</li>
+                    <li class="method">continue_state</li>
+                    <li class="method">create_all_pads</li>
+                    <li class="method">get_base_time</li>
+                    <li class="method">get_bus</li>
+                    <li class="method">get_clock</li>
+                    <li class="method">get_compatible_pad</li>
+                    <li class="method">get_compatible_pad_template</li>
+                    <li class="method">get_factory</li>
+                    <li class="method">get_request_pad</li>
+                    <li class="method">get_start_time</li>
+                    <li class="virtual_method">get_state</li>
+                    <li class="method">get_static_pad</li>
+                    <li class="method">is_locked_state</li>
+                    <li class="method">iterate_pads</li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <ul class="navi_inline">
+                    <li class="method">iterate_sink_pads</li>
+                    <li class="method">iterate_src_pads</li>
+                    <li class="method">link</li>
+                    <li class="method">link_filtered</li>
+                    <li class="method">link_many</li>
+                    <li class="method">link_pads</li>
+                    <li class="method">link_pads_filtered</li>
+                    <li class="method">lost_state</li>
+                    <li class="method">message_full</li>
+                    <li class="virtual_method">post_message</li>
+                    <li class="virtual_method">provide_clock</li>
+                    <li class="virtual_method">query</li>
+                    <li class="method">query_convert</li>
+                    <li class="method">query_duration</li>
+                    <li class="method">query_position</li>
+                    <li class="virtual_method">release_pad</li>
+                    <li class="method">release_request_pad</li>
+                    <li class="method">remove_pad</li>
+                    <li class="virtual_method">request_new_pad</li>
+                    <li class="method">request_pad</li>
+                    <li class="method">seek</li>
+                    <li class="method">seek_simple</li>
+                    <li class="virtual_method">send_event</li>
+                    <li class="method">set_base_time</li>
+                    <li class="virtual_method">set_bus</li>
+                    <li class="virtual_method">set_clock</li>
+                    <li class="virtual_method">set_context</li>
+                    <li class="method">set_locked_state</li>
+                    <li class="method">set_start_time</li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <ul class="navi_inline">
+                    <li class="virtual_method">set_state</li>
+                    <li class="virtual_method">state_changed</li>
+                    <li class="method">sync_state_with_parent</li>
+                    <li class="method">unlink</li>
+                    <li class="method">unlink_many</li>
+                    <li class="method">unlink_pads</li>
+                    <li class="signal">no_more_pads</li>
+                    <li class="signal">pad_added</li>
+                    <li class="signal">pad_removed</li>
+                    <li class="field">base_time</li>
+                    <li class="field">bus</li>
+                    <li class="field">clock</li>
+                    <li class="field">current_state</li>
+                    <li class="field">last_return</li>
+                    <li class="field">next_state</li>
+                    <li class="field">numpads</li>
+                    <li class="field">numsinkpads</li>
+                    <li class="field">numsrcpads</li>
+                    <li class="field">pads</li>
+                    <li class="field">pads_cookie</li>
+                    <li class="field">pending_state</li>
+                    <li class="field">sinkpads</li>
+                    <li class="field">srcpads</li>
+                    <li class="field">start_time</li>
+                    <li class="field">state_cond</li>
+                    <li class="field">state_cookie</li>
+                    <li class="field">state_lock</li>
+                    <li class="field">target_state</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="headline">
+                <div class="text">All known members inherited from class Gst.Object</div>
+                <div class="toggle">
+                  <img onclick="toggle_box  (this, 'box-content-45')" src="../coll_open.png">&nbsp;</div>
+                </div>
+                <div class="content" id="box-content-45">
+                  <div class="column">
+                    <ul class="navi_inline">
+                      <li class="property">name</li>
+                      <li class="property">parent</li>
+                      <li class="static_method">check_uniqueness</li>
+                      <li class="static_method">default_deep_notify</li>
+                      <li class="static_method">replace</li>
+                      <li class="method">add_control_binding</li>
+                      <li class="method">default_error</li>
+                      <li class="method">get_control_binding</li>
+                      <li class="method">get_control_rate</li>
+                      <li class="method">get_g_value_array</li>
+                      <li class="method">get_name</li>
+                    </ul>
+                  </div>
+                  <div class="column">
+                    <ul class="navi_inline">
+                      <li class="method">get_parent</li>
+                      <li class="method">get_path_string</li>
+                      <li class="method">get_value</li>
+                      <li class="method">get_value_array</li>
+                      <li class="method">has_active_control_bindings</li>
+                      <li class="method">has_ancestor</li>
+                      <li class="method">@ref</li>
+                      <li class="method">remove_control_binding</li>
+                      <li class="method">set_control_binding_disabled</li>
+                      <li class="method">set_control_bindings_disabled</li>
+                    </ul>
+                  </div>
+                  <div class="column">
+                    <ul class="navi_inline">
+                      <li class="method">set_control_rate</li>
+                      <li class="method">set_name</li>
+                      <li class="method">set_parent</li>
+                      <li class="method">suggest_next_sync</li>
+                      <li class="method">sync_values</li>
+                      <li class="method">unparent</li>
+                      <li class="method">unref</li>
+                      <li class="signal">deep_notify</li>
+                      <li class="field">flags</li>
+                      <li class="field">@lock</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="box">
+                <div class="headline">
+                  <div class="text">All known members inherited from class GLib.Object</div>
+                  <div class="toggle">
+                    <img onclick="toggle_box  (this, 'box-content-46')" src="../coll_open.png">&nbsp;</div>
+                  </div>
+                  <div class="content" id="box-content-46">
+                    <div class="column">
+                      <ul class="navi_inline">
+                        <li class="static_method">@new</li>
+                        <li class="static_method">newv</li>
+                        <li class="static_method">new_valist</li>
+                        <li class="method">get_type</li>
+                        <li class="method">get_class</li>
+                        <li class="method">@ref</li>
+                        <li class="method">unref</li>
+                        <li class="method">ref_sink</li>
+                        <li class="method">weak_ref</li>
+                        <li class="method">weak_unref</li>
+                        <li class="method">add_weak_pointer</li>
+                        <li class="method">remove_weak_pointer</li>
+                      </ul>
+                    </div>
+                    <div class="column">
+                      <ul class="navi_inline">
+                        <li class="method">@get</li>
+                        <li class="method">@set</li>
+                        <li class="method">get_property</li>
+                        <li class="method">set_property</li>
+                        <li class="method">get_data</li>
+                        <li class="method">set_data</li>
+                        <li class="method">set_data_full</li>
+                        <li class="method">steal_data</li>
+                        <li class="method">get_qdata</li>
+                        <li class="method">set_qdata</li>
+                        <li class="method">set_qdata_full</li>
+                        <li class="method">steal_qdata</li>
+                      </ul>
+                    </div>
+                    <div class="column">
+                      <ul class="navi_inline">
+                        <li class="method">freeze_notify</li>
+                        <li class="method">thaw_notify</li>
+                        <li class="virtual_method">dispose</li>
+                        <li class="virtual_method">constructed</li>
+                        <li class="method">notify_property</li>
+                        <li class="method">connect</li>
+                        <li class="method">disconnect</li>
+                        <li class="method">add_toggle_ref</li>
+                        <li class="method">remove_toggle_ref</li>
+                        <li class="method">bind_property</li>
+                        <li class="signal">notify</li>
+                        <li class="field">ref_count</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><br/>
+            <div class="site_footer">Generated by <a href="http://www.valadoc.org/">Valadoc</a>
+            </div>
+          </body>
+        </html>

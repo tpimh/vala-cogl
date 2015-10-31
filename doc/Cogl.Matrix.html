@@ -23,7 +23,7 @@
         </ul>
         <hr class="navi_hr"/>
         <ul class="navi_main">
-          <li class="class">Matrix</li>
+          <li class="struct">Matrix</li>
         </ul>
         <hr class="navi_hr"/>
         <ul class="navi_main">
@@ -84,7 +84,7 @@
 </map>
 
         <h2 class="main_title">Description:</h2>
-        <div class="main_code_definition">[ <span class="main_type">Compact</span> ]<br/><span class="main_keyword">public</span> <span class="main_keyword">class</span> <b><span class="class">Matrix</span></b>
+        <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">struct</span> <b><span class="struct">Matrix</span></b>
         </div>
         <div class="description">
           <p>A CoglMatrix holds a 4x4 transform matrix.</p>
@@ -115,14 +115,14 @@
         </ul>
         <h3 class="main_title">Methods:</h3>
         <ul class="navi_inline">
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span class="class">Matrix</span></span> <b><a href="Cogl.Matrix.copy.html" class="method">copy</a></b> ()
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span class="struct">Matrix</span></span>? <b><a href="Cogl.Matrix.copy.html" class="method">copy</a></b> ()
             </span>
-            <div class="leaf_brief_description"><span class="brief_description">Allocates a new <span class="class">Matrix</span> on the heap and 
+            <div class="leaf_brief_description"><span class="brief_description">Allocates a new <span class="struct">Matrix</span> on the heap and 
                 initializes it with the same values as <span class="main_keyword">this</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.free.html" class="method">free</a></b> ()
             </span>
-            <div class="leaf_brief_description"><span class="brief_description">Frees a <span class="class">Matrix</span> that was previously 
+            <div class="leaf_brief_description"><span class="brief_description">Frees a <span class="struct">Matrix</span> that was previously 
                 allocated via a call to <a href="Cogl.Matrix.copy.html" class="method">copy</a>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.frustum.html" class="method">frustum</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> left, <span class="main_basic_type"><span class="struct">float</span></span> right, <span class="main_basic_type"><span class="struct">float</span></span> bottom, <span class="main_basic_type"><span class="struct">float</span></span> top, <span class="main_basic_type"><span class="struct">float</span></span> z_near, <span class="main_basic_type"><span class="struct">float</span></span> z_far)
@@ -135,10 +135,10 @@
             <div class="leaf_brief_description"><span class="brief_description">Casts <span class="main_keyword">this</span> to a float array which 
                 can be directly passed to OpenGL.</span>
             </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Matrix.get_inverse.html" class="method">get_inverse</a></b> (<span class="main_keyword">out</span> <span class="main_type"><span class="class">Matrix</span></span> inverse)
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Bool.html" class="struct">Bool</a></span> <b><a href="Cogl.Matrix.get_inverse.html" class="method">get_inverse</a></b> (<span class="main_keyword">out</span> <span class="main_type"><span class="struct">Matrix</span></span> inverse)
             </span>
             <div class="leaf_brief_description"><span class="brief_description">Gets the inverse transform of a given matrix and uses it to initialize
-                 a new <span class="class">Matrix</span>.</span>
+                 a new <span class="struct">Matrix</span>.</span>
             </div></li>
           <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.init_from_array.html" class="method">init_from_array</a></b> (<span class="main_basic_type"><span class="struct">float</span></span> array)
             </span>
@@ -173,7 +173,7 @@
                 positions the camera at the coordinate (<code>eye_position_x</code>, <code>eye_position_y</code>, <code>eye_position_z</code>) looking
                  towards an object at the coordinate (<code>object_x</code>, <code>object_y</code>, <code>object_z</code>).</span>
             </div></li>
-          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.multiply.html" class="method">multiply</a></b> (<span class="main_type"><span class="class">Matrix</span></span> a, <span class="main_type"><span class="class">Matrix</span></span> b)
+          <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.Matrix.multiply.html" class="method">multiply</a></b> (<span class="main_type"><span class="struct">Matrix</span></span> a, <span class="main_type"><span class="struct">Matrix</span></span> b)
             </span>
             <div class="leaf_brief_description"><span class="brief_description">Multiplies the two supplied matrices together and stores the resulting
                  matrix inside <span class="main_keyword">this</span>.</span>
@@ -252,7 +252,15 @@
         </ul>
         <h3 class="main_title">Fields:</h3>
         <ul class="navi_inline">
-          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.ww.html" class="field">ww</a></b>
+          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.xx.html" class="field">xx</a></b>
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.yx.html" class="field">yx</a></b>
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.zx.html" class="field">zx</a></b>
             </span>
             <div class="leaf_brief_description">
             </div></li>
@@ -260,7 +268,31 @@
             </span>
             <div class="leaf_brief_description">
             </div></li>
+          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.xy.html" class="field">xy</a></b>
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.yy.html" class="field">yy</a></b>
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.zy.html" class="field">zy</a></b>
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
           <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.wy.html" class="field">wy</a></b>
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.xz.html" class="field">xz</a></b>
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.yz.html" class="field">yz</a></b>
+            </span>
+            <div class="leaf_brief_description">
+            </div></li>
+          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.zz.html" class="field">zz</a></b>
             </span>
             <div class="leaf_brief_description">
             </div></li>
@@ -272,31 +304,7 @@
             </span>
             <div class="leaf_brief_description">
             </div></li>
-          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.xx.html" class="field">xx</a></b>
-            </span>
-            <div class="leaf_brief_description">
-            </div></li>
-          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.xy.html" class="field">xy</a></b>
-            </span>
-            <div class="leaf_brief_description">
-            </div></li>
-          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.xz.html" class="field">xz</a></b>
-            </span>
-            <div class="leaf_brief_description">
-            </div></li>
           <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.yw.html" class="field">yw</a></b>
-            </span>
-            <div class="leaf_brief_description">
-            </div></li>
-          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.yx.html" class="field">yx</a></b>
-            </span>
-            <div class="leaf_brief_description">
-            </div></li>
-          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.yy.html" class="field">yy</a></b>
-            </span>
-            <div class="leaf_brief_description">
-            </div></li>
-          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.yz.html" class="field">yz</a></b>
             </span>
             <div class="leaf_brief_description">
             </div></li>
@@ -304,15 +312,7 @@
             </span>
             <div class="leaf_brief_description">
             </div></li>
-          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.zx.html" class="field">zx</a></b>
-            </span>
-            <div class="leaf_brief_description">
-            </div></li>
-          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.zy.html" class="field">zy</a></b>
-            </span>
-            <div class="leaf_brief_description">
-            </div></li>
-          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.zz.html" class="field">zz</a></b>
+          <li class="field"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">float</span></span> <b><a href="Cogl.Matrix.ww.html" class="field">ww</a></b>
             </span>
             <div class="leaf_brief_description">
             </div></li>

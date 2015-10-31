@@ -20,6 +20,7 @@
         <hr class="navi_hr"/>
         <ul class="navi_main">
           <li class="namespace"><a href="Cogl.html">Cogl</a></li>
+          <li class="namespace"><a href="CoglGst.html">CoglGst</a></li>
           <li class="namespace"><a href="CoglPango.html">CoglPango</a></li>
         </ul>
       </div>
@@ -60,8 +61,6 @@
                 context used as a sandbox for OpenGLES 2.0 state.</span></li>
             <li class="class"><a href="Cogl.IndexBuffer.html">IndexBuffer</a> - </li>
             <li class="class"><a href="Cogl.Indices.html">Indices</a> - </li>
-            <li class="class"><a href="Cogl.Matrix.html">Matrix</a> - <span class="brief_description">A CoglMatrix holds a 4x4 transform matrix.
-              </span></li>
             <li class="class"><a href="Cogl.MatrixEntry.html">MatrixEntry</a> - <span class="brief_description">Represents a single immutable 
                 transformation that was retrieved from a <a href="Cogl.MatrixStack.html" class="class">MatrixStack</a> using 
                 <a href="Cogl.MatrixStack.get_entry.html" class="method">get_entry</a>.</span></li>
@@ -106,6 +105,8 @@
             <li class="struct"><a href="Cogl.Handle.html">Handle</a> - <span class="brief_description">Type used for storing references to cogl 
                 objects, the CoglHandle is a fully opaque type without any public data members.</span></li>
             <li class="struct"><a href="Cogl.KmsCrtc.html">KmsCrtc</a> - </li>
+            <li class="struct"><a href="Cogl.Matrix.html">Matrix</a> - <span class="brief_description">A CoglMatrix holds a 4x4 transform matrix.
+              </span></li>
             <li class="struct"><a href="Cogl.MetaTexture.html">MetaTexture</a> - </li>
             <li class="struct"><a href="Cogl.OnscreenDirtyInfo.html">OnscreenDirtyInfo</a> - <span class="brief_description">A structure passed to 
                 callbacks registered using <a href="Cogl.Onscreen.add_dirty_callback.html" class="method">add_dirty_callback</a>.</span></li>
@@ -358,9 +359,9 @@
               <div class="leaf_brief_description"><span class="brief_description">Allows visualizing the operations that build up the given <code>
                     entry</code> for debugging purposes by printing to stdout.</span>
               </div></li>
-            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.debug_matrix_print.html" class="method">debug_matrix_print</a></b> (<span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.debug_matrix_print.html" class="method">debug_matrix_print</a></b> (<span class="main_type"><a href="Cogl.Matrix.html" class="struct">Matrix</a></span> matrix)
               </span>
-              <div class="leaf_brief_description"><span class="brief_description">Prints the contents of a <a href="Cogl.Matrix.html" class="class">
+              <div class="leaf_brief_description"><span class="brief_description">Prints the contents of a <a href="Cogl.Matrix.html" class="struct">
                     Matrix</a> to stdout.</span>
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.debug_object_foreach_type.html" class="method">debug_object_foreach_type</a></b> (<span class="main_type"><a href="Cogl.DebugObjectForeachTypeCallback.html" class="delegate">DebugObjectForeachTypeCallback</a></span> func)
@@ -386,6 +387,10 @@
               </span>
               <div class="leaf_brief_description"><span class="brief_description">Gets the current <a href="Cogl.Framebuffer.html" class="interface">
                     Framebuffer</a> as set using <code>cogl_push_framebuffer</code></span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">weak</span> <span class="main_type"><a href="Cogl.Indices.html" class="class">Indices</a></span> <b><a href="Cogl.get_rectangle_indices.html" class="method">get_rectangle_indices</a></b> (<span class="main_type"><a href="Cogl.Context.html" class="class">Context</a></span> context, <span class="main_basic_type"><span class="struct">int</span></span> n_rectangles)
+              </span>
+              <div class="leaf_brief_description">
               </div></li>
             <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">unowned</span> <span class="main_type"><a href="Cogl.Quaternion.html" class="class">Quaternion</a></span> <b><a href="Cogl.get_static_identity_quaternion.html" class="method">get_static_identity_quaternion</a></b> ()
               </span>
@@ -445,12 +450,12 @@
               <div class="leaf_brief_description"><span class="brief_description">Sets the file descriptor Cogl should use to communicate to the kms 
                   driver.</span>
               </div></li>
-            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.poll_renderer_dispatch.html" class="method">poll_renderer_dispatch</a></b> (<span class="main_type"><a href="Cogl.Renderer.html" class="class">Renderer</a></span> renderer, <span class="main_type"><a href="Cogl.PollFD.html" class="struct">PollFD</a></span> poll_fds, <span class="main_basic_type"><span class="struct">int</span></span> n_poll_fds)
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Cogl.poll_renderer_dispatch.html" class="method">poll_renderer_dispatch</a></b> (<span class="main_type"><a href="Cogl.Renderer.html" class="class">Renderer</a></span> renderer, <span class="main_type"><a href="Cogl.PollFD.html" class="struct">PollFD</a></span>[] poll_fds)
               </span>
               <div class="leaf_brief_description"><span class="brief_description">This should be called whenever an application is woken up from going
                    idle in its main loop.</span>
               </div></li>
-            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Cogl.poll_renderer_get_info.html" class="method">poll_renderer_get_info</a></b> (<span class="main_type"><a href="Cogl.Renderer.html" class="class">Renderer</a></span> renderer, <span class="main_type"><a href="Cogl.PollFD.html" class="struct">PollFD</a></span> poll_fds, <span class="main_basic_type"><span class="struct">int</span></span> n_poll_fds, <span class="main_basic_type"><span class="struct">int64</span></span> timeout)
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Cogl.poll_renderer_get_info.html" class="method">poll_renderer_get_info</a></b> (<span class="main_type"><a href="Cogl.Renderer.html" class="class">Renderer</a></span> renderer, <span class="main_keyword">out</span> <span class="main_type"><a href="Cogl.PollFD.html" class="struct">PollFD</a></span>[] poll_fds, <span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">int64</span></span> timeout)
               </span>
               <div class="leaf_brief_description"><span class="brief_description">Is used to integrate Cogl with an application mainloop that is based
                    on the unix poll(2) api (or <code>select</code> or something equivalent).</span>
@@ -587,6 +592,14 @@
               <div class="leaf_brief_description"><span class="brief_description">Assuming you know the given <code>onscreen</code> framebuffer is 
                   based on an x11 window this queries the XID of that window.</span>
               </div></li>
+          </ul>
+          <li class="namespace"><a href="CoglGst.html">CoglGst</a> - </li>
+          <h3 class="main_title">Classes:</h3>
+          <ul class="navi_inline">
+            <li class="class"><a href="CoglGst.Rectangle.html">Rectangle</a> - <span class="brief_description">Describes a rectangle that can be used 
+                for video output.</span></li>
+            <li class="class"><a href="CoglGst.VideoSink.html">VideoSink</a> - <span class="brief_description">The <span class="class">VideoSink
+                </span> structure contains only private data and should be accessed using the provided API.</span></li>
           </ul>
           <li class="namespace"><a href="CoglPango.html">CoglPango</a> - </li>
           <h3 class="main_title">Interfaces:</h3>

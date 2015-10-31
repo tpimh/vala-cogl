@@ -39,13 +39,13 @@
         <h1 class="main_title">@get</h1>
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
-        <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> <b><span class="method">@get</span></b> (<span class="main_keyword">out</span> <span class="main_type"><a href="Cogl.Matrix.html" class="class">Matrix</a></span> matrix)
+        <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_type"><a href="Cogl.Matrix.html" class="struct">Matrix</a></span>? <b><span class="method">@get</span></b> (<span class="main_keyword">out</span> <span class="main_type"><a href="Cogl.Matrix.html" class="struct">Matrix</a></span> matrix)
         </div>
         <div class="description">
-          <p>Resolves the current <span class="main_keyword">this</span> transform into a <a href="Cogl.Matrix.html" class="class">Matrix</a> by 
+          <p>Resolves the current <span class="main_keyword">this</span> transform into a <a href="Cogl.Matrix.html" class="struct">Matrix</a> by 
             combining the sequence of operations that have been applied to build up the current transform.</p>
           <p>There are two possible ways that this function may return its result depending on whether it's possible to directly point to an internal 
-            <a href="Cogl.Matrix.html" class="class">Matrix</a> or whether the result needs to be composed of multiple operations.</p>
+            <a href="Cogl.Matrix.html" class="struct">Matrix</a> or whether the result needs to be composed of multiple operations.</p>
           <p>If an internal matrix contains the required result then this function will directly return a pointer to that matrix, otherwise if the 
             function returns <span class="main_optional_parameter">null</span> then <code>matrix</code> will be initialized to match the transform of 
             <span class="main_keyword">this</span>.</p>
@@ -69,7 +69,7 @@
           <table class="main_parameter_table">
             <tr>
               <td>
-                <p>A direct pointer to a <a href="Cogl.Matrix.html" class="class">Matrix</a> transform or <span class="main_optional_parameter">null
+                <p>A direct pointer to a <a href="Cogl.Matrix.html" class="struct">Matrix</a> transform or <span class="main_optional_parameter">null
                   </span>  and in that case <code>matrix</code> will be initialized with  the effective transform represented by 
                   <span class="main_keyword">this</span>.</p>
               </td>

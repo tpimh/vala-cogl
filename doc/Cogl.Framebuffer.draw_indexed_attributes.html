@@ -122,8 +122,8 @@
             multiple entries in the index array can refer back to a single shared vertex.</p>
           <p>&lt;note&gt;The <code>indices</code> array must be at least as long as <code>first_vertex</code> + <code>n_vertices</code> otherwise the 
             GPU will overrun the indices array when looking up vertex data.&lt;/note&gt;</p>
-          <p>Since it's very common to want to draw a run of rectangles using indices to avoid duplicating vertex data you can use <code>
-              cogl_get_rectangle_indices</code> to get a set of indices that can be shared.</p>
+          <p>Since it's very common to want to draw a run of rectangles using indices to avoid duplicating vertex data you can use 
+            <a href="Cogl.get_rectangle_indices.html" class="method">get_rectangle_indices</a> to get a set of indices that can be shared.</p>
           <p>This drawing api doesn't support high-level meta texture types such as <a href="Cogl.Texture2DSliced.html" class="class">Texture2DSliced
             </a> so it is the user's responsibility to ensure that only low-level textures that can be directly sampled by a GPU such as 
             <a href="Cogl.Texture2D.html" class="class">Texture2D</a>, <a href="Cogl.TextureRectangle.html" class="class">TextureRectangle</a> or 

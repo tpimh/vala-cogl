@@ -89,7 +89,6 @@
           <li class="class"><a href="Cogl.GLES2Context.html">GLES2Context</a></li>
           <li class="class"><a href="Cogl.IndexBuffer.html">IndexBuffer</a></li>
           <li class="class"><a href="Cogl.Indices.html">Indices</a></li>
-          <li class="class"><a href="Cogl.Matrix.html">Matrix</a></li>
           <li class="class"><a href="Cogl.MatrixEntry.html">MatrixEntry</a></li>
           <li class="class"><a href="Cogl.MatrixStack.html">MatrixStack</a></li>
           <li class="abstract_class"><a href="Cogl.Object.html">Object</a></li>
@@ -119,6 +118,7 @@
           <li class="struct"><a href="Cogl.GtypeClass.html">GtypeClass</a></li>
           <li class="struct"><a href="Cogl.Handle.html">Handle</a></li>
           <li class="struct"><a href="Cogl.KmsCrtc.html">KmsCrtc</a></li>
+          <li class="struct"><a href="Cogl.Matrix.html">Matrix</a></li>
           <li class="struct"><a href="Cogl.MetaTexture.html">MetaTexture</a></li>
           <li class="struct"><a href="Cogl.OnscreenDirtyInfo.html">OnscreenDirtyInfo</a></li>
           <li class="struct"><a href="Cogl.PollFD.html">PollFD</a></li>
@@ -168,6 +168,7 @@
           <li class="method"><a href="Cogl.foreach_feature.html">foreach_feature</a></li>
           <li class="method"><a href="Cogl.get_clock_time.html">get_clock_time</a></li>
           <li class="method"><a href="Cogl.get_draw_framebuffer.html">get_draw_framebuffer</a></li>
+          <li class="method"><a href="Cogl.get_rectangle_indices.html">get_rectangle_indices</a></li>
           <li class="method"><a href="Cogl.get_static_identity_quaternion.html">get_static_identity_quaternion</a></li>
           <li class="method"><a href="Cogl.get_static_zero_quaternion.html">get_static_zero_quaternion</a></li>
           <li class="method"><a href="Cogl.gles2_texture_get_handle.html">gles2_texture_get_handle</a></li>
@@ -214,7 +215,7 @@
         <h1 class="main_title">poll_renderer_get_info</h1>
         <hr class="main_hr"/>
         <h2 class="main_title">Description:</h2>
-        <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><span class="method">poll_renderer_get_info</span></b> (<span class="main_type"><a href="Cogl.Renderer.html" class="class">Renderer</a></span> renderer, <span class="main_type"><a href="Cogl.PollFD.html" class="struct">PollFD</a></span> poll_fds, <span class="main_basic_type"><span class="struct">int</span></span> n_poll_fds, <span class="main_basic_type"><span class="struct">int64</span></span> timeout)
+        <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><span class="method">poll_renderer_get_info</span></b> (<span class="main_type"><a href="Cogl.Renderer.html" class="class">Renderer</a></span> renderer, <span class="main_keyword">out</span> <span class="main_type"><a href="Cogl.PollFD.html" class="struct">PollFD</a></span>[] poll_fds, <span class="main_keyword">out</span> <span class="main_basic_type"><span class="struct">int64</span></span> timeout)
         </div>
         <div class="description">
           <p>Is used to integrate Cogl with an application mainloop that is based on the unix poll(2) api (or <code>select</code> or something 
@@ -251,15 +252,15 @@
               </td>
             </tr>
             <tr>
-              <td class="main_parameter_table_name">n_poll_fds</td>
-              <td>
-                <p>A return location for the number of entries in *<code>poll_fds</code></p>
-              </td>
-            </tr>
-            <tr>
               <td class="main_parameter_table_name">timeout</td>
               <td>
                 <p>A return location for the maximum length of time to wait  in microseconds, or -1 to wait indefinitely.</p>
+              </td>
+            </tr>
+            <tr class="main_parameter_table_unknown_parameter">
+              <td class="main_parameter_table_name">n_poll_fds</td>
+              <td>
+                <p>A return location for the number of entries in *<code>poll_fds</code></p>
               </td>
             </tr>
           </table>
