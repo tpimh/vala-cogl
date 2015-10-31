@@ -102,7 +102,7 @@ LDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/..
 #    $2 is subdir like '/subdir/' if thats the web root, '/' if no subdir
 #    $3 is the domain 'subdomain.domain.tld'
 LANG=C LC_TIME=C TOPDIR="TRUE" DIRS="doc vapi pdf" FILES="/dev/zero" create_gnu_index "${LDIR}/" "/vala-cogl/" "blog.golovin.in"
-LANG=C LC_TIME=C FILES="cogl-2.0.vapi cogl-pango-2.0.vapi" create_gnu_index "${LDIR}/vapi/" "/vala-cogl/vapi/" "blog.golovin.in"
+LANG=C LC_TIME=C FILES="*.vapi" create_gnu_index "${LDIR}/vapi/" "/vala-cogl/vapi/" "blog.golovin.in"
 LANG=C LC_TIME=C create_gnu_index "${LDIR}/pdf/" "/vala-cogl/pdf/" "blog.golovin.in"
 
 # takes about 1-5 seconds to complete
