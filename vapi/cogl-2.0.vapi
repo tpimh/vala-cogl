@@ -188,61 +188,12 @@ namespace Cogl {
 		public Cogl.IndicesType get_type ();
 		public void set_offset (ulong offset);
 	}
-	[CCode (cheader_filename = "cogl/cogl.h", copy_function = "g_boxed_copy", free_function = "g_boxed_free", type_id = "cogl_matrix_get_gtype ()")]
-	[Compact]
-	public class Matrix {
-		public float ww;
-		public float wx;
-		public float wy;
-		public float wz;
-		public float xw;
-		public float xx;
-		public float xy;
-		public float xz;
-		public float yw;
-		public float yx;
-		public float yy;
-		public float yz;
-		public float zw;
-		public float zx;
-		public float zy;
-		public float zz;
-		public Cogl.Matrix copy ();
-		public static Cogl.Bool equal (void* v1, void* v2);
-		public void free ();
-		public void frustum (float left, float right, float bottom, float top, float z_near, float z_far);
-		public float get_array ();
-		public Cogl.Bool get_inverse (out unowned Cogl.Matrix inverse);
-		public void init_from_array (float array);
-		public void init_from_euler (Cogl.Euler euler);
-		public void init_from_quaternion (Cogl.Quaternion quaternion);
-		public void init_identity ();
-		public void init_translation (float tx, float ty, float tz);
-		public Cogl.Bool is_identity ();
-		public void look_at (float eye_position_x, float eye_position_y, float eye_position_z, float object_x, float object_y, float object_z, float world_up_x, float world_up_y, float world_up_z);
-		public void multiply (Cogl.Matrix a, Cogl.Matrix b);
-		[Deprecated (since = "1.10")]
-		public void ortho (float left, float right, float bottom, float top, float near, float far);
-		public void orthographic (float x_1, float y_1, float x_2, float y_2, float near, float far);
-		public void perspective (float fov_y, float aspect, float z_near, float z_far);
-		public void project_points (int n_components, ulong stride_in, void* points_in, ulong stride_out, void* points_out, int n_points);
-		public void rotate (float angle, float x, float y, float z);
-		public void rotate_euler (Cogl.Euler euler);
-		public void rotate_quaternion (Cogl.Quaternion quaternion);
-		public void scale (float sx, float sy, float sz);
-		public void transform_point (ref float x, ref float y, ref float z, ref float w);
-		public void transform_points (int n_components, ulong stride_in, void* points_in, ulong stride_out, void* points_out, int n_points);
-		public void translate (float x, float y, float z);
-		public void transpose ();
-		public void view_2d_in_frustum (float left, float right, float bottom, float top, float z_near, float z_2d, float width_2d, float height_2d);
-		public void view_2d_in_perspective (float fov_y, float aspect, float z_near, float z_2d, float width_2d, float height_2d);
-	}
 	[CCode (cheader_filename = "cogl/cogl.h", ref_function = "cogl_matrix_entry_ref", type_id = "cogl_matrix_entry_get_gtype ()", unref_function = "cogl_matrix_entry_unref")]
 	[Compact]
 	public class MatrixEntry {
 		public Cogl.Bool calculate_translation (Cogl.MatrixEntry entry1, out float x, out float y, out float z);
 		public Cogl.Bool equal (Cogl.MatrixEntry entry1);
-		public Cogl.Matrix @get (out unowned Cogl.Matrix matrix);
+		public Cogl.Matrix? @get (out Cogl.Matrix matrix);
 		public Cogl.Bool is_identity ();
 		public Cogl.MatrixEntry @ref ();
 		public void unref ();
@@ -252,9 +203,9 @@ namespace Cogl {
 		[CCode (has_construct_function = false)]
 		public MatrixStack (Cogl.Context ctx);
 		public void frustum (float left, float right, float bottom, float top, float z_near, float z_far);
-		public Cogl.Matrix @get (out unowned Cogl.Matrix matrix);
+		public Cogl.Matrix? @get (out Cogl.Matrix matrix);
 		public unowned Cogl.MatrixEntry get_entry ();
-		public Cogl.Bool get_inverse (out unowned Cogl.Matrix inverse);
+		public Cogl.Bool get_inverse (out Cogl.Matrix inverse);
 		public void load_identity ();
 		public void multiply (Cogl.Matrix matrix);
 		public void orthographic (float x_1, float y_1, float x_2, float y_2, float near, float far);
@@ -605,8 +556,8 @@ namespace Cogl {
 		public int get_green_bits ();
 		public int get_height ();
 		public Cogl.Bool get_is_stereo ();
-		public void get_modelview_matrix (out unowned Cogl.Matrix matrix);
-		public void get_projection_matrix (out unowned Cogl.Matrix matrix);
+		public Cogl.Matrix get_modelview_matrix ();
+		public Cogl.Matrix get_projection_matrix ();
 		public int get_red_bits ();
 		public int get_samples_per_pixel ();
 		public Cogl.StereoMode get_stereo_mode ();
@@ -720,6 +671,54 @@ namespace Cogl {
 		public uint32 connectors;
 		public uint32 count;
 		public Cogl.Bool ignore;
+	}
+	[CCode (cheader_filename = "cogl/cogl.h", type_id = "cogl_matrix_get_gtype ()")]
+	public struct Matrix {
+		public float xx;
+		public float yx;
+		public float zx;
+		public float wx;
+		public float xy;
+		public float yy;
+		public float zy;
+		public float wy;
+		public float xz;
+		public float yz;
+		public float zz;
+		public float wz;
+		public float xw;
+		public float yw;
+		public float zw;
+		public float ww;
+		public Cogl.Matrix? copy ();
+		public static Cogl.Bool equal (void* v1, void* v2);
+		public void free ();
+		public void frustum (float left, float right, float bottom, float top, float z_near, float z_far);
+		public float get_array ();
+		public Cogl.Bool get_inverse (out Cogl.Matrix inverse);
+		public void init_from_array (float array);
+		public void init_from_euler (Cogl.Euler euler);
+		public void init_from_quaternion (Cogl.Quaternion quaternion);
+		public void init_identity ();
+		public void init_translation (float tx, float ty, float tz);
+		public Cogl.Bool is_identity ();
+		public void look_at (float eye_position_x, float eye_position_y, float eye_position_z, float object_x, float object_y, float object_z, float world_up_x, float world_up_y, float world_up_z);
+		public void multiply (Cogl.Matrix a, Cogl.Matrix b);
+		[Deprecated (since = "1.10")]
+		public void ortho (float left, float right, float bottom, float top, float near, float far);
+		public void orthographic (float x_1, float y_1, float x_2, float y_2, float near, float far);
+		public void perspective (float fov_y, float aspect, float z_near, float z_far);
+		public void project_points (int n_components, ulong stride_in, void* points_in, ulong stride_out, void* points_out, int n_points);
+		public void rotate (float angle, float x, float y, float z);
+		public void rotate_euler (Cogl.Euler euler);
+		public void rotate_quaternion (Cogl.Quaternion quaternion);
+		public void scale (float sx, float sy, float sz);
+		public void transform_point (ref float x, ref float y, ref float z, ref float w);
+		public void transform_points (int n_components, ulong stride_in, void* points_in, ulong stride_out, void* points_out, int n_points);
+		public void translate (float x, float y, float z);
+		public void transpose ();
+		public void view_2d_in_frustum (float left, float right, float bottom, float top, float z_near, float z_2d, float width_2d, float height_2d);
+		public void view_2d_in_perspective (float fov_y, float aspect, float z_near, float z_2d, float width_2d, float height_2d);
 	}
 	[CCode (cheader_filename = "cogl/cogl.h")]
 	[SimpleType]
@@ -1342,6 +1341,8 @@ namespace Cogl {
 	[CCode (cheader_filename = "cogl/cogl.h")]
 	public static unowned Cogl.Framebuffer get_draw_framebuffer ();
 	[CCode (cheader_filename = "cogl/cogl.h")]
+	public static unowned Cogl.Indices get_rectangle_indices (Cogl.Context context, int n_rectangles);
+	[CCode (cheader_filename = "cogl/cogl.h")]
 	public static unowned Cogl.Quaternion get_static_identity_quaternion ();
 	[CCode (cheader_filename = "cogl/cogl.h")]
 	public static unowned Cogl.Quaternion get_static_zero_quaternion ();
@@ -1367,9 +1368,9 @@ namespace Cogl {
 	[CCode (cheader_filename = "cogl/cogl.h")]
 	public static void kms_renderer_set_kms_fd (Cogl.Renderer renderer, int fd);
 	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static void poll_renderer_dispatch (Cogl.Renderer renderer, Cogl.PollFD poll_fds, int n_poll_fds);
+	public static void poll_renderer_dispatch (Cogl.Renderer renderer, [CCode (array_length_cname = "n_poll_fds", array_length_pos = 2.1, type = "const CoglPollFD*")] Cogl.PollFD[] poll_fds);
 	[CCode (cheader_filename = "cogl/cogl.h")]
-	public static int poll_renderer_get_info (Cogl.Renderer renderer, Cogl.PollFD poll_fds, int n_poll_fds, int64 timeout);
+	public static int poll_renderer_get_info (Cogl.Renderer renderer, [CCode (array_length_cname = "n_poll_fds", array_length_pos = 2.5, type = "CoglPollFD**")] out unowned Cogl.PollFD[] poll_fds, out int64 timeout);
 	[CCode (cheader_filename = "cogl/cogl.h")]
 	public static void pop_gles2_context (Cogl.Context ctx);
 	[CCode (cheader_filename = "cogl/cogl.h")]
